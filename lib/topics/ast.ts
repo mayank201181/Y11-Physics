@@ -147,7 +147,7 @@ export const ast: Topic = {
           "The deciding factor is **mass**. All stars start the same way, but a star like our Sun ends gently as a white dwarf, while a much more massive star ends violently in a supernova, leaving a neutron star or black hole. Gravity and fusion fight throughout a star's life.",
       },
       body:
-        "Stars form and die over billions of years. **All stars begin the same way**, then their fate depends on **mass**.\n\n**Common beginning**\n\n1. **Nebula** — a cloud of dust and gas.\n2. Gravity pulls it together; it contracts and heats up to form a **protostar**.\n3. When hot/dense enough, **nuclear fusion** of hydrogen into helium begins, and it becomes a **main sequence star**. It is stable here for most of its life: the outward pressure from fusion balances the inward pull of gravity. Our Sun is a main sequence star.\n\n**A star like the Sun (low/medium mass)**\n\n4. When the hydrogen runs low, it swells into a **red giant**.\n5. It then sheds its outer layers as a **planetary nebula**.\n6. The hot, dense core left behind is a **white dwarf**, which slowly cools.\n\n**A much more massive star**\n\n4. It swells into a **red supergiant**.\n5. It explodes in a **supernova**.\n6. The remaining core becomes a **neutron star**, or — if massive enough — a **black hole**.",
+        "Stars form and die over billions of years. **All stars begin the same way**, then their fate depends on **mass**.\n\n**Common beginning**\n\n1. **Nebula** — a cloud of dust and gas.\n2. Gravity pulls it together; it contracts and heats up to form a **protostar**.\n3. When hot/dense enough, **nuclear fusion** of hydrogen into helium begins, and it becomes a **main sequence star**. It is stable here for most of its life: the outward pressure from fusion balances the inward pull of gravity. Our Sun is a main sequence star.\n\n**A star like the Sun (low/medium mass)**\n\n4. When the hydrogen runs low, it swells into a **red giant**.\n5. It then sheds its outer layers as a **planetary nebula**.\n6. The hot, dense core left behind is a **white dwarf**, which slowly cools over a very long time and eventually becomes a (theoretical) cold **black dwarf**.\n\n**A much more massive star**\n\n4. It swells into a **red supergiant**.\n5. It explodes in a **supernova**.\n6. The remaining core becomes a **neutron star**, or — if massive enough — a **black hole**.",
       diagrams: [
         {
           caption: "Stellar life cycle: a common start, then two paths set by mass.",
@@ -157,7 +157,7 @@ export const ast: Topic = {
       ],
       keyPoints: [
         "All stars: nebula → protostar → main sequence star.",
-        "Sun-like star: red giant → planetary nebula → white dwarf.",
+        "Sun-like star: red giant → planetary nebula → white dwarf (→ eventually black dwarf).",
         "Massive star: red supergiant → supernova → neutron star or black hole.",
         "On the main sequence, fusion pressure balances gravity (stable).",
         "A star's final fate is decided by its mass.",

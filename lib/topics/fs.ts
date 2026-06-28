@@ -24,11 +24,12 @@ export const fs: Topic = {
         idea: "The extension doubles when the force doubles, trebles when the force trebles. Extension is proportional to force, so 5 N would give 10 cm. That fixed ratio (force per unit extension) is a property of the spring itself.",
       },
       body:
-        "A single force acting alone can squash, stretch, bend or twist an object — it **deforms** it. To deform an object you actually need *more than one* force: if you stretch a spring you pull down on one end while the support pulls up on the other. A single unbalanced force would just accelerate the object instead of changing its shape.\n\nWhen you stretch a spring, the **extension** is how much *longer* it has become:\n\nextension = stretched length − original (natural) length\n\nExtension is a length, measured in **metres (m)** (or cm in the lab). Always subtract the natural length first — the stretched length on its own is *not* the extension.",
+        "A force can change an object's **shape** as well as its motion. The three shape changes you must know are:\n\n- **stretching** (tension) — pulling makes an object longer, e.g. a spring or elastic band;\n- **compressing** — pushing makes an object shorter, e.g. squashing a spring or a foam block;\n- **bending** — turning forces curve an object, e.g. bending a ruler or a diving board.\n\nChanging shape this way is called **deforming** an object. To deform an object you actually need **more than one force**. If you stretch a spring you pull down on the bottom while the support (clamp) pulls up on the top — two forces acting in opposite directions. A *single* unbalanced force would simply make the object accelerate (move off) instead of changing its shape; it is the pair of opposing forces that squashes, stretches or bends it.\n\nWhen you stretch a spring, the **extension** is how much *longer* it has become:\n\nextension = stretched length − original (natural) length\n\nExtension is a length, measured in **metres (m)** (or cm in the lab). Always subtract the natural length first — the stretched length on its own is *not* the extension. (For a compressed spring the same idea gives the *compression* — how much shorter it has become.)",
       keyPoints: [
-        "A force can change an object's shape (stretch, compress, bend, twist).",
-        "Deforming needs at least two forces (e.g. pull and an equal support force).",
+        "A force can change an object's shape: stretching, compressing or bending.",
+        "Deforming needs at least two (opposing) forces — one force alone just accelerates the object.",
         "Extension = stretched length − original length (a length in metres).",
+        "Compression = original length − compressed length.",
       ],
       whyItWorks:
         "Inside a solid, particles are held by bonds that act like tiny springs. Pulling stretches these bonds; up to a point each bond stretches in proportion to the force, so the whole object's extension is proportional to the force.",
@@ -102,7 +103,7 @@ export const fs: Topic = {
     {
       heading: "Energy stored in a stretched spring",
       body:
-        "Stretching a spring does work on it, and that work is stored as **elastic potential energy**. For a spring obeying Hooke's law:\n\nE = ½ k x²\n\n- **E** = elastic potential energy, in joules (**J**)\n- **k** = spring constant, in N/m\n- **x** = extension, in metres (m)\n\nNotice the extension is **squared**: doubling the extension stores *four times* the energy. On a force–extension graph, this stored energy equals the **area under the straight line** (the triangle ½ × F × x).\n\n*Worked example.* A spring with k = 50 N/m is extended by 0.20 m. E = ½ × 50 × 0.20² = ½ × 50 × 0.04 = **0.5 J**. When released elastically, this energy can be transferred — for example to the kinetic energy of a launched object.",
+        "Stretching (or compressing) a spring does work on it, and that work is stored as **elastic potential energy**. On a force–extension graph the stored energy is the **area under the straight line** — a triangle of base x and height F — so within the linear region:\n\nE = ½ F x\n\nand, substituting F = k x, this becomes the form used most often:\n\nE = ½ k x²\n\n- **E** = elastic potential energy, in joules (**J**)\n- **F** = force at that extension, in newtons (N)\n- **k** = spring constant, in N/m\n- **x** = extension, in metres (m)\n\nUse **E = ½ F x** when you know the force and extension; use **E = ½ k x²** when you know the spring constant and extension. Notice the extension is **squared** in the second form: doubling the extension stores *four times* the energy.\n\n*Worked example.* A spring with k = 50 N/m is extended by 0.20 m. Using E = ½ k x² = ½ × 50 × 0.20² = ½ × 50 × 0.04 = **1.0 J**. Check with E = ½ F x: the force is F = k x = 50 × 0.20 = 10 N, so E = ½ × 10 × 0.20 = **1.0 J** — the two methods agree. When released elastically, this energy can be transferred — for example to the kinetic energy of a launched object.",
       diagrams: [
         {
           caption: "Energy stored = area under the force–extension line (the shaded triangle).",
@@ -111,12 +112,12 @@ export const fs: Topic = {
         },
       ],
       keyPoints: [
-        "Elastic potential energy E = ½ k x².",
+        "Elastic potential energy E = ½ F x = ½ k x².",
         "Energy is measured in joules (J).",
-        "Extension is squared: double x → four times the energy.",
-        "Stored energy = area under the force–extension line.",
+        "Extension is squared in E = ½ k x²: double x → four times the energy.",
+        "Stored energy = area under the force–extension line (the triangle ½ F x).",
       ],
-      formulae: ["E = ½ k x²", "area under F–x line = energy stored", "E in J, k in N/m, x in m"],
+      formulae: ["E = ½ F x", "E = ½ k x²", "area under F–x line = energy stored", "E in J, F in N, k in N/m, x in m"],
       whyItWorks:
         "Work done = force × distance, but the force grows from 0 to F as you stretch, so the average force is ½F. Work = ½F × x = ½(k x)x = ½ k x² — the area of the triangle under the graph.",
       strategies: ["Square the extension before multiplying", "Link area-under-graph to energy"],
@@ -185,14 +186,41 @@ export const fs: Topic = {
       strategies: ["List clockwise vs anticlockwise moments", "Set the two sums equal and solve"],
     },
     {
+      heading: "Levers as force multipliers",
+      discovery: {
+        problem:
+          "A crowbar lets you lift a heavy paving slab you could never lift with your bare hands. You haven't become stronger — so where does the extra lifting force come from?",
+        idea: "A lever turns a small effort applied far from the pivot into a large force on a load close to the pivot. Because moment = force × distance, a small force at a big distance can balance a big force at a small distance.",
+      },
+      body:
+        "A **lever** is a simple machine — a rigid bar that turns about a **pivot (fulcrum)**. You apply an **effort** at one place and it acts on a **load** at another. Levers obey the principle of moments, so for a lever just about to move the load:\n\neffort × (effort's distance from pivot) = load × (load's distance from pivot)\n\nIf the effort is applied **further from the pivot** than the load, then a **small effort can balance (and move) a much larger load** — the lever acts as a **force multiplier**. The longer the effort arm compared with the load arm, the bigger the force the lever produces.\n\n*Worked example.* A crowbar pivots 0.10 m from a 500 N rock; you push down 0.80 m from the pivot. Effort × 0.80 = 500 × 0.10, so effort = 50 ÷ 0.80 = **62.5 N**. A 62.5 N push lifts a 500 N rock — the lever multiplies your force about 8 times.\n\nEveryday levers include spanners, scissors, wheelbarrows, bottle openers, see-saws and your own forearm (the elbow is the pivot).",
+      keyPoints: [
+        "A lever is a rigid bar that turns about a pivot (fulcrum).",
+        "Levers obey the principle of moments: effort × effort arm = load × load arm.",
+        "Effort applied far from the pivot can balance a large load near the pivot.",
+        "This makes a lever a force multiplier (small effort → large force).",
+      ],
+      formulae: ["effort × effort distance = load × load distance", "force multiplied when effort arm > load arm"],
+      whyItWorks:
+        "The two moments must be equal to balance. If the effort's distance is large and the load's distance is small, the effort force can be small while still matching the load's moment — so the lever delivers a bigger force at the load than you put in at the effort.",
+      strategies: ["Identify the pivot, effort and load", "Compare the two distances to see the multiplication"],
+    },
+    {
       heading: "Centre of gravity and stability",
       body:
-        "The **centre of gravity** is the single point through which the whole weight of an object appears to act. For a uniform object it is at the geometric centre.\n\nAn object **topples** when its centre of gravity passes *outside* its **base** — the line of action of its weight then falls beyond the edge it would pivot on, creating an unbalanced moment that tips it over.\n\nAn object is **more stable** when it has:\n\n- a **low centre of gravity**, and\n- a **wide base**.\n\nThat is why racing cars are low and wide, while a tall, narrow bus tips more easily. A stable object also tends to return to its original position after a small push.",
+        "The **centre of gravity** (also called the **centre of mass**) is the single point through which the **whole weight** of an object appears to act. For a uniform, regularly shaped object (a ruler, a uniform beam, a sphere) it is at the **geometric centre**.\n\n**Finding the centre of gravity of a flat (irregular) shape — the plumb-line method:**\n\n1. Hang the shape freely from a pin so it can swing, and let it settle. The centre of gravity always hangs *directly below* the pin.\n2. Hang a **plumb line** (a thread with a weight) from the same pin and draw the vertical line it makes on the shape.\n3. Repeat from a different hanging point to draw a second line.\n4. The **centre of gravity is where the lines cross.** (A third line is a useful check.)\n\n**Stability.** The **base of support** is the area enclosed by the object's contact points with the ground. An object **topples** when its centre of gravity passes *outside* its base — the **line of action of its weight** then falls beyond the edge it pivots on, creating an unbalanced moment that tips it over. While that line stays *inside* the base, the weight's moment turns the object back upright.\n\nAn object is **more stable** when it has:\n\n- a **low centre of gravity**, and\n- a **wide base**.\n\nThat is why racing cars are low and wide, while a tall, narrow bus tips more easily. A stable object tends to return to its original position after a small push; an unstable one topples.",
+      diagrams: [
+        {
+          caption: "Plumb-line method: lines drawn from two hanging points cross at the centre of gravity.",
+          svg:
+            '<svg viewBox="0 0 240 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An irregular card hung from a pin with a plumb line, two vertical lines crossing at the centre of gravity">\n<polygon points="60,30 180,40 200,110 120,150 40,100" fill="#ecfccb" stroke="#65a30d" stroke-width="1.5"/>\n<circle cx="60" cy="30" r="3" fill="#475569"/>\n<line x1="60" y1="30" x2="96" y2="148" stroke="#1d4ed8" stroke-width="1" stroke-dasharray="4 3"/>\n<circle cx="180" cy="40" r="3" fill="#475569"/>\n<line x1="180" y1="40" x2="96" y2="148" stroke="#1d4ed8" stroke-width="1" stroke-dasharray="4 3"/>\n<circle cx="105" cy="92" r="4" fill="#b91c1c"/>\n<text x="118" y="90" font-size="9" fill="#b91c1c">centre of gravity</text>\n<text x="40" y="22" font-size="9" fill="#334155">pin</text>\n</svg>',
+        },
+      ],
       keyPoints: [
-        "Centre of gravity = point where all the weight appears to act.",
-        "An object topples when its centre of gravity goes outside its base.",
-        "Low centre of gravity + wide base = more stable.",
-        "Stable objects return to position after a small tilt.",
+        "Centre of gravity (centre of mass) = point where all the weight appears to act.",
+        "Find it for a flat shape with the plumb-line method: hang from two points, mark the verticals, they cross at the centre of gravity.",
+        "An object topples when its centre of gravity (weight's line of action) goes outside its base of support.",
+        "Low centre of gravity + wide base = more stable; the object returns to position after a small tilt.",
       ],
       whyItWorks:
         "While the weight's line of action stays inside the base, its moment turns the object back upright. Once it passes the pivoting edge, that moment turns the object over instead — so a low, wide shape keeps the line inside the base for larger tilts.",
@@ -206,9 +234,11 @@ export const fs: Topic = {
       "Hooke's law: F = k x, with k the spring constant in N/m.",
       "Force–extension is a straight line through the origin up to the limit of proportionality; the gradient is k.",
       "Elastic deformation is reversible; plastic deformation (past the elastic limit) is permanent.",
-      "Elastic potential energy E = ½ k x² (also the area under the force–extension line).",
+      "Elastic potential energy E = ½ F x = ½ k x² (also the area under the force–extension line).",
       "Moment = force × perpendicular distance (F × d), in newton metres.",
       "Principle of moments: clockwise moments = anticlockwise moments for a balanced object.",
+      "A lever is a force multiplier: effort × effort arm = load × load arm.",
+      "Equilibrium needs no resultant force AND no resultant moment.",
       "Stability improves with a low centre of gravity and a wide base.",
     ],
     keywords: [
@@ -221,15 +251,21 @@ export const fs: Topic = {
       { term: "Elastic potential energy", definition: "Energy stored in a stretched or compressed spring, E = ½ k x², in joules." },
       { term: "Moment", definition: "The turning effect of a force about a pivot, moment = force × perpendicular distance, in N m." },
       { term: "Principle of moments", definition: "For a balanced object, total clockwise moments equal total anticlockwise moments about the same pivot." },
-      { term: "Centre of gravity", definition: "The single point through which the whole weight of an object appears to act." },
+      { term: "Centre of gravity", definition: "The single point (also called the centre of mass) through which the whole weight of an object appears to act." },
+      { term: "Lever", definition: "A rigid bar that turns about a pivot; a force multiplier where effort × effort arm = load × load arm." },
+      { term: "Equilibrium", definition: "A state with no resultant force and no resultant moment, so the object neither accelerates nor turns." },
+      { term: "Base of support", definition: "The area enclosed by an object's contact points with the ground; an object topples if its weight's line of action falls outside it." },
     ],
     flashcards: [
       { front: "State Hooke's law and its formula.", back: "Force is proportional to extension (up to the limit of proportionality): F = k x, where k is the spring constant in N/m." },
       { front: "What does the gradient of a force–extension graph represent?", back: "The spring constant k (steeper line = stiffer spring)." },
       { front: "Difference between elastic and plastic deformation?", back: "Elastic is reversible (returns to original shape); plastic is permanent (stays deformed)." },
-      { front: "Formula for energy stored in a stretched spring?", back: "E = ½ k x² (joules); it is also the area under the force–extension line." },
+      { front: "Formula for energy stored in a stretched spring?", back: "E = ½ F x = ½ k x² (joules); it is also the area under the force–extension line." },
       { front: "How do you calculate a moment?", back: "moment = force × perpendicular distance from the pivot (F × d), measured in N m." },
       { front: "State the principle of moments.", back: "For a balanced object, total clockwise moments = total anticlockwise moments about the same pivot." },
+      { front: "Why is a lever a force multiplier?", back: "Effort × effort arm = load × load arm. With the effort far from the pivot and the load near it, a small effort balances a large load." },
+      { front: "How do you find the centre of gravity of a flat shape?", back: "Plumb-line method: hang it from two different points, draw the vertical (plumb line) each time; the lines cross at the centre of gravity." },
+      { front: "What two conditions are needed for equilibrium?", back: "No resultant force (up forces = down forces) AND no resultant moment (clockwise = anticlockwise moments)." },
     ],
   },
   quiz: {
