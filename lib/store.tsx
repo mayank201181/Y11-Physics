@@ -346,6 +346,9 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     if (typeof window !== "undefined") localStorage.removeItem(PROFILE_KEY);
   }, []);
 
+  // Profile mutations use the account returned by the write response (always
+  // fresh from server memory) rather than re-reading from Blob, which can serve
+  // a stale account for up to ~60s after a write (Vercel Blob edge cache).
   const createProfile = useCallback(
     async (name: string, avatar: string) => {
       const res = await fetch("/api/profiles", {
@@ -354,43 +357,49 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         body: JSON.stringify({ name, avatar }),
       });
       if (res.ok) {
-        const acc = await refreshMe();
-        const newest = acc?.profiles[acc.profiles.length - 1];
+        const data = await res.json();
+        if (data.account) setAccount(data.account);
+        const newest = data.account?.profiles?.[data.account.profiles.length - 1];
         if (newest) await loadProgress(newest);
       }
     },
-    [refreshMe, loadProgress]
+    [loadProgress]
   );
 
   const updateProfile = useCallback(
     async (id: string, name: string, avatar: string) => {
-      await fetch("/api/profiles", {
+      const res = await fetch("/api/profiles", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id, name, avatar }),
       });
-      const acc = await refreshMe();
-      const updated = acc?.profiles.find((p) => p.id === id);
-      if (updated && activeProfile?.id === id) setActiveProfile(updated);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.account) setAccount(data.account);
+        const updated = data.account?.profiles?.find((p: Profile) => p.id === id);
+        if (updated && activeProfile?.id === id) setActiveProfile(updated);
+      }
     },
-    [refreshMe, activeProfile]
+    [activeProfile]
   );
 
   const deleteProfile = useCallback(
     async (id: string) => {
-      await fetch("/api/profiles", {
+      const res = await fetch("/api/profiles", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id }),
       });
-      const acc = await refreshMe();
+      if (res.ok) {
+        const data = await res.json();
+        if (data.account) setAccount(data.account);
+      }
       if (activeProfile?.id === id) {
         setActiveProfile(null);
         setStatus("no-profile");
       }
-      void acc;
     },
-    [refreshMe, activeProfile]
+    [activeProfile]
   );
 
   const selectProfile = useCallback(
