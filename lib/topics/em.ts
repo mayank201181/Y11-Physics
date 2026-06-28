@@ -24,7 +24,7 @@ export const em: Topic = {
           "Every magnet has two poles, north and south. Like poles (N–N or S–S) repel; unlike poles (N–S) attract. Which way you turn a magnet decides which poles face each other, so it decides whether you feel attraction or repulsion.",
       },
       body:
-        "A **permanent magnet** produces a magnetic field all the time. Every magnet has two **poles**: a **north-seeking pole (N)** and a **south-seeking pole (S)**.\n\nThe basic rule of magnetic forces:\n\n- **Like poles repel** (N–N or S–S push apart).\n- **Unlike poles attract** (N–S pull together).\n\nA **magnetic field** is the region around a magnet where another magnet or a magnetic material feels a force. We draw it with **field lines** that:\n\n1. point **from N to S** *outside* the magnet,\n2. never cross, and\n3. are **closer together where the field is stronger** (strongest at the poles).\n\nOnly a few materials are **magnetic** (can be magnetised or attracted): **iron, steel, cobalt and nickel**.",
+        "A **permanent magnet** produces a magnetic field all the time. Every magnet has two **poles**: a **north-seeking pole (N)** and a **south-seeking pole (S)**.\n\nThe basic rule of magnetic forces:\n\n- **Like poles repel** (N–N or S–S push apart).\n- **Unlike poles attract** (N–S pull together).\n\nMagnetism is a **non-contact force**: the magnets push or pull on each other without ever touching.\n\nA **magnetic field** is the region around a magnet (or a current) where another magnet or a magnetic material feels a force. We draw it with **field lines** that:\n\n1. point **from N to S** *outside* the magnet,\n2. never cross, and\n3. are **closer together where the field is stronger** (strongest at the poles).\n\nOnly a few materials are **magnetic** (can be magnetised or attracted): **iron, steel, cobalt and nickel**.\n\n**Plotting the field.** You can reveal the field two ways:\n\n- **Iron filings** — sprinkle them over paper on top of the magnet and tap gently; each tiny filing becomes a mini-magnet and lines up, showing the *shape* of the field (but not its direction).\n- **A plotting compass** — the compass needle points along the field at each point, so it shows both the *shape and the direction* (build a line of dots and join them).\n\n**Field patterns** to know: a single bar magnet (lines curving N to S); two unlike poles facing (lines run straight across — a roughly **uniform** field — and the magnets attract); two like poles facing (lines bend away from each other with a **neutral point** of zero field between them — the magnets repel).\n\n**Earth's magnetic field.** The Earth behaves as if it contains a giant bar magnet, which is why a compass works. A compass needle is a small magnet whose **north-seeking pole** points toward **geographic north**. That means a magnetic **south** pole of the Earth's field lies near the geographic North Pole (unlike poles attract). The needle settles along the Earth's field lines, letting us navigate.",
       diagrams: [
         {
           caption: "Field lines of a bar magnet run from N to S; closely spaced at the poles = stronger field.",
@@ -32,16 +32,17 @@ export const em: Topic = {
             '<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Magnetic field lines around a bar magnet curving from the north pole to the south pole">\n<rect x="100" y="60" width="60" height="20" fill="#cbd5e1" stroke="#475569"/>\n<rect x="100" y="60" width="30" height="20" fill="#ef4444"/>\n<rect x="130" y="60" width="30" height="20" fill="#3b82f6"/>\n<text x="115" y="74" font-size="11" text-anchor="middle" fill="#ffffff">N</text>\n<text x="145" y="74" font-size="11" text-anchor="middle" fill="#ffffff">S</text>\n<path d="M130 60 C150 20 200 20 160 60" fill="none" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fa)"/>\n<path d="M130 80 C150 120 200 120 160 80" fill="none" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fa)"/>\n<path d="M126 60 C90 10 230 10 164 60" fill="none" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fa)"/>\n<path d="M126 80 C90 130 230 130 164 80" fill="none" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fa)"/>\n<defs><marker id="fa" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#1e293b"/></marker></defs>\n<text x="130" y="135" font-size="9" text-anchor="middle" fill="#334155">field lines: N to S (outside)</text>\n</svg>',
         },
         {
-          caption: "Between two unlike poles the field lines run straight across from N to S (attraction).",
+          caption: "Between two unlike poles (attraction) the field lines run straight across from N to S; between two like poles (repulsion) the lines push apart with a neutral point between them.",
           svg:
-            '<svg viewBox="0 0 260 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Uniform magnetic field lines running from a north pole to a facing south pole">\n<rect x="20" y="30" width="40" height="40" fill="#ef4444" stroke="#475569"/>\n<text x="40" y="55" font-size="12" text-anchor="middle" fill="#ffffff">N</text>\n<rect x="200" y="30" width="40" height="40" fill="#3b82f6" stroke="#475569"/>\n<text x="220" y="55" font-size="12" text-anchor="middle" fill="#ffffff">S</text>\n<path d="M60 40 H200" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fb)"/>\n<path d="M60 50 H200" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fb)"/>\n<path d="M60 60 H200" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fb)"/>\n<defs><marker id="fb" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#1e293b"/></marker></defs>\n<text x="130" y="92" font-size="9" text-anchor="middle" fill="#334155">uniform field between unlike poles</text>\n</svg>',
+            '<svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Top: uniform field lines from a north pole to a facing south pole showing attraction. Bottom: two facing north poles whose field lines bend away from each other with a neutral point between them showing repulsion">\n<rect x="20" y="20" width="40" height="40" fill="#ef4444" stroke="#475569"/>\n<text x="40" y="45" font-size="12" text-anchor="middle" fill="#ffffff">N</text>\n<rect x="200" y="20" width="40" height="40" fill="#3b82f6" stroke="#475569"/>\n<text x="220" y="45" font-size="12" text-anchor="middle" fill="#ffffff">S</text>\n<path d="M60 30 H200" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fb)"/>\n<path d="M60 40 H200" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fb)"/>\n<path d="M60 50 H200" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fb)"/>\n<text x="130" y="72" font-size="9" text-anchor="middle" fill="#334155">unlike poles: attract (uniform field)</text>\n<rect x="20" y="110" width="40" height="40" fill="#ef4444" stroke="#475569"/>\n<text x="40" y="135" font-size="12" text-anchor="middle" fill="#ffffff">N</text>\n<rect x="200" y="110" width="40" height="40" fill="#ef4444" stroke="#475569"/>\n<text x="220" y="135" font-size="12" text-anchor="middle" fill="#ffffff">N</text>\n<path d="M60 120 C100 100 100 100 120 95" fill="none" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fb)"/>\n<path d="M60 140 C100 160 100 160 120 165" fill="none" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fb)"/>\n<path d="M200 120 C160 100 160 100 140 95" fill="none" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fb)"/>\n<path d="M200 140 C160 160 160 160 140 165" fill="none" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fb)"/>\n<circle cx="130" cy="130" r="3" fill="#16a34a"/>\n<text x="130" y="178" font-size="9" text-anchor="middle" fill="#334155">like poles: repel (neutral point in green)</text>\n</svg>',
         },
       ],
       keyPoints: [
-        "Like poles repel; unlike poles attract.",
+        "Like poles repel; unlike poles attract; magnetism is a non-contact force (it acts without touching).",
         "Field lines go from N to S outside the magnet and never cross.",
         "Closer lines = stronger field (strongest at the poles).",
-        "Magnetic materials: iron, steel, cobalt, nickel.",
+        "Between unlike poles the field is roughly uniform; between like poles the lines repel and there is a neutral point (zero field) between them.",
+        "Magnetic materials (can be magnetised / attracted): iron, steel, cobalt, nickel.",
       ],
       whyItWorks:
         "Field lines are just a map of the force direction on a tiny test north pole. A north pole is pushed away from N and pulled toward S, so the arrows point from N to S outside the magnet.",
@@ -72,7 +73,7 @@ export const em: Topic = {
           "An electric current makes its own magnetic field. A current is moving charge, and moving charge produces magnetism. Switch the current on and a field appears; switch it off and the field vanishes.",
       },
       body:
-        "**A current in a wire creates a magnetic field around it.** For a straight wire the field lines are **concentric circles** around the wire. Their direction is given by the **right-hand grip rule**: point your right thumb along the (conventional) current and your curled fingers show the field direction.\n\nThe field is **stronger** if the current is **larger** or you are **closer** to the wire.\n\nA **solenoid** is a coil of wire. The fields from each turn add up to give a field that looks exactly like a **bar magnet's**: uniform inside, with a clear N and S pole at the ends. The field is stronger if you:\n\n- increase the **current**,\n- add **more turns**, or\n- put an **iron core** inside (this makes an **electromagnet**).",
+        "**A current in a wire creates a magnetic field around it.** For a straight wire the field lines are **concentric circles** around the wire. Their direction is given by the **right-hand grip rule**: point your right thumb along the (conventional) current and your curled fingers show the field direction. **Reversing the current reverses the field direction** (the circles point the other way round).\n\nThe field is **stronger** if the current is **larger** or you are **closer** to the wire.\n\nA single **flat coil** (one loop) already concentrates the field through its centre, with the lines passing through the middle in one direction. A **solenoid** is a long coil of many turns. The fields from each turn add up to give a field that looks exactly like a **bar magnet's**: uniform inside, with a clear N and S pole at the ends. The field is stronger if you:\n\n- increase the **current**,\n- add **more turns**, or\n- put an **iron core** inside (this makes an **electromagnet**).",
       diagrams: [
         {
           caption: "Concentric circular field around a straight current-carrying wire (right-hand grip rule).",
@@ -88,7 +89,8 @@ export const em: Topic = {
       keyPoints: [
         "A current always creates a magnetic field around it.",
         "Straight wire: concentric circular field lines (right-hand grip rule).",
-        "Solenoid: bar-magnet field, uniform inside, N and S at the ends.",
+        "Reversing the current reverses the field direction.",
+        "Flat coil / solenoid: bar-magnet field, uniform inside, N and S at the ends.",
         "Stronger field: more current, more turns, or an iron core.",
       ],
       whyItWorks:
@@ -99,7 +101,7 @@ export const em: Topic = {
     {
       heading: "Electromagnets and their uses",
       body:
-        "An **electromagnet** is a solenoid wound around a **soft iron core**. Because it is soft iron, the magnetism appears the instant the current flows and **disappears when the current is switched off** — that switchability is the whole point.\n\nUses include:\n\n- **Scrapyard crane** — switch on to lift steel, switch off to drop it.\n- **Electric bell**, **relay** (a small current switches a large one), **circuit breaker**, **loudspeaker** and **maglev**.\n\nYou strengthen an electromagnet by increasing the **current**, adding **more turns**, or using a softer/larger **iron core**.",
+        "An **electromagnet** is a solenoid wound around a **soft iron core**. Because it is soft iron, the magnetism appears the instant the current flows and **disappears when the current is switched off** — that switchability is the whole point.\n\nUses and how each one works:\n\n- **Scrapyard crane** — switch the electromagnet on to lift steel/iron, switch off to drop the load.\n- **Relay** — a *small* current in one circuit energises an electromagnet, which pulls an iron armature to close (or open) the contacts of a *second*, high-power circuit. This lets a small, safe current switch a large/dangerous one (e.g. a car starter motor).\n- **Circuit breaker** — if the current gets too large, the electromagnet becomes strong enough to pull a switch open, cutting the circuit (a fast, resettable replacement for a fuse).\n- **Electric bell** — current flows through the electromagnet, which attracts an iron armature so a hammer strikes the gong. The movement breaks the circuit, the electromagnet switches off, a spring pulls the armature back, the circuit re-makes, and the cycle repeats — giving a continuous ring.\n- **Loudspeaker** — a varying current (the audio signal) in a coil attached to a paper cone sits in a permanent magnet's field; the motor effect pushes the coil and cone in and out, making the air vibrate and producing sound.\n\nYou strengthen an electromagnet by increasing the **current**, adding **more turns**, or using a larger/softer **iron core**.",
       keyPoints: [
         "Electromagnet = coil + soft iron core, controlled by a current.",
         "Magnetism switches on/off with the current (soft iron loses it instantly).",
@@ -174,12 +176,17 @@ export const em: Topic = {
           "Moving a magnet relative to a coil changes the magnetic field through the coil, and a *changing* field induces a voltage (e.m.f.). No change, no e.m.f. — that's why holding it still does nothing.",
       },
       body:
-        "**Electromagnetic induction**: when a conductor and a magnetic field **move relative to each other** (a wire cutting field lines, or a changing field through a coil), an **e.m.f. (voltage)** is *induced*. If the circuit is complete, this drives an **induced current**.\n\nThe induced e.m.f. is **bigger** if you:\n\n- move **faster**,\n- use a **stronger magnet**,\n- use **more turns** on the coil, or\n- increase the coil **area**.\n\n**Reversing the movement reverses the induced e.m.f.** (and current).\n\nAn **a.c. generator (alternator)** uses this. A coil is rotated in a magnetic field; as it spins, its sides cut field lines and an e.m.f. is induced. Because each side moves up through the field then down, the e.m.f. reverses every half-turn, giving **alternating current (a.c.)**. The coil connects to the circuit through **slip rings** and brushes (two continuous rings — *not* a split ring), so the output stays alternating.",
+        "**Electromagnetic induction**: when a conductor and a magnetic field **move relative to each other** (a wire cutting field lines, or a changing field through a coil), an **e.m.f. (voltage)** is *induced*. If the circuit is complete, this drives an **induced current**.\n\nThe induced e.m.f. is **bigger** if you:\n\n- move **faster**,\n- use a **stronger magnet**,\n- use **more turns** on the coil, or\n- increase the coil **area**.\n\n**Reversing the movement reverses the induced e.m.f.** (and current).\n\nAn **a.c. generator (alternator)** uses this. A coil is rotated in a magnetic field; as it spins, its sides cut field lines and an e.m.f. is induced. Because each side moves up through the field then down, the e.m.f. reverses every half-turn, giving **alternating current (a.c.)**. The coil connects to the circuit through **slip rings** and brushes (two continuous rings — *not* a split ring), so the output stays alternating.\n\nThe **output–time graph** is a **sine wave**: the e.m.f. is **maximum** when the sides of the coil are cutting field lines fastest (the plane of the coil parallel to the field, the sides moving across the field at right angles) and **zero** twice per turn when the sides move along the field lines (the plane of the coil at right angles to the field), cutting none. Spinning the coil **faster** increases the **peak** e.m.f. *and* the **frequency** (more cycles per second). A stronger magnet or more turns raises the peak.",
       diagrams: [
         {
           caption: "A.c. generator: a coil spins in a field; slip rings give an alternating output.",
           svg:
             '<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An alternating current generator with a coil rotating between magnet poles connected to slip rings">\n<rect x="10" y="40" width="30" height="60" fill="#ef4444" stroke="#475569"/>\n<text x="25" y="74" font-size="11" text-anchor="middle" fill="#ffffff">N</text>\n<rect x="220" y="40" width="30" height="60" fill="#3b82f6" stroke="#475569"/>\n<text x="235" y="74" font-size="11" text-anchor="middle" fill="#ffffff">S</text>\n<rect x="95" y="45" width="70" height="50" fill="none" stroke="#b91c1c" stroke-width="3"/>\n<text x="130" y="40" font-size="9" text-anchor="middle" fill="#334155">rotating coil</text>\n<circle cx="118" cy="108" r="7" fill="none" stroke="#475569" stroke-width="2"/>\n<circle cx="142" cy="108" r="7" fill="none" stroke="#475569" stroke-width="2"/>\n<text x="130" y="132" font-size="9" text-anchor="middle" fill="#334155">slip rings (continuous) give a.c.</text>\n</svg>',
+        },
+        {
+          caption: "Output-time graph of an a.c. generator: a sine wave that reverses every half-turn. Faster rotation gives a higher peak AND more cycles per second (higher frequency).",
+          svg:
+            '<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sine-wave graph of induced e.m.f. against time for an alternating current generator, crossing zero each half turn and alternating between positive and negative peaks">\n<line x1="20" y1="70" x2="245" y2="70" stroke="#475569" stroke-width="1"/>\n<line x1="30" y1="15" x2="30" y2="125" stroke="#475569" stroke-width="1"/>\n<text x="250" y="74" font-size="9" fill="#334155">t</text>\n<text x="14" y="18" font-size="9" fill="#334155">e.m.f.</text>\n<path d="M30 70 C50 20 70 20 90 70 C110 120 130 120 150 70 C170 20 190 20 210 70 C223 105 233 105 240 85" fill="none" stroke="#b91c1c" stroke-width="2"/>\n<text x="90" y="14" font-size="8" text-anchor="middle" fill="#334155">peak (coil parallel to field)</text>\n<text x="150" y="135" font-size="8" text-anchor="middle" fill="#334155">zero when coil is perpendicular to field</text>\n</svg>',
         },
       ],
       keyPoints: [
@@ -187,7 +194,9 @@ export const em: Topic = {
         "No relative movement → no induced e.m.f.",
         "Bigger e.m.f.: faster movement, stronger magnet, more turns, larger area.",
         "Reversing the motion reverses the induced e.m.f.",
-        "A.c. generator: spinning coil + slip rings = alternating output.",
+        "The induced effect always OPPOSES the change that causes it (energy conservation).",
+        "A.c. generator: spinning coil + slip rings = alternating output (a sine wave).",
+        "Spinning faster raises both the peak e.m.f. and the frequency of the output.",
       ],
       whyItWorks:
         "Moving the conductor through the field exerts a force on its free electrons (the motor effect in reverse), pushing them along the wire — that push is the induced e.m.f. The faster the cutting of field lines, the larger the e.m.f.",
@@ -538,6 +547,132 @@ export const em: Topic = {
         hints: ["Set your left hand: first finger north, second finger up.", "Hold the three at right angles.", "Read off the thumb direction."],
         strategy: "Left hand for the motor effect",
       },
+      {
+        id: "em-mcq-q26",
+        question: "Magnetism is best described as a…",
+        options: ["contact force", "non-contact force", "type of friction", "form of electric charge"],
+        answerIndex: 1,
+        explanation: "Magnets attract or repel without touching, so magnetism is a non-contact force.",
+        guideRef: "Magnets, poles and magnetic fields",
+        difficulty: "warmup",
+      },
+      {
+        id: "em-mcq-q27",
+        question: "The north (north-seeking) end of a plotting compass points toward geographic north because…",
+        options: [
+          "the Earth has a magnetic north pole near geographic north",
+          "the Earth behaves like a magnet with a south-type pole near geographic north, and unlike poles attract",
+          "compasses always point to the Sun",
+          "the compass needle is not a magnet",
+        ],
+        answerIndex: 1,
+        explanation: "The Earth acts like a giant bar magnet with a magnetic south-type pole near the geographic North Pole, so the compass's north-seeking pole is attracted to it.",
+        guideRef: "Magnets, poles and magnetic fields",
+        difficulty: "challenge",
+        hints: ["A compass needle is itself a small magnet.", "Its north end is attracted to the Earth's field.", "Unlike poles attract, so what pole sits near geographic north?"],
+      },
+      {
+        id: "em-mcq-q28",
+        question: "When the like poles of two bar magnets face each other, the point exactly between them where the field is zero is called the…",
+        options: ["pole gap", "neutral point", "dead zone", "field centre"],
+        answerIndex: 1,
+        explanation: "Between two repelling like poles the fields cancel at a neutral point, where the resultant field is zero.",
+        guideRef: "Magnets, poles and magnetic fields",
+        difficulty: "core",
+        hints: ["Two equal, opposing fields meet here.", "They cancel out.", "The resultant field there is zero."],
+      },
+      {
+        id: "em-mcq-q29",
+        question: "Iron filings sprinkled on paper over a bar magnet are useful because they show the field's…",
+        options: ["direction only", "shape (pattern), but not the direction", "strength in tesla", "temperature"],
+        answerIndex: 1,
+        explanation: "Iron filings line up to reveal the shape of the field but do not show which way it points; a plotting compass is needed for direction.",
+        guideRef: "Magnets, poles and magnetic fields",
+        difficulty: "core",
+        hints: ["Each filing becomes a tiny magnet and lines up.", "Do they have arrows on them?", "For direction you would need a compass."],
+      },
+      {
+        id: "em-mcq-q30",
+        question: "If the current in a straight wire is reversed, the circular magnetic field around it…",
+        options: ["disappears", "reverses its direction", "becomes stronger", "is unchanged"],
+        answerIndex: 1,
+        explanation: "By the right-hand grip rule, reversing the current reverses the direction in which the field lines circle the wire.",
+        guideRef: "Magnetic field of a current: wires and solenoids",
+        difficulty: "core",
+        hints: ["Use the right-hand grip rule.", "Point your thumb the opposite way.", "Your curled fingers now point the other way round."],
+        strategy: "Right-hand grip rule",
+      },
+      {
+        id: "em-mcq-q31",
+        question: "In a relay, a small current in the input circuit is used to…",
+        options: [
+          "step up the voltage of the output",
+          "energise an electromagnet that switches a separate, larger circuit on or off",
+          "generate alternating current",
+          "store electrical charge",
+        ],
+        answerIndex: 1,
+        explanation: "A relay uses a small current to energise an electromagnet, which moves an armature to open or close the contacts of a second high-power circuit.",
+        guideRef: "Electromagnets and their uses",
+        difficulty: "core",
+        hints: ["A relay lets a small current control a big one.", "What does the small current energise?", "The electromagnet moves a switch in another circuit."],
+      },
+      {
+        id: "em-mcq-q32",
+        question: "The output–time graph of a simple a.c. generator is a sine wave. Spinning the coil faster will…",
+        options: [
+          "lower the peak voltage and the frequency",
+          "increase both the peak voltage and the frequency",
+          "increase the peak voltage but not the frequency",
+          "have no effect on the graph",
+        ],
+        answerIndex: 1,
+        explanation: "Faster rotation cuts field lines more quickly (higher peak e.m.f.) and completes more turns per second (higher frequency).",
+        guideRef: "Electromagnetic induction and the a.c. generator",
+        difficulty: "challenge",
+        hints: ["Faster cutting of field lines → bigger e.m.f.", "More turns per second → more cycles per second.", "Both peak and frequency rise."],
+      },
+      {
+        id: "em-mcq-q33",
+        question: "An e.m.f. is induced in a coil but no current flows. The most likely reason is that…",
+        options: [
+          "the magnet is too strong",
+          "the circuit is not complete (it is open)",
+          "the coil has too many turns",
+          "the field is too weak to induce anything",
+        ],
+        answerIndex: 1,
+        explanation: "An e.m.f. is induced whenever the field changes, but a current only flows if the circuit forms a complete (closed) loop.",
+        guideRef: "Electromagnetic induction and the a.c. generator",
+        difficulty: "core",
+        hints: ["Voltage can exist without current.", "What does a current need to flow?", "Check whether the loop is closed."],
+      },
+      {
+        id: "em-mcq-q34",
+        question: "An ideal transformer has Np = 500 and Ns = 2500 turns, with a primary voltage of 12 V. The secondary voltage is…",
+        options: ["2.4 V", "60 V", "12 V", "600 V"],
+        answerIndex: 1,
+        explanation: "Vs = Vp × Ns/Np = 12 × 2500/500 = 12 × 5 = 60 V (step-up).",
+        guideRef: "Transformers and the National Grid",
+        difficulty: "core",
+        hints: ["Use Vp/Vs = Np/Ns.", "Vs = Vp × Ns/Np.", "Ns/Np = 2500/500 = 5."],
+        strategy: "Use the turns ratio",
+      },
+      {
+        id: "em-mcq-q35",
+        question: "The energy wasted as heat in transmission cables is given by P = I²R. The main reason a step-up transformer is placed before the cables is to…",
+        options: [
+          "increase the resistance R of the cables",
+          "raise the voltage so the current is small, cutting the I²R loss",
+          "convert a.c. into d.c.",
+          "increase the current to deliver more power",
+        ],
+        answerIndex: 1,
+        explanation: "A step-up transformer raises the voltage, which lowers the current for the same power; since loss is I²R, the lower current sharply reduces wasted energy.",
+        guideRef: "Transformers and the National Grid",
+        difficulty: "core",
+        hints: ["Loss depends on current, not directly on voltage.", "Step-up voltage → lower current.", "Smaller I means much smaller I²R."],
+      },
     ],
     qa: [
       {
@@ -796,6 +931,73 @@ export const em: Topic = {
         guideRef: "Transformers and the National Grid",
         difficulty: "challenge",
         hints: ["What kind of field does induction require?", "What does steady d.c. produce in the core?", "Which supply keeps the field changing?"],
+      },
+      {
+        id: "em-qa-q13",
+        question: "Sketch and describe the magnetic field pattern produced when the north poles of two bar magnets are placed facing each other a short distance apart. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "Each magnet's field lines come out of its north pole and curve away from the other magnet, so the lines from the two magnets bend away from one another rather than joining up. Midway between the two poles the two fields are equal and opposite, so they cancel to give a neutral point where the field is zero. Because like poles are facing, the magnets repel each other.",
+        markScheme: [
+          "Field lines come out of each north pole and curve away from the other magnet | lines do not join",
+          "There is a neutral point (zero field) between them | fields cancel midway",
+          "Like poles repel",
+        ],
+        commonError: "Drawing the lines running straight across from one magnet to the other — that is the pattern for UNLIKE poles (attraction), not like poles.",
+        guideRef: "Magnets, poles and magnetic fields",
+        difficulty: "core",
+        hints: ["Field lines leave a north pole.", "Do lines from two N poles join up or push apart?", "What happens to the field exactly in the middle?"],
+      },
+      {
+        id: "em-qa-q14",
+        question: "Explain how a compass and the Earth's magnetic field allow a person to find the direction of north. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "The Earth behaves as if it contains a large bar magnet, producing a magnetic field over its surface. A compass needle is a small, freely turning magnet, so it lines up along the Earth's field lines. Its north-seeking pole is attracted toward the Earth's field and points toward geographic north (where a magnetic south-type pole lies), so reading the needle tells you which way north is.",
+        markScheme: [
+          "Earth acts like a (bar) magnet with a magnetic field | Earth has a magnetic field",
+          "A compass needle is a small magnet that lines up along the field | needle aligns with field lines",
+          "Its north-seeking pole points toward geographic north",
+        ],
+        commonError: "Saying the compass points to a magnetic NORTH pole at geographic north — it points toward a magnetic SOUTH-type pole there (unlike poles attract).",
+        guideRef: "Magnets, poles and magnetic fields",
+        difficulty: "core",
+        hints: ["What does the Earth behave like?", "What is a compass needle made of?", "Which way does the needle's north end point?"],
+      },
+      {
+        id: "em-qa-q15",
+        question: "Describe how an a.c. generator (alternator) produces an alternating output, and sketch the shape of its output–time graph. State one change that would increase the peak voltage. (5 marks)",
+        marks: 5,
+        modelAnswer:
+          "A coil is rotated in a magnetic field. As it spins, the sides of the coil cut through the magnetic field lines, inducing an e.m.f. by electromagnetic induction. As each side moves first upward and then downward through the field every half-turn, the direction of the induced e.m.f. reverses, giving an alternating output. The coil is connected to the external circuit through slip rings and brushes, which keep the output alternating. The output–time graph is a sine wave that rises to a positive peak, falls through zero, reaches a negative peak and returns — the e.m.f. is maximum when the coil sides are cutting field lines fastest (the plane of the coil parallel to the field) and zero when the sides move along the field lines (the plane of the coil at right angles to the field). The peak voltage can be increased by spinning the coil faster (also using a stronger magnet, more turns, or a larger coil area).",
+        markScheme: [
+          "Coil rotates in a magnetic field, cutting field lines | induces an e.m.f. by induction",
+          "E.m.f. reverses every half-turn → alternating output",
+          "Slip rings (and brushes) keep the output alternating",
+          "Output–time graph is a sine wave (peaks then crosses zero, alternating + and -)",
+          "One way to increase peak: spin faster | stronger magnet | more turns | larger coil area",
+        ],
+        commonError: "Drawing the graph with sharp corners or a constant value — the output is a smooth sine wave that alternates between positive and negative peaks.",
+        guideRef: "Electromagnetic induction and the a.c. generator",
+        difficulty: "challenge",
+        hints: ["What is the coil doing in the field?", "Why does the output reverse each half-turn?", "What does the slip-ring output graph look like?"],
+      },
+      {
+        id: "em-qa-q16",
+        question: "Explain how a loudspeaker uses the motor effect to turn an electrical signal into sound. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "A loudspeaker has a coil attached to a paper cone, placed in the field of a permanent magnet. The varying electrical signal (a.c.) is passed through the coil, so a current flows in a magnetic field. By the motor effect, the coil experiences a force; because the current keeps changing size and direction, the force pushes the coil (and the cone) back and forth. The moving cone makes the surrounding air vibrate, producing sound waves that match the original signal.",
+        markScheme: [
+          "Coil (attached to a cone) sits in a permanent magnet's field",
+          "Varying current through the coil → force by the motor effect",
+          "Changing current makes the coil/cone vibrate back and forth",
+          "Vibrating cone makes the air vibrate → sound",
+        ],
+        commonError: "Describing it as electromagnetic induction — a loudspeaker uses the MOTOR effect (current in a field gives a force), not induction.",
+        guideRef: "Electromagnets and their uses",
+        difficulty: "challenge",
+        hints: ["What sits in the magnet's field?", "Which effect turns current into a force?", "How does cone movement become sound?"],
       },
     ],
   },

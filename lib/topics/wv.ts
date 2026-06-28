@@ -86,10 +86,20 @@ export const wv: Topic = {
       ],
     },
     {
-      heading: "Wavefronts, reflection and the law of reflection",
+      heading: "Wavefronts, the ripple tank, reflection and the law of reflection",
+      discovery: {
+        problem:
+          "How do scientists study how waves behave — reflect, refract, spread out — when light waves are far too small and fast to watch? They needed a way to make waves big, slow and visible.",
+        idea: "Use a **ripple tank**: a shallow tray of water with a vibrating bar (a dipper) making straight wavefronts, or a point making circular ones. A lamp above casts the bright crests and dark troughs as shadows on the floor, so you can see, measure and photograph wave behaviour directly.",
+      },
       body:
-        "A **wavefront** is a line joining points on a wave that are all in step (all at a crest, say). Wavefronts are perpendicular to the direction the wave travels; the arrow showing direction is a **ray**.\n\nWhen a wave hits a barrier it can be **reflected**. We measure angles from the **normal** — an imaginary line drawn at 90° to the surface at the point where the ray hits.\n\n**The law of reflection:**\n\n`angle of incidence (i) = angle of reflection (r)`\n\nBoth angles are measured between the ray and the normal (never from the surface itself). Reflection is how mirrors work and how we see most objects.",
+        "A **wavefront** is a line joining points on a wave that are all in step (all at a crest, say). Wavefronts are perpendicular to the direction the wave travels; the arrow showing direction is a **ray**. The distance between two neighbouring wavefronts is one **wavelength**.\n\n**The ripple tank** is the standard way to study waves in the lab. A motor vibrates a straight bar that dips into shallow water, sending out straight wavefronts; a small ball makes circular ones. A lamp above the tank projects the crests and troughs as bright and dark bands onto a screen below. With it you can show:\n\n- **Reflection** off a straight barrier (wavefronts bounce off, angle in = angle out).\n- **Refraction** — placing a sheet of glass under the water makes it shallower there, so the waves slow down, the wavelength shortens and the wavefronts change direction.\n- The link between the bar's frequency and the wavelength (faster vibration → wavefronts closer together).\n\nWhen a wave hits a barrier it can be **reflected**. We measure angles from the **normal** — an imaginary line drawn at 90° to the surface at the point where the ray hits.\n\n**The law of reflection:**\n\n`angle of incidence (i) = angle of reflection (r)`\n\nBoth angles are measured between the ray and the normal (never from the surface itself). In reflection the wave **speed, frequency and wavelength stay the same** (it is in the same medium) — only the direction changes. Reflection is how mirrors work and how we see most objects.",
       diagrams: [
+        {
+          caption: "Ripple tank: a vibrating bar makes straight wavefronts; a lamp projects crests and troughs onto a screen below.",
+          svg:
+            '<svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A ripple tank with a lamp above, a vibrating bar making straight wavefronts in shallow water, and bright and dark bands projected onto a screen below">\n<circle cx="160" cy="16" r="9" fill="#fde047" stroke="#ca8a04"/>\n<text x="173" y="19" font-size="8" fill="#334155">lamp</text>\n<line x1="160" y1="25" x2="130" y2="55" stroke="#fcd34d"/><line x1="160" y1="25" x2="190" y2="55" stroke="#fcd34d"/>\n<rect x="40" y="55" width="240" height="34" fill="#bae6fd" stroke="#0369a1"/>\n<rect x="50" y="48" width="6" height="14" fill="#475569"/><text x="36" y="46" font-size="8" fill="#334155">bar</text>\n<g stroke="#0e7490" stroke-width="2" fill="none"><line x1="70" y1="57" x2="70" y2="87"/><line x1="92" y1="57" x2="92" y2="87"/><line x1="114" y1="57" x2="114" y2="87"/><line x1="136" y1="57" x2="136" y2="87"/><line x1="158" y1="57" x2="158" y2="87"/><line x1="180" y1="57" x2="180" y2="87"/></g>\n<text x="210" y="76" font-size="8" fill="#334155">straight wavefronts</text>\n<rect x="40" y="110" width="240" height="20" fill="#f1f5f9" stroke="#94a3b8"/>\n<g fill="#1e293b"><rect x="70" y="110" width="4" height="20"/><rect x="92" y="110" width="4" height="20"/><rect x="114" y="110" width="4" height="20"/><rect x="136" y="110" width="4" height="20"/><rect x="158" y="110" width="4" height="20"/><rect x="180" y="110" width="4" height="20"/></g>\n<text x="210" y="124" font-size="8" fill="#334155">screen (bright/dark bands)</text>\n</svg>',
+        },
         {
           caption: "Reflection at a plane mirror: angle of incidence equals angle of reflection, measured from the normal.",
           svg:
@@ -97,13 +107,15 @@ export const wv: Topic = {
         },
       ],
       keyPoints: [
-        "A wavefront joins points in step; a ray shows direction of travel.",
+        "A wavefront joins points in step; a ray shows direction of travel; the gap between wavefronts is one wavelength.",
+        "A ripple tank makes water waves visible to study reflection and refraction (a glass plate makes the water shallower, slowing the waves).",
         "Angles are always measured from the normal (90° to the surface).",
         "Law of reflection: angle of incidence = angle of reflection.",
+        "Reflection does not change the wave's speed, frequency or wavelength — only its direction.",
       ],
       whyItWorks:
         "Reflection keeps the wave speed the same (same medium), so the geometry of the wavefronts forces the reflected angle to mirror the incident angle.",
-      strategies: ["Always draw the normal first", "Measure angles from the normal, not the surface"],
+      strategies: ["Always draw the normal first", "Measure angles from the normal, not the surface", "In a ripple tank, slower water (shallower) means shorter wavelength"],
     },
     {
       heading: "Refraction and refractive index",
@@ -113,8 +125,13 @@ export const wv: Topic = {
         idea: "Light changes speed when it passes from one material into another. A change in speed at an angle makes the ray change direction — this bending is refraction. Your brain assumes light travelled straight, so it 'sees' the object in the wrong place.",
       },
       body:
-        "**Refraction** is the change in direction of a wave when it passes from one medium into another, caused by a **change in wave speed**.\n\n- Going into a **denser** (optically slower) medium, e.g. air → glass: the wave **slows down** and bends **towards the normal**.\n- Going into a **less dense** (optically faster) medium, e.g. glass → air: the wave **speeds up** and bends **away from the normal**.\n- A ray hitting the surface **along the normal** (i = 0°) does not bend, though it still changes speed.\n\nThe **refractive index (n)** of a material measures how much it slows light down and bends it:\n\n`n = sin i / sin r`   (i in the first medium, usually air; r in the material)\n\nIt can also be found from the speed of light:\n\n`n = c / v`\n\nwhere c is the speed of light in a vacuum (≈ 3 × 10⁸ m/s) and v is the speed in the material. Because light always slows in a material, **n is always greater than 1** (e.g. glass ≈ 1.5, water ≈ 1.33). A bigger n means more slowing and more bending.",
+        "**Refraction** is the change in direction of a wave when it passes from one medium into another, caused by a **change in wave speed**.\n\n- Going into a **denser** (optically slower) medium, e.g. air → glass: the wave **slows down** and bends **towards the normal**.\n- Going into a **less dense** (optically faster) medium, e.g. glass → air: the wave **speeds up** and bends **away from the normal**.\n- A ray hitting the surface **along the normal** (i = 0°) does not bend, though it still changes speed.\n\nThe **refractive index (n)** of a material measures how much it slows light down and bends it:\n\n`n = sin i / sin r`   (i in the first medium, usually air; r in the material)\n\nIt can also be found from the speed of light:\n\n`n = c / v`\n\nwhere c is the speed of light in a vacuum (≈ 3 × 10⁸ m/s) and v is the speed in the material. Because light always slows in a material, **n is always greater than 1** (e.g. glass ≈ 1.5, water ≈ 1.33). A bigger n means more slowing and more bending.\n\n**Ray diagram through a rectangular glass block.** A ray entering the block bends *towards* the normal; when it leaves the far side it bends *away* from the normal by the same amount. Because the two surfaces are parallel, the ray that comes out is **parallel to the ray that went in** — just shifted sideways (a *lateral displacement*).\n\n**Worked example.** Light hits a glass surface from air with angle of incidence 40° and refracts to 25°. Find n. n = sin i / sin r = sin 40° / sin 25° = 0.643 / 0.423 = **1.5** (2 s.f.).",
       diagrams: [
+        {
+          caption: "A ray through a rectangular glass block: bends towards the normal entering, away leaving; emergent ray is parallel to the incident ray.",
+          svg:
+            '<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A light ray passing through a rectangular glass block, bending towards the normal on entry and away on exit, leaving parallel to the original ray but shifted sideways">\n<rect x="90" y="40" width="140" height="100" fill="#bae6fd" stroke="#0369a1"/>\n<text x="160" y="155" font-size="9" text-anchor="middle" fill="#0369a1">glass block</text>\n<line x1="90" y1="70" x2="90" y2="130" stroke="#64748b" stroke-dasharray="4 4"/>\n<line x1="50" y1="55" x2="90" y2="85" stroke="#0e7490" stroke-width="2.5" marker-end="url(#g1)"/>\n<text x="60" y="50" font-size="8" fill="#0e7490">incident</text>\n<line x1="90" y1="85" x2="230" y2="120" stroke="#0e7490" stroke-width="2.5"/>\n<line x1="230" y1="100" x2="230" y2="160" stroke="#64748b" stroke-dasharray="4 4"/>\n<line x1="230" y1="120" x2="275" y2="135" stroke="#0e7490" stroke-width="2.5" marker-end="url(#g2)"/>\n<text x="240" y="150" font-size="8" fill="#0e7490">emergent</text>\n<defs><marker id="g1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#0e7490"/></marker><marker id="g2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#0e7490"/></marker></defs>\n</svg>',
+        },
         {
           caption: "Refraction at an air-glass boundary: the ray slows and bends towards the normal entering glass.",
           svg:
@@ -126,6 +143,8 @@ export const wv: Topic = {
         "Refraction = change of direction caused by change of wave speed.",
         "Into denser medium: slows, bends towards the normal.",
         "Into less dense medium: speeds up, bends away from the normal.",
+        "A ray along the normal (i = 0°) changes speed but does not bend.",
+        "Through a parallel-sided glass block the emergent ray is parallel to the incident ray (shifted sideways).",
         "n = sin i / sin r = c / v, and n is always > 1.",
       ],
       whyItWorks:
@@ -169,20 +188,26 @@ export const wv: Topic = {
     {
       heading: "The electromagnetic spectrum",
       body:
-        "**Electromagnetic (EM) waves** are transverse waves that travel through a vacuum at the speed of light, c ≈ **3 × 10⁸ m/s**. They form a continuous **spectrum**, ordered by wavelength and frequency:\n\n`Radio — Microwave — Infrared — Visible — Ultraviolet — X-ray — Gamma`\n\nFrom radio to gamma, **wavelength decreases** and **frequency (and energy) increases**. Visible light is the only part our eyes detect, running red → orange → yellow → green → blue → indigo → violet (red has the longest wavelength, violet the shortest).\n\n**Uses:**\n\n- **Radio** — broadcasting TV and radio signals.\n- **Microwave** — cooking; satellite and mobile-phone communication.\n- **Infrared** — remote controls, thermal imaging, optical fibre signals, heaters/grills.\n- **Visible** — seeing, photography, illumination.\n- **Ultraviolet (UV)** — security marking, sterilising water, fluorescent lamps, tanning.\n- **X-ray** — medical images of bones, airport security scanning.\n- **Gamma** — sterilising medical equipment and food, treating (and detecting) cancer.\n\n**Dangers** (rising with frequency/energy): microwaves can heat body tissue; **infrared** causes skin burns; **UV** damages skin (ageing, skin cancer) and eyes; **X-rays** and **gamma** are *ionising* — they can damage cells and cause mutations/cancer.",
+        "**Electromagnetic (EM) waves** are transverse waves that travel through a vacuum at the speed of light, c ≈ **3 × 10⁸ m/s**. They form a continuous **spectrum**, ordered by wavelength and frequency:\n\n`Radio — Microwave — Infrared — Visible — Ultraviolet — X-ray — Gamma`\n\nFrom radio to gamma, **wavelength decreases** and **frequency (and energy) increases**. Visible light is the only part our eyes detect, running red → orange → yellow → green → blue → indigo → violet (red has the longest wavelength, violet the shortest).\n\n**Uses:**\n\n- **Radio** — broadcasting TV and radio signals.\n- **Microwave** — cooking; satellite and mobile-phone communication.\n- **Infrared** — remote controls, thermal imaging, optical fibre signals, heaters/grills.\n- **Visible** — seeing, photography, illumination.\n- **Ultraviolet (UV)** — security marking, sterilising water, fluorescent lamps, tanning.\n- **X-ray** — medical images of bones, airport security scanning.\n- **Gamma** — sterilising medical equipment and food, treating (and detecting) cancer.\n\n**Dangers** (rising with frequency/energy): **microwaves** can heat the water in body cells (internal heating); **infrared** causes skin burns; **UV** damages skin (premature ageing and skin cancer) and the eyes (can cause blindness); **X-rays** and **gamma** are *ionising* — they carry enough energy to knock electrons off atoms, damaging cells, causing mutations and cancer. The higher the frequency, the higher the energy and the greater the danger.\n\n**The visible spectrum.** Visible light is the narrow band our eyes detect, roughly **400 nm to 700 nm** (1 nm = 1 × 10⁻⁹ m). Splitting white light with a prism gives the colours in order of decreasing wavelength:\n\n`Red (longest λ ≈ 700 nm) → Orange → Yellow → Green → Blue → Indigo → Violet (shortest λ ≈ 400 nm)`\n\nSo **red light has the longest wavelength and lowest frequency**, and **violet has the shortest wavelength and highest frequency**. Just beyond red is infrared; just beyond violet is ultraviolet.",
       diagrams: [
         {
           caption: "The EM spectrum from radio (long wavelength, low frequency) to gamma (short wavelength, high frequency).",
           svg:
             '<svg viewBox="0 0 360 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The electromagnetic spectrum strip from radio to gamma with wavelength decreasing and frequency increasing to the right">\n<rect x="10" y="30" width="49" height="30" fill="#fca5a5"/><rect x="59" y="30" width="49" height="30" fill="#fdba74"/><rect x="108" y="30" width="49" height="30" fill="#fde047"/><rect x="157" y="30" width="49" height="30" fill="#86efac"/><rect x="206" y="30" width="49" height="30" fill="#7dd3fc"/><rect x="255" y="30" width="49" height="30" fill="#a5b4fc"/><rect x="304" y="30" width="46" height="30" fill="#d8b4fe"/>\n<g font-size="7.5" text-anchor="middle" fill="#1e293b">\n<text x="34" y="49">Radio</text><text x="83" y="49">Micro</text><text x="132" y="49">IR</text><text x="181" y="49">Visible</text><text x="230" y="49">UV</text><text x="279" y="49">X-ray</text><text x="327" y="49">Gamma</text>\n</g>\n<text x="12" y="22" font-size="9" fill="#334155">long wavelength, low frequency</text>\n<text x="348" y="22" font-size="9" text-anchor="end" fill="#334155">short wavelength, high frequency</text>\n<line x1="10" y1="72" x2="350" y2="72" stroke="#1e293b" stroke-width="1.5" marker-end="url(#fr)"/>\n<text x="180" y="86" font-size="8" text-anchor="middle" fill="#334155">frequency / energy increases this way</text>\n<defs><marker id="fr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#1e293b"/></marker></defs>\n</svg>',
         },
+        {
+          caption: "The visible spectrum: red has the longest wavelength (~700 nm), violet the shortest (~400 nm).",
+          svg:
+            '<svg viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The visible spectrum from red on the left with long wavelength to violet on the right with short wavelength">\n<rect x="20" y="25" width="40" height="30" fill="#ef4444"/><rect x="60" y="25" width="40" height="30" fill="#f97316"/><rect x="100" y="25" width="40" height="30" fill="#facc15"/><rect x="140" y="25" width="40" height="30" fill="#22c55e"/><rect x="180" y="25" width="40" height="30" fill="#3b82f6"/><rect x="220" y="25" width="40" height="30" fill="#4338ca"/><rect x="260" y="25" width="40" height="30" fill="#7c3aed"/>\n<text x="20" y="18" font-size="8" fill="#334155">red ~700 nm (long)</text>\n<text x="300" y="18" font-size="8" text-anchor="end" fill="#334155">violet ~400 nm (short)</text>\n<g font-size="7" text-anchor="middle" fill="#ffffff"><text x="40" y="44">R</text><text x="80" y="44">O</text><text x="120" y="44">Y</text><text x="160" y="44">G</text><text x="200" y="44">B</text><text x="240" y="44">I</text><text x="280" y="44">V</text></g>\n<text x="160" y="74" font-size="8" text-anchor="middle" fill="#334155">wavelength decreases, frequency increases</text>\n</svg>',
+        },
       ],
-      formulae: ["all EM waves: v = c ≈ 3 × 10⁸ m/s in a vacuum", "v = f λ still applies"],
+      formulae: ["all EM waves: v = c ≈ 3 × 10⁸ m/s in a vacuum", "v = f λ still applies", "visible light ≈ 400 nm (violet) to 700 nm (red)"],
       keyPoints: [
         "Order (long→short λ): Radio, Micro, IR, Visible, UV, X-ray, Gamma.",
         "Towards gamma: wavelength falls, frequency and energy rise.",
-        "All EM waves are transverse and travel at c in a vacuum.",
-        "Dangers grow with frequency; UV, X-ray and gamma are most harmful (X-ray/gamma are ionising).",
+        "All EM waves are transverse and travel at c (3 × 10⁸ m/s) in a vacuum.",
+        "Visible colours (long→short λ): Red, Orange, Yellow, Green, Blue, Indigo, Violet.",
+        "Each band has uses AND dangers; dangers grow with frequency. UV, X-ray and gamma are most harmful (X-ray/gamma are ionising).",
       ],
       whyItWorks:
         "All EM waves are oscillating electric and magnetic fields that regenerate each other, so they need no medium and all move at the same speed c. Since v = f λ is fixed, frequency and wavelength trade off across the spectrum.",
@@ -199,13 +224,22 @@ export const wv: Topic = {
         idea: "Sound is a longitudinal wave that needs a medium — particles to be squashed and stretched. Space is a near-vacuum with almost no particles, so there is nothing to carry the sound. No medium, no sound.",
       },
       body:
-        "**Sound** is a **longitudinal** wave made of compressions and rarefactions travelling through a medium (solid, liquid or gas). Sound **cannot travel through a vacuum** because it needs particles.\n\nSound travels **fastest in solids**, slower in liquids, and slowest in gases (particles are closest together in solids, so vibrations pass on quickest). In air it travels at about **340 m/s**.\n\nThe wave's properties map onto what we hear:\n\n- **Frequency ↔ pitch.** Higher frequency = higher pitch.\n- **Amplitude ↔ loudness.** Bigger amplitude = louder sound.\n\nThe normal **human hearing range is about 20 Hz to 20 000 Hz** (20 kHz). Below 20 Hz is *infrasound*; above 20 kHz is *ultrasound*. The wave equation v = f λ applies to sound just as it does to other waves.",
-      formulae: ["v = f λ (applies to sound)", "speed of sound in air ≈ 340 m/s", "human hearing range ≈ 20 Hz – 20 000 Hz"],
+        "**Sound** is a **longitudinal** wave made of compressions and rarefactions travelling through a medium (solid, liquid or gas). Sound **cannot travel through a vacuum** because it needs particles.\n\nSound travels **fastest in solids**, slower in liquids, and slowest in gases (particles are closest together in solids, so vibrations pass on quickest). In air it travels at about **340 m/s**.\n\nThe wave's properties map onto what we hear:\n\n- **Frequency ↔ pitch.** Higher frequency = higher pitch.\n- **Amplitude ↔ loudness.** Bigger amplitude = louder sound.\n\nThe normal **human hearing range is about 20 Hz to 20 000 Hz** (20 kHz). Below 20 Hz is *infrasound*; above 20 kHz is *ultrasound*. The wave equation v = f λ applies to sound just as it does to other waves.\n\n**Measuring the speed of sound in air.** A simple method uses an **echo**: stand a measured distance d from a large flat wall, clap, and time how long the echo takes to return. The sound travels to the wall and back (a distance 2d), so speed = distance ÷ time = 2d ÷ t. Averaging many claps reduces error. *Example:* d = 50 m, echo after 0.29 s → v = (2 × 50) ÷ 0.29 ≈ 340 m/s. A more accurate lab method uses **two microphones** a known distance apart connected to a timer (or oscilloscope): a sound is made and the timer measures the tiny delay between the microphones picking it up, giving v = distance ÷ time.\n\n**Oscilloscope (CRO) traces.** A microphone changes sound into an electrical signal which an oscilloscope displays as a wave on a screen. The trace lets you compare sounds:\n\n- **Louder sound → taller trace** (bigger amplitude).\n- **Higher pitch → waves closer together** (higher frequency, shorter period on screen).\n\nReading off the time for one cycle gives the period T, and f = 1/T gives the frequency.",
+      diagrams: [
+        {
+          caption: "Oscilloscope traces: a louder sound has a bigger amplitude; a higher-pitched sound has more waves (higher frequency).",
+          svg:
+            '<svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two oscilloscope traces compared, one with larger amplitude for a louder sound and one with more cycles for a higher pitch">\n<rect x="10" y="10" width="140" height="55" fill="#0f172a" stroke="#334155"/>\n<path d="M10 37 C25 12 40 12 55 37 C70 62 85 62 100 37 C115 12 130 12 145 37" fill="none" stroke="#22d3ee" stroke-width="2"/>\n<text x="80" y="80" font-size="8" text-anchor="middle" fill="#334155">louder (bigger amplitude)</text>\n<rect x="170" y="10" width="140" height="55" fill="#0f172a" stroke="#334155"/>\n<path d="M170 37 C177 22 184 22 191 37 C198 52 205 52 212 37 C219 22 226 22 233 37 C240 52 247 52 254 37 C261 22 268 22 275 37 C282 52 289 52 296 37 C303 28 307 28 310 37" fill="none" stroke="#a3e635" stroke-width="2"/>\n<text x="240" y="80" font-size="8" text-anchor="middle" fill="#334155">higher pitch (higher frequency)</text>\n</svg>',
+        },
+      ],
+      formulae: ["v = f λ (applies to sound)", "speed of sound in air ≈ 340 m/s", "echo method: v = 2d / t", "human hearing range ≈ 20 Hz – 20 000 Hz"],
       keyPoints: [
         "Sound is longitudinal and needs a medium (no sound in a vacuum).",
-        "Fastest in solids, slowest in gases.",
+        "Fastest in solids, slowest in gases; in air ≈ 340 m/s.",
         "Frequency → pitch; amplitude → loudness.",
         "Human hearing range ≈ 20 Hz to 20 000 Hz.",
+        "Measure speed by echo (v = 2d/t) or two microphones and a timer.",
+        "On an oscilloscope: taller trace = louder; waves closer together = higher pitch.",
       ],
       whyItWorks:
         "A vibrating source pushes nearby particles together (compression); they push the next layer and bounce back, leaving a rarefaction. This squash-stretch pattern passes the energy on — but only if particles are present to be pushed.",
@@ -214,20 +248,26 @@ export const wv: Topic = {
     {
       heading: "Converging lenses and ray diagrams",
       body:
-        "A **converging (convex) lens** is thicker in the middle and bends parallel rays inwards so they meet at the **principal focus (F)**. The distance from the lens to F is the **focal length**.\n\nTo find the image, draw two rays from the top of the object:\n\n1. A ray **parallel** to the axis, which refracts through the **focal point F** on the far side.\n2. A ray straight through the **centre of the lens**, which carries on undeviated.\n\nWhere the rays meet is the top of the image.\n\n**Real vs virtual images:**\n\n- A **real image** forms where rays actually cross. It can be projected on a screen and is **inverted** (upside down). This happens when the object is **beyond F** (e.g. camera, eye, projector).\n- A **virtual image** forms when the object is **inside F**: the refracted rays diverge, so you trace them *backwards* to where they appear to come from. It is **upright and magnified** and **cannot** be put on a screen — this is the **magnifying glass**.",
+        "A **converging (convex) lens** is thicker in the middle and bends parallel rays inwards so they meet at the **principal focus (F)**. The distance from the lens to F is the **focal length**.\n\nTo find the image, draw two rays from the top of the object:\n\n1. A ray **parallel** to the axis, which refracts through the **focal point F** on the far side.\n2. A ray straight through the **centre of the lens**, which carries on undeviated.\n\nWhere the rays meet is the top of the image.\n\n**Real vs virtual images:**\n\n- A **real image** forms where rays actually cross. It can be projected on a screen and is **inverted** (upside down). This happens when the object is **beyond F** (e.g. camera, eye, projector).\n- A **virtual image** forms when the object is **inside F**: the refracted rays diverge, so you trace them *backwards* (dashed lines) to where they appear to come from. It is **upright and magnified** and **cannot** be put on a screen — this is the **magnifying glass**.\n\n**Magnification.** How much bigger (or smaller) the image is than the object is the **magnification**:\n\n`magnification = image height / object height`\n\nMagnification has **no unit** (it is a ratio). A magnification greater than 1 means the image is enlarged; less than 1 means it is smaller. *Worked example:* an object 2 cm tall gives an image 6 cm tall. Magnification = 6 / 2 = **3** (the image is 3× the size of the object).\n\n**Summary of object position vs image** (for a converging lens):\n\n- Object **beyond 2F** → real, inverted, *smaller* image (the camera).\n- Object **between F and 2F** → real, inverted, *larger* image (the projector).\n- Object **inside F** → virtual, upright, *larger* image (the magnifying glass).",
       diagrams: [
         {
           caption: "Converging lens forming a real, inverted image of an object placed beyond F.",
           svg:
             '<svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A converging lens ray diagram with an object beyond the focal point forming a smaller inverted real image on the far side">\n<line x1="10" y1="90" x2="350" y2="90" stroke="#94a3b8"/>\n<ellipse cx="180" cy="90" rx="12" ry="62" fill="#bae6fd" stroke="#0369a1"/>\n<circle cx="130" cy="90" r="3" fill="#1e293b"/><text x="120" y="103" font-size="9" fill="#334155">F</text>\n<circle cx="230" cy="90" r="3" fill="#1e293b"/><text x="228" y="103" font-size="9" fill="#334155">F</text>\n<line x1="70" y1="90" x2="70" y2="40" stroke="#0e7490" stroke-width="2.5" marker-end="url(#ob)"/>\n<text x="58" y="36" font-size="9" fill="#0e7490">object</text>\n<line x1="70" y1="40" x2="180" y2="40" stroke="#dc2626" stroke-width="1.5"/>\n<line x1="180" y1="40" x2="280" y2="125" stroke="#dc2626" stroke-width="1.5" marker-end="url(#ry)"/>\n<line x1="70" y1="40" x2="280" y2="125" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#ry2)"/>\n<line x1="270" y1="90" x2="270" y2="123" stroke="#16a34a" stroke-width="2.5" marker-end="url(#im)"/>\n<text x="276" y="118" font-size="9" fill="#15803d">image (real, inverted)</text>\n<defs><marker id="ob" markerWidth="8" markerHeight="8" refX="4" refY="1" orient="auto"><path d="M0 6 L4 0 L8 6 z" fill="#0e7490"/></marker><marker id="im" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M0 0 L4 6 L8 0 z" fill="#16a34a"/></marker><marker id="ry" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#dc2626"/></marker><marker id="ry2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#1d4ed8"/></marker></defs>\n</svg>',
         },
+        {
+          caption: "Magnifying glass: object inside F gives an upright, magnified, virtual image (dashed rays traced back).",
+          svg:
+            '<svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A converging lens with an object inside the focal length, the refracted rays traced back as dashed lines to form an upright magnified virtual image on the same side">\n<line x1="10" y1="110" x2="350" y2="110" stroke="#94a3b8"/>\n<ellipse cx="200" cy="110" rx="12" ry="65" fill="#bae6fd" stroke="#0369a1"/>\n<circle cx="120" cy="110" r="3" fill="#1e293b"/><text x="110" y="124" font-size="9" fill="#334155">F</text>\n<circle cx="280" cy="110" r="3" fill="#1e293b"/><text x="278" y="124" font-size="9" fill="#334155">F</text>\n<line x1="165" y1="110" x2="165" y2="75" stroke="#0e7490" stroke-width="2.5" marker-end="url(#ob2)"/>\n<text x="150" y="71" font-size="8" fill="#0e7490">object</text>\n<line x1="165" y1="75" x2="200" y2="75" stroke="#dc2626" stroke-width="1.5"/>\n<line x1="200" y1="75" x2="330" y2="40" stroke="#dc2626" stroke-width="1.5" marker-end="url(#ry3)"/>\n<line x1="200" y1="75" x2="60" y2="48" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="5 4"/>\n<line x1="165" y1="75" x2="330" y2="20" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#ry4)"/>\n<line x1="165" y1="75" x2="60" y2="48" stroke="#1d4ed8" stroke-width="1.2" stroke-dasharray="5 4"/>\n<line x1="60" y1="110" x2="60" y2="48" stroke="#16a34a" stroke-width="2.5" marker-end="url(#im2)"/>\n<text x="20" y="44" font-size="8" fill="#15803d">virtual image (upright, magnified)</text>\n<defs><marker id="ob2" markerWidth="8" markerHeight="8" refX="4" refY="1" orient="auto"><path d="M0 6 L4 0 L8 6 z" fill="#0e7490"/></marker><marker id="im2" markerWidth="8" markerHeight="8" refX="4" refY="1" orient="auto"><path d="M0 6 L4 0 L8 6 z" fill="#16a34a"/></marker><marker id="ry3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#dc2626"/></marker><marker id="ry4" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#1d4ed8"/></marker></defs>\n</svg>',
+        },
       ],
-      formulae: ["Ray 1: parallel ray → refracts through far focal point F", "Ray 2: ray through lens centre → undeviated"],
+      formulae: ["Ray 1: parallel ray → refracts through far focal point F", "Ray 2: ray through lens centre → undeviated", "magnification = image height / object height (no unit)"],
       keyPoints: [
-        "Converging lens brings parallel rays to the principal focus F.",
-        "Draw the parallel-then-through-F ray and the straight-through-centre ray.",
+        "Converging (convex) lens brings parallel rays to the principal focus F; lens-to-F distance = focal length.",
+        "Draw the parallel-then-through-F ray and the straight-through-centre ray; they cross at the image.",
         "Object beyond F → real, inverted image (can be on a screen).",
         "Object inside F → virtual, upright, magnified image (magnifying glass).",
+        "magnification = image height / object height (a ratio, no unit).",
       ],
       whyItWorks:
         "The lens refracts light twice (entering and leaving the glass). Its curved shape bends rays by just the right amount to bring parallel rays together at F, and to form an image of any object point where its rays reconverge.",
@@ -248,6 +288,8 @@ export const wv: Topic = {
       "Total internal reflection needs dense→less dense AND i > critical angle, with sin c = 1/n.",
       "EM order (long→short λ): Radio, Micro, IR, Visible, UV, X-ray, Gamma — all travel at c.",
       "Sound is longitudinal, needs a medium; frequency↔pitch, amplitude↔loudness, range 20 Hz–20 kHz.",
+      "Converging lens: object beyond F → real inverted image; inside F → virtual upright magnified image; magnification = image height / object height.",
+      "Each EM band has a use AND a danger; visible colours red→violet run long→short wavelength.",
     ],
     keywords: [
       { term: "Transverse wave", definition: "A wave whose vibrations are at right angles (90°) to the direction of energy transfer." },
@@ -260,6 +302,11 @@ export const wv: Topic = {
       { term: "Refractive index (n)", definition: "A measure of how much a material slows and bends light: n = sin i / sin r = c/v, always greater than 1." },
       { term: "Critical angle (c)", definition: "The angle of incidence in the denser medium for which the refracted ray travels along the surface; sin c = 1/n." },
       { term: "Total internal reflection", definition: "When light hitting a boundary from a denser medium at an angle greater than the critical angle is entirely reflected back." },
+      { term: "Ripple tank", definition: "A shallow tray of water with a vibrating bar used to make water waves visible so reflection and refraction can be studied." },
+      { term: "Real image", definition: "An image formed where light rays actually cross; it is inverted and can be projected on a screen." },
+      { term: "Virtual image", definition: "An image from which rays only appear to come (traced back); it is upright, cannot be put on a screen, and is formed by a magnifying glass." },
+      { term: "Magnification", definition: "How many times bigger the image is than the object: image height / object height (a ratio, no unit)." },
+      { term: "Principal focus (F)", definition: "The point on the axis where rays parallel to the axis meet after passing through a converging lens; lens-to-F distance is the focal length." },
     ],
     flashcards: [
       { front: "State the wave equation and the meaning of each symbol.", back: "v = f λ: wave speed (m/s) = frequency (Hz) × wavelength (m)." },
@@ -268,6 +315,10 @@ export const wv: Topic = {
       { front: "What two conditions are needed for total internal reflection?", back: "Light going from a denser to a less dense medium AND angle of incidence greater than the critical angle." },
       { front: "List the EM spectrum from longest to shortest wavelength.", back: "Radio, Microwave, Infrared, Visible, Ultraviolet, X-ray, Gamma." },
       { front: "Why can't sound travel through space?", back: "Sound is longitudinal and needs particles (a medium); space is a vacuum with almost none." },
+      { front: "Give the equation for magnification.", back: "magnification = image height / object height (a ratio, no unit)." },
+      { front: "Object beyond F vs inside F for a converging lens?", back: "Beyond F: real, inverted image (can be on a screen). Inside F: virtual, upright, magnified image (magnifying glass)." },
+      { front: "On an oscilloscope, what shows loudness and what shows pitch?", back: "Trace height (amplitude) shows loudness; how close the waves are (frequency) shows pitch." },
+      { front: "Echo method for the speed of sound?", back: "Time the echo t from a wall distance d away; v = 2d / t (sound travels there and back)." },
     ],
   },
   quiz: {
@@ -356,7 +407,7 @@ export const wv: Topic = {
         options: ["surface of the mirror", "normal", "reflected ray", "horizontal"],
         answerIndex: 1,
         explanation: "Both the angle of incidence and angle of reflection are measured from the normal (the line at 90° to the surface).",
-        guideRef: "Wavefronts, reflection and the law of reflection",
+        guideRef: "Wavefronts, the ripple tank, reflection and the law of reflection",
         difficulty: "core",
         hints: ["Angles in optics are not measured from the surface.", "What line is drawn at 90° to the surface?", "It's called the normal."],
       },
@@ -537,6 +588,170 @@ export const wv: Topic = {
         hints: ["Check both TIR conditions.", "Is it dense → less dense? Yes.", "Is 50° greater than the 42° critical angle?"],
         strategy: "Test both TIR conditions",
       },
+      {
+        id: "wv-mcq-q27",
+        question: "A ripple tank is used to study water waves because it…",
+        options: ["makes the waves travel at the speed of light", "makes waves large and slow enough to see and measure", "turns water waves into sound", "removes the need for a medium"],
+        answerIndex: 1,
+        explanation: "A ripple tank makes water waves visible (a lamp projects crests and troughs onto a screen) so reflection and refraction can be observed and measured.",
+        guideRef: "Wavefronts, the ripple tank, reflection and the law of reflection",
+        difficulty: "warmup",
+      },
+      {
+        id: "wv-mcq-q28",
+        question: "In a ripple tank, water waves move from a deep region over a glass plate where the water is shallower. There they travel more slowly. The wavelength of the waves in the shallow water…",
+        options: ["increases", "decreases", "stays the same", "becomes zero"],
+        answerIndex: 1,
+        explanation: "Frequency is set by the dipper and is unchanged. As v decreases (slower in shallow water) with f constant, v = f λ means λ must decrease.",
+        guideRef: "Wavefronts, the ripple tank, reflection and the law of reflection",
+        difficulty: "challenge",
+        hints: ["Frequency is fixed by the vibrating bar.", "The waves slow down in shallow water.", "In v = f λ with f fixed and v smaller, λ must do what?"],
+        strategy: "Hold the constant quantity fixed in v = f λ",
+      },
+      {
+        id: "wv-mcq-q29",
+        question: "When a wave is reflected, which property changes?",
+        options: ["Its speed", "Its frequency", "Its wavelength", "Its direction"],
+        answerIndex: 3,
+        explanation: "Reflection stays in the same medium, so speed, frequency and wavelength are unchanged — only the direction of travel changes.",
+        guideRef: "Wavefronts, the ripple tank, reflection and the law of reflection",
+        difficulty: "core",
+        hints: ["Is the wave still in the same medium after reflecting?", "Same medium means same speed.", "Only one of these must change when a wave bounces."],
+      },
+      {
+        id: "wv-mcq-q30",
+        question: "A ray of light enters and then leaves a rectangular glass block. Compared with the ray that entered, the ray that emerges is…",
+        options: ["bent further towards the normal", "travelling in a completely new direction", "parallel to the entering ray but shifted sideways", "reflected straight back"],
+        answerIndex: 2,
+        explanation: "The ray bends towards the normal on entry and away by the same amount on exit; because the two faces are parallel, the emergent ray is parallel to the incident ray, just displaced sideways.",
+        guideRef: "Refraction and refractive index",
+        difficulty: "core",
+        hints: ["The two faces of the block are parallel.", "It bends one way entering and the opposite way leaving.", "Equal-and-opposite bends keep it parallel."],
+      },
+      {
+        id: "wv-mcq-q31",
+        question: "Light enters glass from air with an angle of incidence of 40°, refracting to 25°. Using sin 40° = 0.643 and sin 25° = 0.423, the refractive index is about…",
+        options: ["0.66", "1.5", "1.6", "0.62"],
+        answerIndex: 1,
+        explanation: "n = sin i / sin r = 0.643 / 0.423 = 1.5 (2 s.f.).",
+        guideRef: "Refraction and refractive index",
+        difficulty: "core",
+        hints: ["Use n = sin i / sin r.", "Incidence angle on top.", "0.643 ÷ 0.423 = ?"],
+        strategy: "Use n = sin i / sin r",
+      },
+      {
+        id: "wv-mcq-q32",
+        question: "Reflecting prisms in a periscope or binoculars turn light using…",
+        options: ["refraction at the critical angle", "total internal reflection", "diffraction", "absorption and re-emission"],
+        answerIndex: 1,
+        explanation: "Light hits the sloping face of a 45° prism at more than the critical angle for glass, so it is totally internally reflected and turned through 90° (or 180°) with very little loss.",
+        guideRef: "Total internal reflection and the critical angle",
+        difficulty: "core",
+        hints: ["The light strikes the prism face at 45°.", "42° is the critical angle for glass, and 45° is bigger.", "So the light is totally internally reflected."],
+      },
+      {
+        id: "wv-mcq-q33",
+        question: "Which colour of visible light has the shortest wavelength?",
+        options: ["Red", "Green", "Yellow", "Violet"],
+        answerIndex: 3,
+        explanation: "Violet has the shortest wavelength (~400 nm) and highest frequency; red has the longest (~700 nm).",
+        guideRef: "The electromagnetic spectrum",
+        difficulty: "warmup",
+      },
+      {
+        id: "wv-mcq-q34",
+        question: "Which is the correct order of visible colours from longest to shortest wavelength?",
+        options: [
+          "Violet, Blue, Green, Yellow, Orange, Red",
+          "Red, Orange, Yellow, Green, Blue, Indigo, Violet",
+          "Red, Yellow, Orange, Green, Indigo, Blue, Violet",
+          "Green, Blue, Red, Yellow, Violet, Orange",
+        ],
+        answerIndex: 1,
+        explanation: "From longest to shortest wavelength: Red, Orange, Yellow, Green, Blue, Indigo, Violet.",
+        guideRef: "The electromagnetic spectrum",
+        difficulty: "core",
+        hints: ["Red is the longest wavelength.", "Violet is the shortest.", "Think of a rainbow from the outside (red) inwards."],
+      },
+      {
+        id: "wv-mcq-q35",
+        question: "Which type of EM radiation is ionising and used to sterilise medical equipment and treat cancer?",
+        options: ["Radio waves", "Microwaves", "Infrared", "Gamma rays"],
+        answerIndex: 3,
+        explanation: "Gamma rays are ionising; they are used to sterilise equipment, to treat cancer (radiotherapy) and can also cause cancer if cells are damaged.",
+        guideRef: "The electromagnetic spectrum",
+        difficulty: "core",
+        hints: ["Which end of the spectrum carries the most energy?", "Ionising radiation can knock electrons off atoms.", "It is the highest-frequency band."],
+      },
+      {
+        id: "wv-mcq-q36",
+        question: "Which is a danger of ultraviolet radiation?",
+        options: ["It can cause skin cancer and eye damage", "It heats the water in food", "It is used for radio broadcasts", "It cannot affect living tissue"],
+        answerIndex: 0,
+        explanation: "UV damages skin cells (premature ageing and skin cancer) and can damage the eyes; that is why sunscreen and UV-blocking sunglasses are used.",
+        guideRef: "The electromagnetic spectrum",
+        difficulty: "warmup",
+      },
+      {
+        id: "wv-mcq-q37",
+        question: "Which EM band is used for cooking food and for satellite/mobile-phone communication?",
+        options: ["Infrared", "Microwaves", "X-rays", "Ultraviolet"],
+        answerIndex: 1,
+        explanation: "Microwaves are absorbed by water in food (heating it) and pass easily through the atmosphere for satellite and mobile communication.",
+        guideRef: "The electromagnetic spectrum",
+        difficulty: "warmup",
+      },
+      {
+        id: "wv-mcq-q38",
+        question: "An oscilloscope shows two sound traces. Trace B has the same height as Trace A but its waves are twice as close together. Compared with A, sound B is…",
+        options: ["louder at the same pitch", "the same loudness but higher pitch", "quieter at a lower pitch", "identical"],
+        answerIndex: 1,
+        explanation: "Same height = same amplitude = same loudness. Waves closer together = higher frequency = higher pitch.",
+        guideRef: "Sound waves",
+        difficulty: "core",
+        hints: ["Trace height shows amplitude (loudness).", "How close the waves are shows frequency (pitch).", "Same height, closer waves = ?"],
+      },
+      {
+        id: "wv-mcq-q39",
+        question: "A student measures the speed of sound by clapping 75 m from a wall and timing the echo at 0.44 s. The speed of sound is about…",
+        options: ["170 m/s", "341 m/s", "33 m/s", "165 m/s"],
+        answerIndex: 1,
+        explanation: "The sound travels to the wall and back, a distance 2 × 75 = 150 m. v = distance/time = 150 / 0.44 ≈ 341 m/s.",
+        guideRef: "Sound waves",
+        difficulty: "challenge",
+        hints: ["The sound travels to the wall AND back.", "Distance = 2 × 75 = 150 m.", "v = 150 ÷ 0.44 = ?"],
+        strategy: "Remember the echo travels there and back (2d)",
+      },
+      {
+        id: "wv-mcq-q40",
+        question: "An object 4 cm tall produces an image 10 cm tall through a converging lens. The magnification is…",
+        options: ["0.4", "2.5", "6", "40"],
+        answerIndex: 1,
+        explanation: "magnification = image height / object height = 10 / 4 = 2.5 (no unit).",
+        guideRef: "Converging lenses and ray diagrams",
+        difficulty: "core",
+        hints: ["Which formula gives magnification?", "magnification = image height / object height.", "10 ÷ 4 = ?"],
+        strategy: "Use magnification = image height / object height",
+      },
+      {
+        id: "wv-mcq-q41",
+        question: "Five complete water waves pass a post every 2 seconds. The frequency of the waves is…",
+        options: ["0.4 Hz", "2.5 Hz", "5 Hz", "10 Hz"],
+        answerIndex: 1,
+        explanation: "Frequency = number of waves ÷ time = 5 ÷ 2 = 2.5 Hz.",
+        guideRef: "Describing waves: amplitude, wavelength, frequency, period",
+        difficulty: "core",
+        hints: ["Frequency is waves per second.", "Divide the number of waves by the time.", "5 ÷ 2 = ?"],
+      },
+      {
+        id: "wv-mcq-q42",
+        question: "On the principal axis of a converging lens, the principal focus F is the point where…",
+        options: ["the object must always be placed", "rays parallel to the axis are brought together after the lens", "the lens is thickest", "light is reflected"],
+        answerIndex: 1,
+        explanation: "Rays arriving parallel to the principal axis converge at the principal focus F; the lens-to-F distance is the focal length.",
+        guideRef: "Converging lenses and ray diagrams",
+        difficulty: "warmup",
+      },
     ],
     qa: [
       {
@@ -645,7 +860,7 @@ export const wv: Topic = {
           "Angles measured from the normal (consistent reference) not the surface",
         ],
         commonError: "Saying angles are measured from the mirror surface.",
-        guideRef: "Wavefronts, reflection and the law of reflection",
+        guideRef: "Wavefronts, the ripple tank, reflection and the law of reflection",
         difficulty: "core",
         hints: ["What is the relationship between i and r?", "Where is the normal drawn?", "Why not measure from the surface itself?"],
       },
@@ -820,6 +1035,146 @@ export const wv: Topic = {
         guideRef: "Converging lenses and ray diagrams",
         difficulty: "challenge",
         hints: ["What does the parallel ray do after the lens?", "Which ray passes straight through undeviated?", "Where the rays cross is the image — real or virtual here?"],
+      },
+      {
+        id: "wv-qa-q14",
+        question: "A period of one wave on an oscilloscope is measured as 0.004 s. (a) Calculate the frequency of the sound. (b) State whether a human could hear it, giving a reason. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "(a) f = 1/T = 1/0.004 = 250 Hz. (b) Yes — 250 Hz lies within the human hearing range of about 20 Hz to 20 000 Hz, so it can be heard.",
+        markScheme: [
+          "Equation f = 1/T used",
+          "f = 1/0.004 = 250 Hz",
+          "Compares 250 Hz with the human range (20 Hz – 20 000 Hz)",
+          "Concludes it can be heard (it is inside the range)",
+        ],
+        commonError: "Forgetting to convert period to frequency, or quoting the hearing range wrongly.",
+        guideRef: "Sound waves",
+        difficulty: "core",
+        hints: ["Part (a): which equation links f and T?", "f = 1/T = 1 ÷ 0.004.", "Part (b): is 250 Hz between 20 and 20 000 Hz?"],
+        solutions: [
+          {
+            label: "Method: f = 1/T then compare to the audible range",
+            steps: [
+              "Write f = 1/T.",
+              "Substitute: f = 1 / 0.004 = 250 Hz.",
+              "Compare with the audible range 20 Hz – 20 000 Hz.",
+              "250 Hz is inside the range, so it can be heard.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "wv-qa-q15",
+        question: "Describe a method to measure the speed of sound in air using an echo, and give the equation you would use. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "Stand a measured distance d from a large flat wall (e.g. 50 m). Clap your hands and use a stopwatch to time how long t it takes to hear the echo. The sound travels to the wall and back, a distance of 2d. The speed is v = 2d / t. Repeating several times and taking an average reduces the timing error.",
+        markScheme: [
+          "Measure a distance d to a large flat reflecting surface (wall)",
+          "Make a sound (clap) and time the echo with a stopwatch",
+          "Recognise the sound travels there and back, distance 2d",
+          "v = 2d / t (and/or repeat and average to improve accuracy)",
+        ],
+        commonError: "Using distance d instead of 2d, forgetting the sound makes a round trip to the wall and back.",
+        guideRef: "Sound waves",
+        difficulty: "core",
+        hints: ["You need a distance and a time.", "Time the echo from a wall a known distance away.", "The sound goes there and back, so distance = 2d."],
+      },
+      {
+        id: "wv-qa-q16",
+        question: "Compare two sounds shown on an oscilloscope: sound X has a taller, more spread-out trace; sound Y has a shorter, more bunched-up trace. Describe how each sound differs in loudness and pitch. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "The height of a trace shows the amplitude and the spacing of the waves shows the frequency. Sound X has a taller trace, so it has a larger amplitude and is louder; its waves are spread out, so it has a lower frequency and a lower pitch. Sound Y has a shorter trace, so a smaller amplitude and is quieter; its waves are bunched up, so it has a higher frequency and a higher pitch.",
+        markScheme: [
+          "Taller trace = larger amplitude = louder (X louder than Y)",
+          "Spread-out waves = lower frequency = lower pitch (X lower pitch)",
+          "Shorter trace = smaller amplitude = quieter (Y quieter)",
+          "Bunched-up waves = higher frequency = higher pitch (Y higher pitch)",
+        ],
+        commonError: "Linking amplitude to pitch or frequency to loudness — they are swapped.",
+        guideRef: "Sound waves",
+        difficulty: "core",
+        hints: ["Trace height tells you amplitude.", "Wave spacing tells you frequency.", "Amplitude → loudness; frequency → pitch."],
+      },
+      {
+        id: "wv-qa-q17",
+        question: "An object 5 mm tall is viewed through a magnifying glass, producing an upright virtual image 15 mm tall. (a) Calculate the magnification. (b) State two properties of the image and where the object must be placed. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "(a) magnification = image height / object height = 15 / 5 = 3 (no unit). (b) The image is virtual and upright (and magnified). The object must be placed inside the focal length F (between the lens and F).",
+        markScheme: [
+          "Equation magnification = image height / object height",
+          "magnification = 15 / 5 = 3 (no unit)",
+          "Image is virtual and upright (accept magnified)",
+          "Object placed inside the focal length / between the lens and F",
+        ],
+        commonError: "Adding a unit to magnification, or saying the image is real (a magnifying glass forms a virtual image).",
+        guideRef: "Converging lenses and ray diagrams",
+        difficulty: "core",
+        hints: ["Part (a): divide image height by object height.", "15 ÷ 5 = ? (no unit).", "Part (b): a magnifying glass gives a virtual, upright image; the object sits inside F."],
+        solutions: [
+          {
+            label: "Method: magnification = image height / object height",
+            steps: [
+              "Write magnification = image height / object height.",
+              "Substitute: magnification = 15 / 5.",
+              "Calculate: magnification = 3 (a ratio, no unit).",
+            ],
+          },
+        ],
+      },
+      {
+        id: "wv-qa-q18",
+        question: "For X-rays and for infrared radiation, give one use and one danger of each. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "X-rays: a use is producing medical images of bones (or airport security scanning); a danger is that they are ionising and can damage cells and cause cancer. Infrared: a use is in remote controls, thermal imaging or heaters/grills; a danger is that it can burn the skin (overheating of body tissue).",
+        markScheme: [
+          "One correct use of X-rays: imaging bones | medical X-ray | airport security",
+          "One correct danger of X-rays: ionising | damages cells | causes cancer",
+          "One correct use of infrared: remote controls | thermal imaging | heaters | optical fibre signals",
+          "One correct danger of infrared: skin burns | overheating tissue",
+        ],
+        commonError: "Giving infrared as ionising — it is not; the ionising bands are X-ray and gamma.",
+        guideRef: "The electromagnetic spectrum",
+        difficulty: "core",
+        hints: ["X-rays pass through soft tissue but not bone.", "X-rays and gamma are ionising.", "Infrared is felt as heat."],
+      },
+      {
+        id: "wv-qa-q19",
+        question: "Explain how a ripple tank can be used to show that water waves slow down and change wavelength when they move into shallower water. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "Set up a ripple tank with a vibrating bar making straight wavefronts at a fixed frequency, and place a flat glass plate in part of the tank so the water there is shallower. A lamp above projects the wavefronts onto a screen below. Over the shallow region the waves travel more slowly. Because the frequency is fixed by the bar, the wave equation v = f λ means a smaller speed gives a shorter wavelength, so the projected wavefronts are seen to be closer together over the shallow water. If the waves cross the boundary at an angle, the change in speed also changes their direction (refraction).",
+        markScheme: [
+          "Vibrating bar makes wavefronts at a fixed frequency; lamp projects them onto a screen",
+          "A glass plate makes the water shallower so the waves slow down",
+          "Frequency stays constant, so by v = f λ the wavelength decreases",
+          "Wavefronts seen closer together (and direction changes if at an angle = refraction)",
+        ],
+        commonError: "Saying the frequency changes — it is fixed by the dipper; it is the speed and wavelength that change.",
+        guideRef: "Wavefronts, the ripple tank, reflection and the law of reflection",
+        difficulty: "challenge",
+        hints: ["What fixes the frequency of the waves?", "A glass plate makes the water shallower, slowing the waves.", "With f fixed, v = f λ tells you what happens to λ."],
+      },
+      {
+        id: "wv-qa-q20",
+        question: "White light is passed through a triangular prism and splits into a spectrum. Name the colours in order from the longest wavelength to the shortest, and state which colour is refracted (bent) the most. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "In order of decreasing wavelength the colours are red, orange, yellow, green, blue, indigo and violet. Violet (the shortest wavelength) is refracted, or bent, the most; red (the longest wavelength) is bent the least.",
+        markScheme: [
+          "Order: Red, Orange, Yellow, Green, Blue, Indigo, Violet",
+          "Red identified as longest wavelength",
+          "Violet identified as shortest wavelength",
+          "Violet is refracted/bent the most (red the least)",
+        ],
+        commonError: "Reversing the order, or saying red bends the most.",
+        guideRef: "The electromagnetic spectrum",
+        difficulty: "core",
+        hints: ["Red is at the long-wavelength end.", "Violet is at the short-wavelength end.", "Shorter wavelength light is refracted more."],
       },
     ],
   },
