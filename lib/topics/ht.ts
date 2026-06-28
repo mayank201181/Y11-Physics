@@ -2,7 +2,7 @@ import type { Topic } from "../types";
 
 // Heat Transfer — Edexcel IGCSE Physics (4PH1) thermal energy transfer.
 // Gold-standard topic: AoPS discovery openers, whyItWorks, strategies, tiered
-// difficulty, hint ladders and multi-method solutions. 25 MCQ / 12 QA.
+// difficulty, hint ladders and multi-method solutions. 33 MCQ / 17 QA.
 
 export const ht: Topic = {
   id: "ht",
