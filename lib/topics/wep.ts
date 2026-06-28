@@ -1,0 +1,832 @@
+import type { Topic } from "../types";
+
+// Work, Energy and Power — Edexcel International GCSE Physics (4PH1), Energy transfer.
+// Energy stores & transfers, conservation, W = Fd, GPE = mgh, KE = ½mv²,
+// GPE↔KE conversions, P = W/t = E/t, efficiency and Sankey diagrams.
+// g = 10 N/kg used consistently throughout (the value Edexcel data sheets use).
+
+export const wep: Topic = {
+  id: "wep",
+  code: "WEP",
+  number: 5,
+  title: "Work, Energy and Power",
+  subject: "Physics",
+  icon: "🔋",
+  color: "#10b981",
+  intro:
+    "Energy is never created or destroyed — it is only stored and shifted from one form to another. In this topic you'll learn the energy stores (kinetic, gravitational, elastic, thermal, chemical, nuclear) and the four ways energy is transferred. You'll calculate work done (W = F d), kinetic energy (½ m v²) and gravitational potential energy (m g h), follow energy as a rollercoaster swaps GPE for KE, work out power (P = W/t) and efficiency, and read Sankey diagrams. Throughout we take g = 10 N/kg.",
+  guide: [
+    {
+      heading: "Energy stores and transfers",
+      discovery: {
+        problem:
+          "You stretch a catapult, let go, and a stone flies off and smashes into a wall, which gets slightly warmer. Energy seems to keep changing its identity — stretched rubber, flying stone, warm wall. Is energy being made and destroyed at each step?",
+        idea: "No — the same energy is just being moved between *stores*. Elastic energy in the stretched band becomes kinetic energy of the stone, which becomes thermal energy in the wall. Nothing is created or lost; it is only shifted and stored differently.",
+      },
+      body:
+        "Energy is measured in **joules (J)**. We describe where energy is held using **energy stores**, and how it moves using **energy transfers**.\n\n**The main energy stores:**\n\n- **Kinetic** — energy of a moving object.\n- **Gravitational potential (GPE)** — energy of a raised object in a gravitational field.\n- **Elastic (strain)** — energy in a stretched or squashed object (springs, rubber bands).\n- **Thermal (internal)** — energy of the particles in a warm object.\n- **Chemical** — energy in fuels, food and batteries, released by reactions.\n- **Nuclear** — energy stored in the nucleus of an atom.\n\n**The four ways energy is transferred:**\n\n1. **Mechanically** — by a force doing work (pushing, pulling, lifting).\n2. **Electrically** — by a current in a circuit.\n3. **By heating** — from a hotter to a cooler object.\n4. **By radiation** — by waves such as light, infrared or sound.",
+      diagrams: [
+        {
+          caption: "A torch: chemical store transferred electrically, then to light and thermal stores.",
+          svg:
+            '<svg viewBox="0 0 360 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Energy store and transfer diagram for a torch">\n<rect x="10" y="35" width="90" height="40" rx="6" fill="#bbf7d0" stroke="#166534"/>\n<text x="55" y="52" font-size="11" text-anchor="middle" fill="#14532d">chemical</text>\n<text x="55" y="66" font-size="9" text-anchor="middle" fill="#14532d">(battery)</text>\n<rect x="140" y="35" width="90" height="40" rx="6" fill="#fde68a" stroke="#92400e"/>\n<text x="185" y="52" font-size="11" text-anchor="middle" fill="#7c2d12">light bulb</text>\n<text x="185" y="66" font-size="9" text-anchor="middle" fill="#7c2d12">(transfer)</text>\n<rect x="270" y="20" width="80" height="30" rx="6" fill="#fecaca" stroke="#991b1b"/>\n<text x="310" y="39" font-size="10" text-anchor="middle" fill="#7f1d1d">light + heat</text>\n<rect x="270" y="62" width="80" height="28" rx="6" fill="#e2e8f0" stroke="#475569"/>\n<text x="310" y="80" font-size="9" text-anchor="middle" fill="#334155">thermal store</text>\n<path d="M100 55 H138" stroke="#1e293b" stroke-width="2" marker-end="url(#aw)"/>\n<text x="119" y="48" font-size="8" text-anchor="middle" fill="#334155">electrically</text>\n<path d="M230 50 L268 35" stroke="#1e293b" stroke-width="2" marker-end="url(#aw)"/>\n<path d="M230 60 L268 74" stroke="#1e293b" stroke-width="2" marker-end="url(#aw)"/>\n<defs><marker id="aw" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#1e293b"/></marker></defs>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "Energy is measured in joules (J).",
+        "Stores: kinetic, gravitational, elastic, thermal, chemical, nuclear.",
+        "Transfers: mechanically, electrically, by heating, by radiation.",
+        "A transfer is HOW energy moves; a store is WHERE it ends up.",
+      ],
+      whyItWorks:
+        "Naming stores and transfers separately stops the common mix-up between the route energy takes and the place it is held — you can then track every joule from start to finish.",
+      strategies: ["Label the start store and end store", "Name the transfer route between them"],
+    },
+    {
+      heading: "Conservation of energy",
+      body:
+        "The **principle of conservation of energy** states:\n\n> Energy cannot be created or destroyed — it can only be transferred from one store to another, or *dissipated*.\n\nSo in any change, the **total energy stays the same**. What looks like 'lost' energy has actually been transferred to less useful stores — most often **thermal energy** spread out to the surroundings (by friction, air resistance or electrical resistance). This wasted, spread-out energy is said to be **dissipated**.\n\nA useful way to write it for a single device:\n\n*total energy in = useful energy out + wasted energy out*\n\nThis is why a perpetual-motion machine is impossible: some energy is always dissipated, so a machine can never give out more useful energy than it takes in.",
+      keyPoints: [
+        "Total energy is always conserved (constant).",
+        "'Lost' energy is dissipated, usually as thermal energy to the surroundings.",
+        "Total energy in = useful energy out + wasted energy out.",
+      ],
+      whyItWorks:
+        "Friction and resistance do work against motion, transferring kinetic energy into thermal energy of the surfaces and surrounding air — the energy is still there, just spread out and hard to use.",
+      formulae: ["total energy in = useful energy out + wasted (dissipated) energy"],
+      strategies: ["Account for every joule — nothing vanishes"],
+    },
+    {
+      heading: "Work done: W = F d",
+      discovery: {
+        problem:
+          "You push hard against a brick wall for a minute and get tired — but the wall doesn't move at all. Have you done any work on the wall in the physics sense?",
+        idea: "In physics, **work** is only done when a force moves something through a distance. The wall doesn't move (d = 0), so no work is done *on the wall* — your muscles tire from internal chemical/biological processes, not from doing mechanical work on the wall.",
+      },
+      body:
+        "When a force makes an object move, energy is transferred. The amount transferred is the **work done**:\n\n**W = F × d**\n\n- **W** = work done in **joules (J)**\n- **F** = force in **newtons (N)** (in the direction of motion)\n- **d** = distance moved **in the direction of the force**, in **metres (m)**\n\n**Work done = energy transferred.** Lifting a 5 N box up 2 m does 10 J of work, transferring 10 J into its gravitational store. Dragging a crate against 40 N of friction over 3 m does 120 J of work against friction, transferred to thermal energy.\n\nKey points:\n\n- 1 joule is the work done when a force of 1 N moves an object 1 m (1 J = 1 N m).\n- If the object doesn't move, no work is done (d = 0).",
+      diagrams: [
+        {
+          caption: "A force F moving a box a distance d does work W = F d.",
+          svg:
+            '<svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A box pushed by a force F through a distance d">\n<line x1="10" y1="80" x2="310" y2="80" stroke="#475569" stroke-width="2"/>\n<rect x="40" y="48" width="50" height="32" rx="3" fill="#cbd5e1" stroke="#334155"/>\n<path d="M92 64 H160" stroke="#16a34a" stroke-width="3" marker-end="url(#fw)"/>\n<text x="125" y="56" font-size="12" text-anchor="middle" fill="#15803d">F</text>\n<rect x="200" y="48" width="50" height="32" rx="3" fill="#e2e8f0" stroke="#94a3b8" stroke-dasharray="4 3"/>\n<path d="M65 92 H225" stroke="#1d4ed8" stroke-width="1.5" marker-start="url(#dn2)" marker-end="url(#dn2)"/>\n<text x="145" y="105" font-size="11" text-anchor="middle" fill="#1e40af">d (distance moved)</text>\n<defs><marker id="fw" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#16a34a"/></marker><marker id="dn2" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#1d4ed8"/></marker></defs>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "W = F d (work in J, force in N, distance in m).",
+        "Work done equals the energy transferred.",
+        "Distance must be measured in the direction of the force.",
+        "No movement means no work is done.",
+      ],
+      whyItWorks:
+        "A force acting over a distance continuously pushes energy into the object — the further it pushes (or the bigger the force), the more energy is delivered, so W naturally scales with both F and d.",
+      formulae: ["W = F d", "1 J = 1 N m"],
+      strategies: ["Check the distance is along the force", "Convert all units to N and m first"],
+    },
+    {
+      heading: "Gravitational potential energy: GPE = m g h",
+      body:
+        "When you lift an object you do work against gravity, and that work is stored as **gravitational potential energy (GPE)**:\n\n**GPE = m × g × h**\n\n- **m** = mass in **kilograms (kg)**\n- **g** = gravitational field strength = **10 N/kg** (on Earth)\n- **h** = change in height in **metres (m)**\n- **GPE** in **joules (J)**\n\nThis comes straight from work done: the weight of the object is W = m g (newtons), and lifting it a height h does work = force × distance = (m g) × h = **m g h**.\n\n*Example:* lift a 2 kg book onto a 1.5 m shelf. GPE gained = m g h = 2 × 10 × 1.5 = **30 J**. Drop it and that 30 J transfers to kinetic energy.",
+      keyPoints: [
+        "GPE = m g h; use g = 10 N/kg on Earth.",
+        "h is the change in vertical height, in metres.",
+        "Gaining GPE = work done lifting against gravity.",
+      ],
+      whyItWorks:
+        "Lifting at steady speed needs an upward force equal to the weight m g, applied over height h. Work done = force × distance = m g × h, and that energy is stored as GPE.",
+      formulae: ["GPE = m g h", "weight = m g"],
+      strategies: ["Identify the height change, not the total height", "State the value of g you used"],
+    },
+    {
+      heading: "Kinetic energy: KE = ½ m v²",
+      body:
+        "Any moving object has **kinetic energy (KE)**:\n\n**KE = ½ × m × v²**\n\n- **m** = mass in **kg**\n- **v** = speed in **metres per second (m/s)**\n- **KE** in **joules (J)**\n\nNotice the **v²**: kinetic energy depends on the *square* of the speed. **Double the speed gives four times the KE.** This is why stopping distances and crash energy rise so sharply with speed.\n\n*Example:* a 1000 kg car at 20 m/s has KE = ½ × 1000 × 20² = ½ × 1000 × 400 = **200 000 J**. At 40 m/s it has ½ × 1000 × 1600 = **800 000 J** — four times as much for double the speed.\n\n**Watch out:** square the speed *before* multiplying — a very common slip is to do ½ m v and forget the square.",
+      keyPoints: [
+        "KE = ½ m v² (mass in kg, speed in m/s, energy in J).",
+        "KE depends on the square of speed: double v gives 4× KE.",
+        "Always square v before multiplying.",
+      ],
+      whyItWorks:
+        "To reach speed v, a constant force must do work over a distance that itself grows with v² (from the equations of motion), so the energy delivered — the KE — scales with v², not v.",
+      thinkDeeper:
+        "A car travelling at 30 m/s has nine times the kinetic energy it had at 10 m/s. How does this help explain why speed limits matter so much for braking distances?",
+      formulae: ["KE = ½ m v²"],
+      strategies: ["Square the speed first", "Beware the ½ — a quarter of mistakes come from dropping it"],
+    },
+    {
+      heading: "Conservation in falling and rollercoasters (GPE to KE)",
+      discovery: {
+        problem:
+          "A rollercoaster car is hauled to the top of the first hill, then the motor switches off completely. With no engine, how does it manage to race round the whole track?",
+        idea: "At the top it is full of gravitational potential energy. As it drops, that GPE converts into kinetic energy — the car speeds up going down and slows going up, swapping the two stores back and forth. Energy is conserved, so it keeps moving (until friction gradually dissipates it).",
+      },
+      body:
+        "When an object falls (ignoring air resistance), its **GPE is transferred to KE**. By conservation of energy:\n\n**GPE lost = KE gained** which gives **m g h = ½ m v²**\n\nThe mass **m cancels** from both sides, giving a neat result: **g h = ½ v²**, so **v = square root of (2 g h)**. This is why, in a vacuum, a feather and a hammer dropped from the same height hit the ground at the same speed.\n\n**Rollercoasters:** at the highest point the car has maximum GPE and minimum KE (slowest). At the lowest point it has minimum GPE and maximum KE (fastest). On the way round, energy continuously swaps between the two stores. In reality some energy is dissipated as thermal energy by friction and air resistance, so each successive hill must be lower than the last.",
+      diagrams: [
+        {
+          caption: "GPE to KE swap on a rollercoaster: high = max GPE/slow, low = max KE/fast.",
+          svg:
+            '<svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rollercoaster track showing GPE converting to KE at the bottom and back to GPE">\n<path d="M10 30 Q70 30 90 90 Q110 140 170 140 Q230 140 250 80 Q265 40 320 40" fill="none" stroke="#334155" stroke-width="3"/>\n<circle cx="20" cy="30" r="7" fill="#16a34a"/>\n<text x="20" y="20" font-size="9" text-anchor="middle" fill="#14532d">max GPE</text>\n<text x="20" y="50" font-size="8" text-anchor="middle" fill="#14532d">slow</text>\n<circle cx="170" cy="140" r="7" fill="#dc2626"/>\n<text x="170" y="132" font-size="9" text-anchor="middle" fill="#7f1d1d">max KE</text>\n<text x="170" y="120" font-size="8" text-anchor="middle" fill="#7f1d1d">fast</text>\n<circle cx="305" cy="40" r="7" fill="#16a34a"/>\n<text x="300" y="30" font-size="9" text-anchor="middle" fill="#14532d">GPE again</text>\n<path d="M40 70 L70 110" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#dw)"/>\n<text x="40" y="100" font-size="8" fill="#1e40af">GPE to KE</text>\n<defs><marker id="dw" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#1d4ed8"/></marker></defs>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "Falling: GPE lost = KE gained, so m g h = ½ m v².",
+        "Mass cancels, so v = square root of (2 g h) — landing speed is independent of mass (no air resistance).",
+        "Rollercoaster: high point = max GPE/slow; low point = max KE/fast.",
+        "Friction and air resistance dissipate energy as heat over time.",
+      ],
+      whyItWorks:
+        "Conservation of energy means whatever leaves the gravitational store must appear in the kinetic store (when no energy is dissipated), so the two are simply linked by m g h = ½ m v².",
+      formulae: ["m g h = ½ m v²", "v = square root of (2 g h)"],
+      strategies: ["Equate the energy lost to the energy gained", "Cancel m when it appears on both sides"],
+    },
+    {
+      heading: "Power: P = W/t = E/t",
+      body:
+        "**Power** is the **rate** of doing work, or the rate of transferring energy:\n\n**P = W / t = E / t**\n\n- **P** = power in **watts (W)**\n- **W** or **E** = work done / energy transferred in **joules (J)**\n- **t** = time taken in **seconds (s)**\n\nOne **watt is one joule per second** (1 W = 1 J/s). A more powerful device does the *same* work in *less* time, or *more* work in the *same* time.\n\n*Example:* a motor lifts a load, doing 600 J of work in 4 s. Power = 600 ÷ 4 = **150 W**. A second motor doing the same 600 J in just 2 s has power 300 W — it is twice as powerful.\n\n**Careful:** the unit symbol for the watt is also W, the same letter used for work. Read from the context which is meant.",
+      keyPoints: [
+        "P = W/t = E/t (power in watts).",
+        "1 watt = 1 joule per second.",
+        "More power = same energy faster, or more energy in the same time.",
+      ],
+      whyItWorks:
+        "Power separates 'how much' energy from 'how quickly'. Two engines can transfer the same total energy, but the one that does it faster delivers more power — exactly what 'rate' means.",
+      formulae: ["P = W / t", "P = E / t", "1 W = 1 J/s"],
+      strategies: ["Convert time to seconds", "Decide whether you want energy or rate of energy"],
+    },
+    {
+      heading: "Efficiency and Sankey diagrams",
+      discovery: {
+        problem:
+          "An old filament bulb takes in 100 J of electrical energy but gives out only about 10 J as light — the other 90 J comes off as heat. Where has the 'missing' useful energy gone, and how do we measure how good the bulb is?",
+        idea: "No energy is missing — 90 J is dissipated as wasted thermal energy. The bulb is just *inefficient*: only 10 of every 100 joules do the useful job. **Efficiency** is the fraction of input energy that ends up useful.",
+      },
+      body:
+        "No device transfers all its input energy usefully — some is always dissipated, usually as heat. **Efficiency** tells us what fraction is useful:\n\n**efficiency = useful energy output ÷ total energy input** (× 100 for a %)\n\nYou can use **power** instead of energy:\n\n**efficiency = useful power output ÷ total power input**\n\nEfficiency is always between 0 and 1 (or 0–100%); it can never exceed 100% because that would create energy.\n\n*Example:* a motor takes in 500 J and usefully lifts a load by transferring 400 J to GPE. Efficiency = 400 ÷ 500 = 0.8 = **80%**.\n\n**Sankey diagrams** show energy flow as arrows whose **width is proportional to the energy**. One wide arrow goes in; it splits into a useful output arrow and one or more wasted (usually thermal) arrows. The narrower the wasted branches, the more efficient the device.\n\n**Reducing wasted energy:** lubricate moving parts to cut friction, insulate to reduce heat loss, use LED lamps instead of filament bulbs, and streamline shapes to cut air resistance.",
+      diagrams: [
+        {
+          caption: "Sankey diagram of a filament bulb: 100 J in, 10 J light, 90 J heat.",
+          svg:
+            '<svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sankey diagram showing 100 joules input splitting into 10 joules light and 90 joules wasted heat">\n<rect x="10" y="20" width="120" height="100" fill="#fde68a" stroke="#92400e"/>\n<text x="70" y="14" font-size="10" text-anchor="middle" fill="#7c2d12">100 J electrical (in)</text>\n<rect x="130" y="20" width="180" height="12" fill="#bbf7d0" stroke="#166534"/>\n<text x="240" y="16" font-size="9" text-anchor="middle" fill="#14532d">10 J light (useful)</text>\n<polygon points="130,32 310,108 310,120 130,120" fill="#fecaca" stroke="#991b1b"/>\n<text x="230" y="145" font-size="9" text-anchor="middle" fill="#7f1d1d">90 J heat (wasted)</text>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "efficiency = useful output ÷ total input (×100%).",
+        "Can use energy or power — same ratio.",
+        "Efficiency is never more than 100%.",
+        "Sankey arrow width is proportional to the energy it represents.",
+        "Reduce waste: lubricate, insulate, streamline, use LEDs.",
+      ],
+      whyItWorks:
+        "Because total energy is conserved, the input must equal useful output plus waste. Efficiency just expresses how big the useful slice is compared with the whole input.",
+      formulae: [
+        "efficiency = useful energy output / total energy input",
+        "efficiency = useful power output / total power input",
+        "% efficiency = efficiency × 100",
+      ],
+      strategies: ["Identify which output is 'useful'", "Use Sankey widths to read off energies"],
+    },
+  ],
+  learn: {
+    bigIdea:
+      "Energy is conserved — never made or destroyed, only moved between stores and dissipated. Work done (W = F d) transfers energy; GPE = m g h and KE = ½ m v² let us track it through falls and rollercoasters; power (P = W/t) measures how fast energy moves; and efficiency shows how much of it does a useful job.",
+    mustKnow: [
+      "Energy is conserved: total energy stays constant; 'lost' energy is dissipated, usually as heat.",
+      "Work done = energy transferred: W = F d (J, N, m).",
+      "GPE = m g h and KE = ½ m v²; use g = 10 N/kg.",
+      "In a fall, GPE lost = KE gained: m g h = ½ m v², so v = square root of (2 g h) and mass cancels.",
+      "Power is the rate of energy transfer: P = W/t = E/t, in watts (1 W = 1 J/s).",
+      "Efficiency = useful output ÷ total input (×100%); never more than 100%.",
+      "Sankey diagram arrow widths are proportional to the energy they carry.",
+    ],
+    keywords: [
+      { term: "Energy store", definition: "A way energy is held: kinetic, gravitational, elastic, thermal, chemical or nuclear." },
+      { term: "Energy transfer", definition: "How energy moves: mechanically, electrically, by heating, or by radiation." },
+      { term: "Conservation of energy", definition: "The principle that energy cannot be created or destroyed, only transferred or dissipated." },
+      { term: "Work done", definition: "Energy transferred when a force moves an object; W = F d, measured in joules." },
+      { term: "Gravitational potential energy (GPE)", definition: "Energy stored in a raised object; GPE = m g h." },
+      { term: "Kinetic energy (KE)", definition: "Energy of a moving object; KE = ½ m v²." },
+      { term: "Power", definition: "The rate of doing work or transferring energy; P = W/t, measured in watts." },
+      { term: "Efficiency", definition: "The fraction of input energy that is transferred usefully; useful output ÷ total input." },
+      { term: "Dissipated", definition: "Energy spread out to the surroundings, usually as thermal energy, and no longer useful." },
+      { term: "Sankey diagram", definition: "A flow diagram where arrow width is proportional to the amount of energy." },
+    ],
+    flashcards: [
+      { front: "State the principle of conservation of energy.", back: "Energy cannot be created or destroyed, only transferred from one store to another or dissipated; the total stays constant." },
+      { front: "Write the equation for work done and its units.", back: "W = F d. Work in joules (J), force in newtons (N), distance in metres (m)." },
+      { front: "Give the equations for GPE and KE.", back: "GPE = m g h and KE = ½ m v² (with g = 10 N/kg on Earth)." },
+      { front: "How is the landing speed of a falling object found from energy?", back: "Set GPE lost = KE gained: m g h = ½ m v², mass cancels, so v = square root of (2 g h)." },
+      { front: "Define power and give its equation and unit.", back: "Power is the rate of energy transfer: P = W/t = E/t, measured in watts (1 W = 1 J/s)." },
+      { front: "How do you calculate efficiency?", back: "Efficiency = useful energy (or power) output ÷ total energy (or power) input, ×100 for a percentage." },
+    ],
+  },
+  quiz: {
+    mcq: [
+      {
+        id: "wep-mcq-q01",
+        question: "Which of these is a unit of energy?",
+        options: ["newton (N)", "joule (J)", "watt (W)", "metre (m)"],
+        answerIndex: 1,
+        explanation: "Energy and work are measured in joules (J). The newton is force, the watt is power, the metre is distance.",
+        guideRef: "Energy stores and transfers",
+        difficulty: "warmup",
+      },
+      {
+        id: "wep-mcq-q02",
+        question: "Which of the following is an energy store rather than a transfer?",
+        options: ["heating", "electrically", "kinetic", "by radiation"],
+        answerIndex: 2,
+        explanation: "Kinetic is a store (energy of a moving object). Heating, electrically and radiation are ways energy is transferred.",
+        guideRef: "Energy stores and transfers",
+        difficulty: "warmup",
+      },
+      {
+        id: "wep-mcq-q03",
+        question: "A battery in a circuit makes a bulb light up. The energy is transferred mainly…",
+        options: ["mechanically", "electrically", "by heating", "by sound"],
+        answerIndex: 1,
+        explanation: "A current in a circuit transfers energy electrically, from the chemical store of the battery to the bulb.",
+        guideRef: "Energy stores and transfers",
+        difficulty: "warmup",
+      },
+      {
+        id: "wep-mcq-q04",
+        question: "The principle of conservation of energy states that energy…",
+        options: [
+          "is always increasing",
+          "can be created if you do work",
+          "cannot be created or destroyed, only transferred",
+          "is destroyed by friction",
+        ],
+        answerIndex: 2,
+        explanation: "Energy is conserved: it can only be transferred between stores or dissipated, never created or destroyed.",
+        guideRef: "Conservation of energy",
+        difficulty: "warmup",
+      },
+      {
+        id: "wep-mcq-q05",
+        question: "Which equation gives the work done by a force?",
+        options: ["W = F / d", "W = F d", "W = ½ F d²", "W = m g h"],
+        answerIndex: 1,
+        explanation: "Work done = force × distance moved in the direction of the force: W = F d.",
+        guideRef: "Work done: W = F d",
+        difficulty: "warmup",
+      },
+      {
+        id: "wep-mcq-q06",
+        question: "A force of 20 N pushes a box 3 m along the floor in the direction of the force. The work done is…",
+        options: ["6.7 J", "23 J", "60 J", "60 N"],
+        answerIndex: 2,
+        explanation: "W = F d = 20 × 3 = 60 J. Work is energy, measured in joules, not newtons.",
+        guideRef: "Work done: W = F d",
+        difficulty: "core",
+        hints: ["Which equation links force and distance?", "Multiply force by distance.", "Remember the unit is joules, not newtons."],
+        strategy: "Convert all units first",
+      },
+      {
+        id: "wep-mcq-q07",
+        question: "You push as hard as you can against a stationary wall for 30 s. The work you do ON the wall is…",
+        options: ["very large", "zero, because the wall does not move", "equal to your force × 30 s", "impossible to know"],
+        answerIndex: 1,
+        explanation: "Work needs movement in the direction of the force. The wall does not move (d = 0), so W = F × 0 = 0 J.",
+        guideRef: "Work done: W = F d",
+        difficulty: "core",
+        hints: ["What is the distance moved by the wall?", "W = F d — what is d here?", "Anything multiplied by 0 is…?"],
+        strategy: "Check the distance is along the force",
+      },
+      {
+        id: "wep-mcq-q08",
+        question: "The equation for gravitational potential energy is GPE =",
+        options: ["½ m v²", "m g h", "F d", "m / g h"],
+        answerIndex: 1,
+        explanation: "GPE = m g h, the work done lifting a mass m through a height h against gravity g.",
+        guideRef: "Gravitational potential energy: GPE = m g h",
+        difficulty: "warmup",
+      },
+      {
+        id: "wep-mcq-q09",
+        question: "A 4 kg bag is lifted onto a shelf 2 m high. Using g = 10 N/kg, the GPE gained is…",
+        options: ["8 J", "20 J", "40 J", "80 J"],
+        answerIndex: 3,
+        explanation: "GPE = m g h = 4 × 10 × 2 = 80 J.",
+        guideRef: "Gravitational potential energy: GPE = m g h",
+        difficulty: "core",
+        hints: ["Write GPE = m g h.", "Put in m = 4, g = 10, h = 2.", "Multiply all three together."],
+        strategy: "State the value of g you used",
+      },
+      {
+        id: "wep-mcq-q10",
+        question: "The equation for kinetic energy is KE =",
+        options: ["m g h", "½ m v²", "m v", "½ m v"],
+        answerIndex: 1,
+        explanation: "Kinetic energy = ½ × mass × speed² = ½ m v².",
+        guideRef: "Kinetic energy: KE = ½ m v²",
+        difficulty: "warmup",
+      },
+      {
+        id: "wep-mcq-q11",
+        question: "A 2 kg ball moves at 3 m/s. Its kinetic energy is…",
+        options: ["3 J", "6 J", "9 J", "18 J"],
+        answerIndex: 2,
+        explanation: "KE = ½ m v² = ½ × 2 × 3² = ½ × 2 × 9 = 9 J.",
+        guideRef: "Kinetic energy: KE = ½ m v²",
+        difficulty: "core",
+        hints: ["Write KE = ½ m v².", "Square the speed first: 3² = 9.", "Then ½ × 2 × 9."],
+        strategy: "Square the speed first",
+      },
+      {
+        id: "wep-mcq-q12",
+        question: "If the speed of a car doubles, its kinetic energy…",
+        options: ["stays the same", "doubles", "trebles", "becomes four times as big"],
+        answerIndex: 3,
+        explanation: "KE depends on v². Doubling v multiplies v² by 4, so KE becomes four times as large.",
+        guideRef: "Kinetic energy: KE = ½ m v²",
+        difficulty: "core",
+        hints: ["Which quantity in KE = ½ m v² changes with speed?", "What does doubling v do to v²?", "2² = 4."],
+        strategy: "Beware the square on v",
+      },
+      {
+        id: "wep-mcq-q13",
+        question: "A ball is dropped from rest. As it falls (ignoring air resistance), the energy change is…",
+        options: ["KE to GPE", "GPE to KE", "GPE to elastic", "chemical to KE"],
+        answerIndex: 1,
+        explanation: "As the ball falls it loses height (GPE) and gains speed (KE), so GPE is transferred to KE.",
+        guideRef: "Conservation in falling and rollercoasters (GPE to KE)",
+        difficulty: "core",
+        hints: ["Is it getting higher or lower?", "Is it speeding up or slowing down?", "Lower = less GPE; faster = more KE."],
+      },
+      {
+        id: "wep-mcq-q14",
+        question: "At the highest point of a rollercoaster (with the motor off), the car has…",
+        options: ["maximum KE and is fastest", "maximum GPE and is slowest", "zero energy", "maximum KE and maximum GPE"],
+        answerIndex: 1,
+        explanation: "Highest point = maximum height = maximum GPE; the car is moving slowest there, so KE is least.",
+        guideRef: "Conservation in falling and rollercoasters (GPE to KE)",
+        difficulty: "core",
+        hints: ["GPE depends on height — where is the car highest?", "Where is the car moving slowest?", "Max height to max GPE, min KE."],
+      },
+      {
+        id: "wep-mcq-q15",
+        question: "Ignoring air resistance, an object dropped from height h hits the ground at a speed given by…",
+        options: ["v = g h", "v = 2 g h", "v = square root of (2 g h)", "v = square root of (g h)"],
+        answerIndex: 2,
+        explanation: "Setting m g h = ½ m v², mass cancels giving g h = ½ v², so v² = 2 g h and v = square root of (2 g h).",
+        guideRef: "Conservation in falling and rollercoasters (GPE to KE)",
+        difficulty: "core",
+        hints: ["Equate GPE lost to KE gained.", "m g h = ½ m v² — cancel the m.", "Rearrange for v."],
+        strategy: "Cancel m when it appears on both sides",
+      },
+      {
+        id: "wep-mcq-q16",
+        question: "The equation for power is P =",
+        options: ["W × t", "W / t", "F d t", "E × t"],
+        answerIndex: 1,
+        explanation: "Power is the rate of energy transfer: P = W/t = E/t, measured in watts.",
+        guideRef: "Power: P = W/t = E/t",
+        difficulty: "warmup",
+      },
+      {
+        id: "wep-mcq-q17",
+        question: "A motor transfers 900 J of energy in 3 s. Its power output is…",
+        options: ["300 W", "2700 W", "0.0033 W", "903 W"],
+        answerIndex: 0,
+        explanation: "P = E / t = 900 ÷ 3 = 300 W.",
+        guideRef: "Power: P = W/t = E/t",
+        difficulty: "core",
+        hints: ["Use P = E/t.", "Divide energy by time.", "900 ÷ 3."],
+      },
+      {
+        id: "wep-mcq-q18",
+        question: "One watt is the same as…",
+        options: ["one joule × second", "one joule per second", "one newton per metre", "one joule per metre"],
+        answerIndex: 1,
+        explanation: "1 watt = 1 joule per second (1 W = 1 J/s), because power is energy per unit time.",
+        guideRef: "Power: P = W/t = E/t",
+        difficulty: "warmup",
+      },
+      {
+        id: "wep-mcq-q19",
+        question: "A device takes in 200 J and usefully transfers 150 J. Its efficiency is…",
+        options: ["25%", "50%", "75%", "133%"],
+        answerIndex: 2,
+        explanation: "Efficiency = useful out ÷ total in = 150 ÷ 200 = 0.75 = 75%.",
+        guideRef: "Efficiency and Sankey diagrams",
+        difficulty: "core",
+        hints: ["Efficiency = useful output ÷ total input.", "150 ÷ 200.", "Multiply by 100 for a percentage."],
+      },
+      {
+        id: "wep-mcq-q20",
+        question: "Which value of efficiency is IMPOSSIBLE for a real device?",
+        options: ["10%", "55%", "99%", "120%"],
+        answerIndex: 3,
+        explanation: "Efficiency can never exceed 100%, because that would mean getting out more useful energy than was put in — creating energy.",
+        guideRef: "Efficiency and Sankey diagrams",
+        difficulty: "core",
+        hints: ["What is the most useful energy you can get from an input?", "Can useful output exceed the input?", "Anything over 100% breaks conservation of energy."],
+      },
+      {
+        id: "wep-mcq-q21",
+        question: "On a Sankey diagram, the width of each arrow represents…",
+        options: ["the speed of the energy", "the amount of energy", "the temperature", "the time taken"],
+        answerIndex: 1,
+        explanation: "In a Sankey diagram the width of an arrow is proportional to the amount of energy it represents.",
+        guideRef: "Efficiency and Sankey diagrams",
+        difficulty: "warmup",
+      },
+      {
+        id: "wep-mcq-q22",
+        question: "Most of the energy 'wasted' by machines is dissipated as…",
+        options: ["light", "thermal (heat) energy", "chemical energy", "nuclear energy"],
+        answerIndex: 1,
+        explanation: "Friction and resistance transfer energy to thermal energy, which spreads out to the surroundings and becomes hard to use.",
+        guideRef: "Conservation of energy",
+        difficulty: "core",
+        hints: ["What do friction and resistance produce?", "Think what a machine feels like after running.", "It spreads out to the surroundings."],
+      },
+      {
+        id: "wep-mcq-q23",
+        question: "A 1000 kg car travels at 20 m/s. Using KE = ½ m v², its kinetic energy is…",
+        options: ["10 000 J", "20 000 J", "200 000 J", "400 000 J"],
+        answerIndex: 2,
+        explanation: "KE = ½ × 1000 × 20² = ½ × 1000 × 400 = 200 000 J.",
+        guideRef: "Kinetic energy: KE = ½ m v²",
+        difficulty: "challenge",
+        hints: ["Square the speed: 20² = 400.", "Then ½ × 1000 × 400.", "Keep track of the zeros."],
+        strategy: "Square the speed first",
+      },
+      {
+        id: "wep-mcq-q24",
+        question: "A 0.5 kg ball is dropped from 5 m (g = 10 N/kg, no air resistance). Its speed just before landing is…",
+        options: ["5 m/s", "10 m/s", "50 m/s", "100 m/s"],
+        answerIndex: 1,
+        explanation: "v = square root of (2 g h) = square root of (2 × 10 × 5) = square root of 100 = 10 m/s. The mass does not affect the answer.",
+        guideRef: "Conservation in falling and rollercoasters (GPE to KE)",
+        difficulty: "challenge",
+        hints: ["Use v = square root of (2 g h); mass cancels.", "2 × 10 × 5 = 100.", "Take the square root of 100."],
+        strategy: "Cancel m when it appears on both sides",
+      },
+      {
+        id: "wep-mcq-q25",
+        question: "A 2 kg trolley starts from rest and 80 J of work is done to accelerate it on a flat, frictionless track. Its final speed is closest to…",
+        options: ["4.0 m/s", "8.9 m/s", "40 m/s", "80 m/s"],
+        answerIndex: 1,
+        explanation: "All the work becomes KE: 80 = ½ × 2 × v² so v² = 80 and v = square root of 80 ≈ 8.9 m/s.",
+        guideRef: "Kinetic energy: KE = ½ m v²",
+        difficulty: "challenge",
+        hints: ["Work done = KE gained (no friction).", "80 = ½ × 2 × v², so v² = 80.", "Take the square root of 80 ≈ 8.9."],
+        strategy: "Equate work done to KE gained",
+      },
+      {
+        id: "wep-mcq-q26",
+        question: "A crane lifts a 500 kg load 12 m in 20 s (g = 10 N/kg). Its useful power output is…",
+        options: ["300 W", "3000 W", "6000 W", "120 000 W"],
+        answerIndex: 1,
+        explanation: "GPE gained = m g h = 500 × 10 × 12 = 60 000 J. Power = E/t = 60 000 ÷ 20 = 3000 W.",
+        guideRef: "Power: P = W/t = E/t",
+        difficulty: "challenge",
+        hints: ["First find the energy: GPE = m g h.", "500 × 10 × 12 = 60 000 J.", "Then P = E/t = 60 000 ÷ 20."],
+        strategy: "Find energy first, then divide by time",
+      },
+    ],
+    qa: [
+      {
+        id: "wep-qa-q01",
+        question: "Name the six main energy stores and the four ways energy can be transferred. (5 marks)",
+        marks: 5,
+        modelAnswer:
+          "The six energy stores are: kinetic, gravitational (potential), elastic (strain), thermal (internal), chemical and nuclear. The four ways energy is transferred are: mechanically (by a force doing work), electrically (by a current), by heating, and by radiation (by waves).",
+        markScheme: [
+          "Any FOUR stores from: kinetic | gravitational | elastic | thermal | chemical | nuclear",
+          "All SIX stores named correctly for full store marks",
+          "Mechanically | by a force/working",
+          "Electrically | by a current",
+          "By heating AND by radiation (both needed)",
+        ],
+        commonError: "Confusing a transfer with a store, e.g. listing 'electrical' as a store. Electrical is a transfer; chemical/kinetic etc. are stores.",
+        guideRef: "Energy stores and transfers",
+        difficulty: "warmup",
+      },
+      {
+        id: "wep-qa-q02",
+        question: "State the principle of conservation of energy, and explain what happens to the energy that appears to be 'lost' when a moving car brakes to a stop. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "The principle of conservation of energy states that energy cannot be created or destroyed, only transferred from one store to another (or dissipated). When a car brakes, its kinetic energy is not destroyed: friction at the brakes transfers it to thermal energy, heating the brakes, tyres and surrounding air. This thermal energy is dissipated (spread out) to the surroundings, so it is no longer useful, but the total energy is unchanged.",
+        markScheme: [
+          "Energy cannot be created or destroyed | only transferred/dissipated",
+          "Kinetic energy is transferred, not destroyed",
+          "Friction (at the brakes) transfers it to thermal energy | heat",
+          "Energy is dissipated/spread out to the surroundings; total energy unchanged",
+        ],
+        commonError: "Saying the energy is 'destroyed' or 'used up'. It is transferred to thermal energy and dissipated.",
+        guideRef: "Conservation of energy",
+        difficulty: "core",
+        hints: ["Quote the conservation principle first.", "Kinetic energy goes where when you brake?", "What does friction produce, and where does it go?"],
+      },
+      {
+        id: "wep-qa-q03",
+        question: "A worker pushes a crate with a steady horizontal force of 150 N, moving it 8 m across a floor. (a) Calculate the work done. (b) State the energy transfer involved. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "(a) W = F d = 150 × 8 = 1200 J. (b) The work is done mechanically (by the force), transferring energy that mostly becomes thermal energy in the floor and crate because the crate moves against friction.",
+        markScheme: [
+          "W = F d | uses correct equation",
+          "= 150 × 8",
+          "= 1200 J (must have unit J)",
+          "Mechanical transfer (working) | energy transferred to thermal/heat by friction",
+        ],
+        commonError: "Giving the answer in newtons. Work is energy, so the unit is joules (J).",
+        guideRef: "Work done: W = F d",
+        difficulty: "core",
+        hints: ["Which equation links force and distance?", "Multiply 150 by 8.", "What unit does work have?"],
+        solutions: [
+          {
+            label: "Method: W = F d",
+            steps: [
+              "Write the equation: W = F d.",
+              "Substitute: W = 150 N × 8 m.",
+              "Calculate: W = 1200 J.",
+              "The energy is transferred mechanically (mostly to thermal energy via friction).",
+            ],
+          },
+        ],
+      },
+      {
+        id: "wep-qa-q04",
+        question: "A 3 kg watering can is lifted 1.2 m onto a bench. Take g = 10 N/kg. (a) Calculate the gravitational potential energy gained. (b) State the equation you used. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "(a) GPE = m g h = 3 × 10 × 1.2 = 36 J. (b) The equation used is GPE = m g h, with m = mass (kg), g = gravitational field strength (10 N/kg) and h = change in height (m).",
+        markScheme: [
+          "GPE = m g h stated",
+          "= 3 × 10 × 1.2",
+          "= 36 J (unit required)",
+        ],
+        commonError: "Using a different value of g without stating it, or forgetting to multiply by g entirely.",
+        guideRef: "Gravitational potential energy: GPE = m g h",
+        difficulty: "core",
+        hints: ["Write GPE = m g h.", "Substitute m = 3, g = 10, h = 1.2.", "Multiply all three; the unit is joules."],
+        solutions: [
+          {
+            label: "Method: GPE = m g h",
+            steps: [
+              "Write the equation: GPE = m g h.",
+              "Substitute: GPE = 3 × 10 × 1.2.",
+              "Calculate: GPE = 36 J.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "wep-qa-q05",
+        question: "A 1500 kg car is travelling at 12 m/s. Calculate its kinetic energy. Then state what happens to this kinetic energy if the speed is doubled to 24 m/s, and justify your answer. (5 marks)",
+        marks: 5,
+        modelAnswer:
+          "KE = ½ m v² = ½ × 1500 × 12² = ½ × 1500 × 144 = 108 000 J. If the speed doubles to 24 m/s, the kinetic energy becomes four times as large (432 000 J), because KE depends on the square of the speed: doubling v multiplies v² by 4.",
+        markScheme: [
+          "KE = ½ m v² used",
+          "12² = 144 (speed squared correctly)",
+          "= 108 000 J (unit required)",
+          "Doubling speed gives 4× the KE | 432 000 J",
+          "Because KE depends on v² (the square of speed)",
+        ],
+        commonError: "Forgetting the square, or thinking doubling the speed doubles the KE. KE depends on v², so it quadruples.",
+        guideRef: "Kinetic energy: KE = ½ m v²",
+        difficulty: "core",
+        hints: ["Write KE = ½ m v² and square the speed first.", "½ × 1500 × 144 = ?", "Doubling v changes v² by what factor?"],
+        solutions: [
+          {
+            label: "Method: KE = ½ m v²",
+            steps: [
+              "Square the speed: 12² = 144.",
+              "KE = ½ × 1500 × 144.",
+              "KE = 750 × 144 = 108 000 J.",
+              "Doubling v multiplies v² (and so KE) by 2² = 4, giving 432 000 J.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "wep-qa-q06",
+        question: "A small rock of mass 0.8 kg is dropped from a cliff 20 m high. Take g = 10 N/kg and ignore air resistance. (a) Calculate the GPE lost. (b) Calculate the speed at which it hits the ground. (5 marks)",
+        marks: 5,
+        modelAnswer:
+          "(a) GPE lost = m g h = 0.8 × 10 × 20 = 160 J. (b) By conservation of energy, all the GPE becomes KE, so ½ m v² = 160 J. Then v² = 2 × 160 ÷ 0.8 = 400, so v = square root of 400 = 20 m/s. (Equivalently v = square root of (2 g h) = square root of (2 × 10 × 20) = square root of 400 = 20 m/s.)",
+        markScheme: [
+          "GPE = m g h = 0.8 × 10 × 20",
+          "= 160 J",
+          "GPE lost = KE gained | ½ m v² = 160 (or v = square root of (2 g h))",
+          "v² = 400 | rearranged correctly",
+          "v = 20 m/s (unit required)",
+        ],
+        commonError: "Trying to use the mass to change the landing speed. With no air resistance the mass cancels: v = square root of (2 g h) is independent of mass.",
+        guideRef: "Conservation in falling and rollercoasters (GPE to KE)",
+        difficulty: "core",
+        hints: ["GPE lost = m g h.", "Set GPE lost equal to ½ m v².", "Rearrange for v, or use v = square root of (2 g h)."],
+        solutions: [
+          {
+            label: "Method 1: energy conservation (GPE = KE)",
+            steps: [
+              "GPE lost = m g h = 0.8 × 10 × 20 = 160 J.",
+              "All GPE becomes KE: ½ m v² = 160.",
+              "½ × 0.8 × v² = 160, so 0.4 v² = 160, so v² = 400.",
+              "v = square root of 400 = 20 m/s.",
+            ],
+          },
+          {
+            label: "Method 2: shortcut v = square root of (2 g h)",
+            steps: [
+              "Mass cancels in m g h = ½ m v², leaving v = square root of (2 g h).",
+              "v = square root of (2 × 10 × 20).",
+              "v = square root of 400 = 20 m/s — same answer, mass not needed.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "wep-qa-q07",
+        question: "An electric winch does 4800 J of useful work lifting a load in 12 s. Calculate its useful power output, and state the unit. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "Power = work done ÷ time = W/t = 4800 ÷ 12 = 400 W (watts).",
+        markScheme: [
+          "P = W/t | P = E/t used",
+          "= 4800 ÷ 12",
+          "= 400 W (unit watts required)",
+        ],
+        commonError: "Multiplying energy by time instead of dividing, or giving the unit as joules instead of watts.",
+        guideRef: "Power: P = W/t = E/t",
+        difficulty: "core",
+        hints: ["Power is energy per unit time.", "Use P = W/t.", "4800 ÷ 12; the unit is watts."],
+        solutions: [
+          {
+            label: "Method: P = W/t",
+            steps: [
+              "Write the equation: P = W/t.",
+              "Substitute: P = 4800 ÷ 12.",
+              "Calculate: P = 400 W.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "wep-qa-q08",
+        question: "A lamp is supplied with 60 J of electrical energy each second. Of this, 9 J is transferred to light and the rest to thermal energy. (a) Calculate the efficiency of the lamp. (b) Draw or describe the Sankey diagram for this lamp. (5 marks)",
+        marks: 5,
+        modelAnswer:
+          "(a) Efficiency = useful output ÷ total input = 9 ÷ 60 = 0.15 = 15%. (b) The Sankey diagram has one wide input arrow of 60 J (electrical) entering from the left. It splits into a narrow useful output arrow of 9 J going straight on (light), and a much wider arrow of 51 J bending away downward (wasted thermal energy). The arrow widths are in proportion 9 : 51, so the wasted arrow is far wider than the useful one.",
+        markScheme: [
+          "Efficiency = useful ÷ total | 9 ÷ 60",
+          "= 0.15 | 15%",
+          "Input arrow 60 J electrical (widest)",
+          "Useful output 9 J light (narrow, straight on)",
+          "Wasted 51 J thermal (wider, bends away); widths proportional to energy",
+        ],
+        commonError: "Forgetting that the wasted energy is 60 − 9 = 51 J, or drawing the arrows without keeping their widths proportional to the energy.",
+        guideRef: "Efficiency and Sankey diagrams",
+        difficulty: "core",
+        hints: ["Efficiency = useful ÷ total input.", "Wasted energy = 60 − 9 = 51 J.", "In a Sankey, arrow width is proportional to energy."],
+        solutions: [
+          {
+            label: "Method: efficiency and energy balance",
+            steps: [
+              "Useful output = 9 J; total input = 60 J.",
+              "Efficiency = 9 ÷ 60 = 0.15 = 15%.",
+              "Wasted = total − useful = 60 − 9 = 51 J (thermal).",
+              "Sankey: 60 J in splits to 9 J light (narrow) and 51 J heat (wide), widths in proportion.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "wep-qa-q09",
+        question: "Explain, in terms of energy stores, why a rollercoaster car (with its motor switched off after the first climb) moves fastest at the bottom of the track and slowest at the top of each hill. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "At the top of a hill the car is highest, so it has maximum gravitational potential energy and minimum kinetic energy, which is why it moves slowest there. As it descends, GPE is transferred to kinetic energy, so the car speeds up; at the bottom it is lowest, so GPE is least and KE is greatest, making it move fastest. The total energy stays the same (conserved), apart from a small amount dissipated as heat by friction and air resistance.",
+        markScheme: [
+          "Top = maximum GPE (highest) and minimum KE so slowest",
+          "Going down, GPE is transferred to KE",
+          "Bottom = minimum GPE and maximum KE so fastest",
+          "Total energy conserved | some dissipated as heat by friction/air resistance",
+        ],
+        commonError: "Saying the car 'gains energy' going down. The total energy is conserved; it is just converting GPE into KE.",
+        guideRef: "Conservation in falling and rollercoasters (GPE to KE)",
+        difficulty: "core",
+        hints: ["Where is GPE greatest?", "What does GPE turn into as the car drops?", "Link the bottom to maximum KE and maximum speed."],
+      },
+      {
+        id: "wep-qa-q10",
+        question: "Suggest three different ways a designer could reduce the energy wasted by a machine, and for each one explain how it reduces waste. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "Lubricate the moving parts with oil to reduce friction, so less kinetic energy is transferred to thermal energy. Add insulation around hot parts to reduce energy lost by heating to the surroundings. Streamline the moving parts to reduce air resistance, so less energy is wasted overcoming drag. (Replacing filament bulbs with LEDs would also waste less energy as heat.)",
+        markScheme: [
+          "Lubrication reduces friction so less heat wasted",
+          "Insulation reduces heat loss to the surroundings",
+          "Streamlining reduces air resistance/drag | use LEDs instead of filament bulbs",
+        ],
+        commonError: "Naming a method (e.g. 'add oil') without explaining the energy benefit (it reduces friction, so less energy becomes heat).",
+        guideRef: "Efficiency and Sankey diagrams",
+        difficulty: "core",
+        hints: ["Think about what causes most waste in machines.", "What reduces friction between surfaces?", "What reduces heat loss and what reduces air resistance?"],
+      },
+      {
+        id: "wep-qa-q11",
+        question: "A 60 kg athlete runs up a flight of stairs of total vertical height 5 m in 4 s. Take g = 10 N/kg. (a) Calculate the work done against gravity. (b) Calculate the useful power developed. (5 marks)",
+        marks: 5,
+        modelAnswer:
+          "(a) Work done against gravity = GPE gained = m g h = 60 × 10 × 5 = 3000 J. (b) Power = work ÷ time = 3000 ÷ 4 = 750 W.",
+        markScheme: [
+          "Work = m g h | GPE = m g h",
+          "= 60 × 10 × 5 = 3000 J",
+          "P = W/t used",
+          "= 3000 ÷ 4",
+          "= 750 W (unit required)",
+        ],
+        commonError: "Using the slope distance instead of the vertical height for h, or forgetting to divide by time for power.",
+        guideRef: "Power: P = W/t = E/t",
+        difficulty: "challenge",
+        hints: ["Work against gravity = m g h, using the vertical height.", "60 × 10 × 5 = 3000 J.", "Then P = W/t = 3000 ÷ 4."],
+        solutions: [
+          {
+            label: "Method: GPE then power",
+            steps: [
+              "Work done against gravity = GPE = m g h = 60 × 10 × 5 = 3000 J.",
+              "Power = work ÷ time = 3000 ÷ 4.",
+              "Power = 750 W.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "wep-qa-q12",
+        question: "A toy car of mass 0.4 kg is released from the top of a ramp 0.5 m high. It reaches the bottom moving at 2 m/s. Take g = 10 N/kg. (a) Calculate the GPE lost and the KE gained. (b) Explain why the KE is less than the GPE lost. (6 marks)",
+        marks: 6,
+        modelAnswer:
+          "(a) GPE lost = m g h = 0.4 × 10 × 0.5 = 2 J. KE at the bottom = ½ m v² = ½ × 0.4 × 2² = ½ × 0.4 × 4 = 0.8 J. (b) The kinetic energy (0.8 J) is less than the GPE lost (2 J) because energy is dissipated by friction (between the car and ramp) and air resistance as the car moves down. This 'missing' 1.2 J has been transferred to thermal energy in the surfaces and air, so it does not appear as kinetic energy — energy is still conserved overall.",
+        markScheme: [
+          "GPE = m g h = 0.4 × 10 × 0.5 = 2 J",
+          "KE = ½ m v² with v² = 4",
+          "KE = ½ × 0.4 × 4 = 0.8 J",
+          "KE < GPE lost because energy is dissipated",
+          "By friction and/or air resistance",
+          "Transferred to thermal energy; total energy still conserved",
+        ],
+        commonError: "Claiming energy has been 'lost' or destroyed. The missing energy is dissipated as thermal energy by friction and air resistance; the total is conserved.",
+        guideRef: "Conservation in falling and rollercoasters (GPE to KE)",
+        difficulty: "challenge",
+        hints: ["GPE lost = m g h.", "KE = ½ m v²; square the 2 first.", "Compare the two values — where did the difference go?"],
+        solutions: [
+          {
+            label: "Method: compute both energies, then account for the difference",
+            steps: [
+              "GPE lost = m g h = 0.4 × 10 × 0.5 = 2 J.",
+              "KE gained = ½ m v² = ½ × 0.4 × 2² = 0.8 J.",
+              "Difference = 2 − 0.8 = 1.2 J.",
+              "The 1.2 J is dissipated as thermal energy by friction and air resistance; energy is conserved.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "wep-qa-q13",
+        question: "A pump is supplied with 2000 J of electrical energy and usefully lifts water, gaining 1400 J of GPE. (a) Calculate the efficiency. (b) The pump runs for 10 s. Calculate the useful power output and the input power. (6 marks)",
+        marks: 6,
+        modelAnswer:
+          "(a) Efficiency = useful output ÷ total input = 1400 ÷ 2000 = 0.7 = 70%. (b) Useful power output = useful energy ÷ time = 1400 ÷ 10 = 140 W. Input power = total energy ÷ time = 2000 ÷ 10 = 200 W. (Check: 140 ÷ 200 = 0.7 = 70%, the same efficiency.)",
+        markScheme: [
+          "Efficiency = useful ÷ total = 1400 ÷ 2000",
+          "= 0.7 | 70%",
+          "Useful power = 1400 ÷ 10 = 140 W",
+          "Input power = 2000 ÷ 10 = 200 W",
+          "Both powers have unit watts (W)",
+          "Efficiency from powers (140/200) gives the same 70% (consistency)",
+        ],
+        commonError: "Mixing up which energy is 'useful' (the GPE, 1400 J) and which is the 'total input' (2000 J) when forming the efficiency ratio.",
+        guideRef: "Efficiency and Sankey diagrams",
+        difficulty: "challenge",
+        hints: ["Efficiency = useful output ÷ total input.", "Useful = 1400 J, total = 2000 J.", "For power, divide each energy by 10 s."],
+        solutions: [
+          {
+            label: "Method 1: efficiency from energy",
+            steps: [
+              "Efficiency = useful ÷ total = 1400 ÷ 2000 = 0.7 = 70%.",
+              "Useful power = 1400 ÷ 10 = 140 W.",
+              "Input power = 2000 ÷ 10 = 200 W.",
+            ],
+          },
+          {
+            label: "Method 2: efficiency from power (check)",
+            steps: [
+              "Useful power output = 140 W; input power = 200 W.",
+              "Efficiency = useful power ÷ input power = 140 ÷ 200.",
+              "= 0.7 = 70% — agrees with the energy method.",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  // questionBank omitted — auto-assembled from the quiz pools by lib/content.ts.
+};

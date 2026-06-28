@@ -1,0 +1,778 @@
+import type { Topic } from "../types";
+
+// Topic 8 — Solids, Liquids and Gases (Edexcel IGCSE Physics 4PH1).
+// Covers density, the particle model, changes of state and internal energy,
+// specific heat capacity, pressure (p = F/A and p = hρg), the gas laws
+// (pressure law and Boyle's law), the Kelvin scale, and Brownian motion.
+
+export const slg: Topic = {
+  id: "slg",
+  code: "SLG",
+  number: 8,
+  title: "Solids, Liquids and Gases",
+  subject: "Physics",
+  icon: "💧",
+  color: "#3b82f6",
+  intro:
+    "Everything around you is made of tiny particles, and how those particles are arranged and how they move decides whether you see a solid, a liquid or a gas. In this topic you'll measure density, explain pressure in liquids and gases, work with specific heat capacity, and use the gas laws (Boyle's law and the pressure law) — always remembering to switch temperatures into kelvin.",
+  guide: [
+    {
+      heading: "Density",
+      discovery: {
+        problem:
+          "A small steel bolt sinks in water, but a huge steel ship floats. Both are made of the same metal — so what really decides whether something sinks, and how do we compare 'how heavy' two materials are fairly?",
+        idea:
+          "We can't compare materials by mass alone, because a big lump of a light material can outweigh a small lump of a heavy one. Instead we compare the mass packed into a fixed volume — this is **density**. Steel is denser than water, but a ship encloses a large volume of air, lowering its average density below water's.",
+      },
+      body:
+        "**Density** is the mass per unit volume of a material. It tells you how tightly the matter is packed.\n\nThe equation is:\n\n`ρ = m / V`\n\nwhere ρ (rho) is density, m is mass and V is volume.\n\n- If mass is in **kilograms (kg)** and volume in **cubic metres (m³)**, density is in **kg/m³**.\n- If mass is in **grams (g)** and volume in **cubic centimetres (cm³)**, density is in **g/cm³**.\n\nUseful conversion: **1 g/cm³ = 1000 kg/m³**. Water has a density of about **1000 kg/m³** (1 g/cm³). Anything less dense than the surrounding fluid floats; anything denser sinks.",
+      formulae: ["density: ρ = m / V", "rearranged: m = ρV  and  V = m / ρ", "1 g/cm³ = 1000 kg/m³"],
+      keyPoints: [
+        "Density = mass ÷ volume (ρ = m/V).",
+        "Units: kg/m³ or g/cm³ (1 g/cm³ = 1000 kg/m³).",
+        "Water ≈ 1000 kg/m³; less dense floats, more dense sinks.",
+      ],
+      whyItWorks:
+        "Dividing by volume removes the unfair advantage of simply being bigger, so density is a property of the material itself rather than of the particular lump you happen to have.",
+      strategies: ["Check units before substituting", "Rearrange the formula before putting numbers in"],
+    },
+    {
+      heading: "Measuring density",
+      body:
+        "To find a density you always need a **mass** (from a balance) and a **volume**.\n\n**Regular solid** (e.g. a cuboid): measure the sides with a ruler and calculate the volume (length × width × height). Find the mass on a balance, then ρ = m/V.\n\n**Irregular solid** (e.g. a stone): find the mass on a balance, then measure the volume by **displacement** — lower it into a measuring cylinder (or eureka can) of water and read the rise in water level. The volume of water displaced equals the volume of the solid.\n\n**Liquid**: place an empty measuring cylinder on a balance and record its mass. Pour in a known volume of the liquid and record the new mass. The mass of liquid is the difference, and the volume is read from the cylinder.",
+      diagrams: [
+        {
+          caption: "Finding the volume of an irregular solid by displacement.",
+          svg:
+            '<svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A measuring cylinder of water with a stone lowered in, showing the water level rising">\n<rect x="40" y="20" width="50" height="110" rx="4" fill="#eff6ff" stroke="#475569"/>\n<rect x="40" y="70" width="50" height="60" fill="#bfdbfe" stroke="#475569"/>\n<text x="100" y="78" font-size="10" fill="#1d4ed8">start level</text>\n<line x1="40" y1="70" x2="150" y2="70" stroke="#1d4ed8" stroke-dasharray="3 2"/>\n<rect x="150" y="20" width="50" height="110" rx="4" fill="#eff6ff" stroke="#475569"/>\n<rect x="150" y="55" width="50" height="75" fill="#bfdbfe" stroke="#475569"/>\n<polygon points="165,95 185,95 180,118 170,118" fill="#64748b" stroke="#334155"/>\n<line x1="150" y1="55" x2="210" y2="55" stroke="#1d4ed8" stroke-dasharray="3 2"/>\n<text x="205" y="52" font-size="10" fill="#1d4ed8" text-anchor="start">new</text>\n<text x="175" y="14" font-size="10" text-anchor="middle" fill="#334155">rise = volume of stone</text>\n</svg>',
+        },
+      ],
+      formulae: ["regular solid: V = length × width × height", "displacement: V(solid) = rise in water level", "liquid: mass = (cylinder + liquid) − (empty cylinder)"],
+      keyPoints: [
+        "Always need a mass (balance) and a volume.",
+        "Regular solid: measure sides and calculate V = l × w × h.",
+        "Irregular solid: use water displacement for V.",
+        "Liquid: weigh the cylinder empty, then with the liquid in it.",
+      ],
+      strategies: ["Pick the volume method that suits the shape"],
+    },
+    {
+      heading: "The particle model of solids, liquids and gases",
+      discovery: {
+        problem:
+          "Ice, water and steam are all the same substance (H₂O), yet ice holds its shape, water flows and fills the bottom of a glass, and steam spreads out to fill a whole room. Same particles — so what is different?",
+        idea:
+          "The particles are identical; what changes is their **arrangement, spacing, movement and energy**. Heating gives particles more energy, loosening and eventually breaking the bonds between them, which changes the state.",
+      },
+      body:
+        "Matter exists in three states, explained by the **kinetic (particle) model**:\n\n**Solid** — particles are packed closely in a regular, fixed arrangement. They have the least energy and only **vibrate about fixed positions**. A solid has a fixed shape and fixed volume.\n\n**Liquid** — particles are still close together but arranged randomly. They have more energy and can **move/slide past one another**. A liquid has a fixed volume but takes the shape of its container.\n\n**Gas** — particles are far apart and arranged randomly. They have the most energy and **move quickly in all directions**, filling whatever container they are in. A gas has no fixed shape or volume and is easily compressed.\n\nFrom solid to gas: spacing increases, randomness increases, freedom of movement increases, and energy increases.",
+      diagrams: [
+        {
+          caption: "Particle arrangement in the three states of matter.",
+          svg:
+            '<svg viewBox="0 0 330 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three boxes showing particles packed regularly in a solid, close but random in a liquid, and far apart in a gas">\n<rect x="10" y="20" width="90" height="90" fill="#f8fafc" stroke="#475569"/>\n<text x="55" y="14" font-size="11" text-anchor="middle" fill="#334155">Solid</text>\n<g fill="#3b82f6"><circle cx="28" cy="38" r="7"/><circle cx="46" cy="38" r="7"/><circle cx="64" cy="38" r="7"/><circle cx="82" cy="38" r="7"/><circle cx="28" cy="56" r="7"/><circle cx="46" cy="56" r="7"/><circle cx="64" cy="56" r="7"/><circle cx="82" cy="56" r="7"/><circle cx="28" cy="74" r="7"/><circle cx="46" cy="74" r="7"/><circle cx="64" cy="74" r="7"/><circle cx="82" cy="74" r="7"/><circle cx="28" cy="92" r="7"/><circle cx="46" cy="92" r="7"/><circle cx="64" cy="92" r="7"/><circle cx="82" cy="92" r="7"/></g>\n<rect x="120" y="20" width="90" height="90" fill="#f8fafc" stroke="#475569"/>\n<text x="165" y="14" font-size="11" text-anchor="middle" fill="#334155">Liquid</text>\n<g fill="#3b82f6"><circle cx="138" cy="42" r="7"/><circle cx="158" cy="38" r="7"/><circle cx="180" cy="46" r="7"/><circle cx="198" cy="40" r="7"/><circle cx="146" cy="62" r="7"/><circle cx="170" cy="60" r="7"/><circle cx="192" cy="66" r="7"/><circle cx="136" cy="84" r="7"/><circle cx="160" cy="86" r="7"/><circle cx="184" cy="88" r="7"/><circle cx="200" cy="82" r="7"/></g>\n<rect x="230" y="20" width="90" height="90" fill="#f8fafc" stroke="#475569"/>\n<text x="275" y="14" font-size="11" text-anchor="middle" fill="#334155">Gas</text>\n<g fill="#3b82f6"><circle cx="246" cy="38" r="7"/><circle cx="300" cy="46" r="7"/><circle cx="270" cy="70" r="7"/><circle cx="248" cy="96" r="7"/><circle cx="304" cy="92" r="7"/><circle cx="288" cy="34" r="7"/></g>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "Solid: regular, fixed, close packing; particles vibrate; fixed shape and volume.",
+        "Liquid: close but random; particles slide past each other; fixed volume, no fixed shape.",
+        "Gas: far apart and random; fast motion in all directions; no fixed shape or volume.",
+        "From solid → gas: spacing, randomness, freedom and energy all increase.",
+      ],
+      whyItWorks:
+        "Forces (bonds) between particles hold them in place. Adding energy makes particles move faster and overcome these forces, loosening the arrangement from rigid (solid) to free (gas).",
+      strategies: ["Compare the three states side by side", "Describe arrangement, spacing, movement and energy each time"],
+    },
+    {
+      heading: "Changes of state and internal energy",
+      body:
+        "When a substance changes state, particles are rearranged but **no particles are created or destroyed**, so the mass stays the same. Changes of state are **physical (reversible)** changes.\n\nThe changes are:\n\n- **Melting**: solid → liquid (at the melting point).\n- **Freezing/solidifying**: liquid → solid.\n- **Boiling/evaporating**: liquid → gas.\n- **Condensing**: gas → liquid.\n\nThe energy stored inside a substance is its **internal energy** — the total kinetic energy and potential energy of its particles. Heating a substance increases its internal energy. This can either:\n\n1. raise the **temperature** (faster-moving particles = more kinetic energy), or\n2. cause a **change of state** at constant temperature (energy goes into breaking bonds = more potential energy).\n\n**Evaporation** happens from the *surface* of a liquid at any temperature, when the fastest particles escape. Because the most energetic particles leave, the average energy of those left behind falls, so **evaporation cools** the liquid. **Boiling** happens throughout the liquid at a fixed boiling point.",
+      keyPoints: [
+        "Changes of state are physical and reversible; mass is conserved.",
+        "Internal energy = total kinetic + potential energy of the particles.",
+        "During a change of state the temperature stays constant (energy breaks bonds).",
+        "Evaporation occurs at the surface at any temperature and cools the liquid.",
+      ],
+      whyItWorks:
+        "During melting or boiling, the energy supplied is used to overcome the forces between particles (raising potential energy) rather than to speed them up, so the temperature does not change while the state is changing.",
+      thinkDeeper:
+        "Why does stepping out of a swimming pool feel cold even on a warm day? Water evaporating from your skin takes the most energetic particles away, lowering the average energy left behind and cooling you.",
+      strategies: ["Track where the energy goes: speeding up vs breaking bonds"],
+    },
+    {
+      heading: "Specific heat capacity",
+      discovery: {
+        problem:
+          "On a hot day the sand at the beach is scorching but the sea is still cool, even though the Sun shines equally on both. Why does the same heating warm one so much more than the other?",
+        idea:
+          "Different materials need different amounts of energy to warm up by the same amount. This property is the **specific heat capacity**. Water has a very high value, so it warms up (and cools down) slowly; sand has a low value, so it heats quickly.",
+      },
+      body:
+        "The **specific heat capacity (c)** of a material is the energy needed to raise the temperature of **1 kg** of it by **1 °C** (or 1 K).\n\nThe equation is:\n\n`Q = m c ΔT`\n\nwhere Q is the thermal energy transferred in **joules (J)**, m is the mass in **kg**, c is the specific heat capacity in **J/(kg °C)**, and ΔT is the temperature change in **°C** (a temperature *change* is the same number in °C or K).\n\nWater's specific heat capacity is about **4200 J/(kg °C)** — very high, which is why it is used in heating systems and why coastal climates are mild.",
+      formulae: ["specific heat capacity: Q = m c ΔT", "rearranged: c = Q / (m ΔT)  and  ΔT = Q / (m c)", "ΔT is the same in °C and K"],
+      keyPoints: [
+        "c = energy to raise 1 kg of a substance by 1 °C, in J/(kg °C).",
+        "Use Q = m c ΔT with Q in J, m in kg, ΔT in °C.",
+        "A high c means the material heats up and cools down slowly.",
+        "Water has a high c (≈ 4200 J/(kg °C)).",
+      ],
+      whyItWorks:
+        "ΔT counts a difference in temperature, and one kelvin and one degree Celsius are the same size, so a temperature change has the same number whether you call it °C or K.",
+      strategies: ["List Q, m, c and ΔT before choosing the rearrangement", "Keep mass in kg"],
+    },
+    {
+      heading: "Pressure, and pressure in a liquid",
+      discovery: {
+        problem:
+          "A sharp drawing pin pushes into a board easily, but pressing the blunt end into your thumb with the same force just hurts. The force is identical — so why does only the sharp point pierce?",
+        idea:
+          "Pressure depends on how the force is spread out. The same force over a **tiny area** (the point) gives a huge pressure; over a **large area** (your thumb) the pressure is small. Pressure = force ÷ area.",
+      },
+      body:
+        "**Pressure** is the force acting per unit area, at right angles to a surface:\n\n`p = F / A`\n\nwhere p is pressure in **pascals (Pa)**, F is force in **newtons (N)** and A is area in **square metres (m²)**. One pascal is one newton per square metre (1 Pa = 1 N/m²).\n\n**Pressure in a liquid** increases with **depth**, because deeper down there is more liquid weighing down from above. It also depends on the liquid's density. The pressure due to a column of liquid is:\n\n`p = h ρ g`\n\nwhere h is the depth in **metres (m)**, ρ is the liquid density in **kg/m³**, and g is the gravitational field strength (about **10 N/kg** on Earth). The pressure at a point in a liquid acts **equally in all directions** and does not depend on the shape of the container.",
+      diagrams: [
+        {
+          caption: "Pressure in a liquid increases with depth — deeper holes squirt water further.",
+          svg:
+            '<svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A tall container of water with three holes; the lowest hole squirts water the furthest, showing pressure increases with depth">\n<rect x="20" y="20" width="60" height="120" fill="#bfdbfe" stroke="#475569"/>\n<path d="M80 45 q40 5 55 25" stroke="#1d4ed8" stroke-width="2.5" fill="none"/>\n<path d="M80 80 q55 8 80 35" stroke="#1d4ed8" stroke-width="2.5" fill="none"/>\n<path d="M80 115 q75 10 110 45" stroke="#1d4ed8" stroke-width="2.5" fill="none"/>\n<circle cx="80" cy="45" r="3" fill="#1e293b"/>\n<circle cx="80" cy="80" r="3" fill="#1e293b"/>\n<circle cx="80" cy="115" r="3" fill="#1e293b"/>\n<text x="120" y="14" font-size="10" text-anchor="middle" fill="#334155">deeper = higher pressure</text>\n</svg>',
+        },
+      ],
+      formulae: ["pressure: p = F / A  (Pa = N/m²)", "pressure in a liquid: p = h ρ g", "g ≈ 10 N/kg on Earth"],
+      keyPoints: [
+        "Pressure p = F/A, measured in pascals (Pa = N/m²).",
+        "Same force on a smaller area gives more pressure.",
+        "Liquid pressure increases with depth (p = hρg) and with density.",
+        "Liquid pressure acts equally in all directions.",
+      ],
+      whyItWorks:
+        "Deeper down, a greater height of liquid sits above you. That extra weight pressing on each square metre raises the pressure, so p grows in proportion to depth h.",
+      strategies: ["Spot which pressure formula fits (solid contact = F/A, depth in liquid = hρg)", "Convert areas to m² and depths to m"],
+    },
+    {
+      heading: "Gas pressure, the Kelvin scale and the gas laws",
+      discovery: {
+        problem:
+          "A sealed packet of crisps bought at sea level puffs up and feels tight at the top of a mountain, and a car tyre reads a higher pressure after a long fast drive. The gas inside hasn't leaked — so what makes the pressure change?",
+        idea:
+          "Gas pressure comes from countless particles colliding with the container walls. Squeezing the gas into less space (more frequent collisions) or heating it (faster, harder collisions) both raise the pressure. Two neat laws describe this.",
+      },
+      body:
+        "Gas particles move quickly in all directions and constantly **collide with the walls** of their container. Each collision exerts a tiny force; together these collisions produce the **gas pressure**.\n\n**Absolute zero and the Kelvin scale.** The lowest possible temperature is **absolute zero**, where particles have the minimum possible energy. This is **0 K = −273 °C**. To convert: **T(K) = θ(°C) + 273**. Gas-law calculations must always use **kelvin**.\n\n**Pressure law (constant volume).** At constant volume, the pressure of a fixed mass of gas is directly proportional to its **absolute (kelvin) temperature**: heating it makes particles collide more often and harder, so pressure rises. `p / T = constant`, giving:\n\n`p₁ / T₁ = p₂ / T₂`\n\n**Boyle's law (constant temperature).** At constant temperature, the pressure of a fixed mass of gas is inversely proportional to its volume: squeeze it into half the volume and the pressure doubles. `pV = constant`, giving:\n\n`p₁ V₁ = p₂ V₂`",
+      diagrams: [
+        {
+          caption: "Boyle's law: at constant temperature, pressure rises as volume falls (p ∝ 1/V).",
+          svg:
+            '<svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A pressure against volume graph that is a downward curve showing inverse proportion">\n<line x1="30" y1="20" x2="30" y2="125" stroke="#334155" stroke-width="1.5"/>\n<line x1="30" y1="125" x2="200" y2="125" stroke="#334155" stroke-width="1.5"/>\n<path d="M45 30 C70 95 110 115 195 120" stroke="#3b82f6" stroke-width="2.5" fill="none"/>\n<text x="14" y="75" font-size="10" fill="#334155" transform="rotate(-90 14 75)">pressure p</text>\n<text x="115" y="142" font-size="10" text-anchor="middle" fill="#334155">volume V</text>\n</svg>',
+        },
+        {
+          caption: "Pressure law: at constant volume, pressure is proportional to temperature in kelvin (line through 0 K).",
+          svg:
+            '<svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A pressure against absolute temperature graph that is a straight line passing through the origin at zero kelvin">\n<line x1="30" y1="20" x2="30" y2="125" stroke="#334155" stroke-width="1.5"/>\n<line x1="30" y1="125" x2="200" y2="125" stroke="#334155" stroke-width="1.5"/>\n<line x1="30" y1="125" x2="190" y2="35" stroke="#3b82f6" stroke-width="2.5"/>\n<text x="14" y="75" font-size="10" fill="#334155" transform="rotate(-90 14 75)">pressure p</text>\n<text x="115" y="142" font-size="10" text-anchor="middle" fill="#334155">temperature / K</text>\n<text x="30" y="138" font-size="9" text-anchor="middle" fill="#334155">0</text>\n</svg>',
+        },
+      ],
+      formulae: ["T(K) = θ(°C) + 273", "absolute zero = 0 K = −273 °C", "pressure law (constant V): p₁/T₁ = p₂/T₂", "Boyle's law (constant T): p₁V₁ = p₂V₂"],
+      keyPoints: [
+        "Gas pressure is caused by particles colliding with the container walls.",
+        "Absolute zero = 0 K = −273 °C; convert with T(K) = °C + 273.",
+        "Pressure law (constant V): p₁/T₁ = p₂/T₂ — use kelvin.",
+        "Boyle's law (constant T): p₁V₁ = p₂V₂.",
+      ],
+      whyItWorks:
+        "Heating gives particles more kinetic energy: they hit the walls more often and with greater force, so pressure rises with temperature. Reducing the volume packs the same particles into less space, so they hit the walls more frequently and pressure rises.",
+      strategies: ["Always convert °C to K for gas laws", "Identify what is held constant to pick the right law"],
+    },
+    {
+      heading: "Brownian motion — evidence for particles",
+      body:
+        "**Brownian motion** is the random, jerky movement of tiny visible particles (such as smoke grains or pollen) suspended in a fluid, seen under a microscope.\n\nThe smoke grains are large enough to see but are being constantly bombarded from all sides by the much smaller, fast-moving and invisible **air (fluid) molecules**. At any instant slightly more molecules hit one side than another, giving the visible grain a small push in a random direction. The next instant the imbalance is in a different direction, so the grain jiggles around on a random, zig-zag path.\n\nThis is strong **evidence** that fluids are made of tiny, fast-moving particles in constant random motion — exactly what the kinetic model predicts.",
+      diagrams: [
+        {
+          caption: "A large smoke grain jiggling on a random path as fast air molecules bombard it.",
+          svg:
+            '<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A large particle on a random zig-zag path being hit by small fast molecules from all directions">\n<polyline points="40,40 70,55 55,80 90,75 80,105 120,95 110,120" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 3"/>\n<circle cx="110" cy="120" r="9" fill="#64748b" stroke="#334155"/>\n<g fill="#3b82f6"><circle cx="95" cy="110" r="2.5"/><circle cx="128" cy="118" r="2.5"/><circle cx="112" cy="100" r="2.5"/><circle cx="120" cy="135" r="2.5"/><circle cx="40" cy="40" r="3" fill="#1e293b"/></g>\n<text x="100" y="14" font-size="10" text-anchor="middle" fill="#334155">smoke grain on a random path</text>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "Brownian motion = random jiggling of visible particles in a fluid.",
+        "Caused by uneven bombardment from small, fast, invisible molecules.",
+        "Evidence that fluids are made of tiny particles in constant random motion.",
+      ],
+      whyItWorks:
+        "Because the molecules are tiny and fast, the numbers hitting each side of a grain are never perfectly balanced. The momentary imbalance pushes the grain a little, and since the imbalance keeps changing direction, the path is random.",
+      strategies: ["Distinguish the visible grain from the invisible molecules doing the pushing"],
+    },
+  ],
+  learn: {
+    bigIdea:
+      "All matter is made of particles. Their arrangement, spacing and movement decide the state (solid, liquid, gas); energy changes the state or the temperature; and the same particle picture explains density, pressure in liquids and gases, and the gas laws — provided you work in kelvin.",
+    mustKnow: [
+      "Density ρ = m/V, in kg/m³ or g/cm³ (1 g/cm³ = 1000 kg/m³).",
+      "Particle model: solid (fixed, vibrating), liquid (close, sliding), gas (far apart, fast random motion).",
+      "Internal energy changes either raise temperature or change state (constant temperature while changing state).",
+      "Specific heat capacity: Q = m c ΔT, with Q in J, m in kg, c in J/(kg °C).",
+      "Pressure p = F/A (Pa); pressure in a liquid p = hρg increases with depth.",
+      "Gas pressure is caused by particle collisions with the walls.",
+      "Gas laws use kelvin (T = °C + 273): Boyle's law p₁V₁ = p₂V₂; pressure law p₁/T₁ = p₂/T₂.",
+    ],
+    keywords: [
+      { term: "Density", definition: "Mass per unit volume of a material, ρ = m/V, in kg/m³ or g/cm³." },
+      { term: "Kinetic (particle) model", definition: "The idea that matter is made of tiny particles whose arrangement and motion explain the three states." },
+      { term: "Internal energy", definition: "The total kinetic and potential energy of all the particles in a substance." },
+      { term: "Change of state", definition: "A reversible physical change between solid, liquid and gas (e.g. melting, boiling) in which mass is conserved." },
+      { term: "Evaporation", definition: "Change from liquid to gas at the surface at any temperature; the fastest particles escape, cooling the liquid." },
+      { term: "Specific heat capacity", definition: "Energy needed to raise the temperature of 1 kg of a substance by 1 °C, in J/(kg °C)." },
+      { term: "Pressure", definition: "Force per unit area at right angles to a surface, p = F/A, in pascals (Pa)." },
+      { term: "Absolute zero", definition: "The lowest possible temperature, 0 K = −273 °C, where particles have minimum energy." },
+      { term: "Boyle's law", definition: "At constant temperature, p₁V₁ = p₂V₂ for a fixed mass of gas (p inversely proportional to V)." },
+      { term: "Brownian motion", definition: "Random movement of visible particles in a fluid caused by bombardment from small fast molecules." },
+    ],
+    flashcards: [
+      { front: "State the density equation and a unit.", back: "ρ = m/V; units kg/m³ (or g/cm³, where 1 g/cm³ = 1000 kg/m³)." },
+      { front: "Why does temperature stay constant during melting or boiling?", back: "The energy supplied breaks bonds between particles (raises potential energy) instead of speeding them up." },
+      { front: "How do you convert °C to kelvin?", back: "T(K) = θ(°C) + 273. Always use kelvin in gas-law calculations." },
+      { front: "What causes gas pressure?", back: "Gas particles colliding with the walls of the container; each collision exerts a small force." },
+      { front: "State Boyle's law and the pressure law.", back: "Boyle's law (constant T): p₁V₁ = p₂V₂. Pressure law (constant V): p₁/T₁ = p₂/T₂." },
+      { front: "What does Brownian motion show?", back: "That fluids are made of tiny, fast-moving particles in constant random motion." },
+    ],
+  },
+  quiz: {
+    mcq: [
+      {
+        id: "slg-mcq-q01",
+        question: "The density of a material is defined as its…",
+        options: ["mass × volume", "mass ÷ volume", "volume ÷ mass", "weight ÷ area"],
+        answerIndex: 1,
+        explanation: "Density is mass per unit volume, ρ = m/V.",
+        guideRef: "Density",
+        difficulty: "warmup",
+      },
+      {
+        id: "slg-mcq-q02",
+        question: "Which is a correct unit of density?",
+        options: ["kg/m²", "kg/m³", "N/m²", "J/kg"],
+        answerIndex: 1,
+        explanation: "Density is mass ÷ volume, so kg ÷ m³ = kg/m³ (g/cm³ is also used).",
+        guideRef: "Density",
+        difficulty: "warmup",
+      },
+      {
+        id: "slg-mcq-q03",
+        question: "A block has a mass of 240 g and a volume of 30 cm³. Its density is…",
+        options: ["8 g/cm³", "0.125 g/cm³", "270 g/cm³", "210 g/cm³"],
+        answerIndex: 0,
+        explanation: "ρ = m/V = 240 ÷ 30 = 8 g/cm³.",
+        guideRef: "Density",
+        difficulty: "core",
+        hints: ["Which equation links mass, volume and density?", "Divide mass by volume.", "240 ÷ 30 = ?"],
+        strategy: "Rearrange the formula before putting numbers in",
+      },
+      {
+        id: "slg-mcq-q04",
+        question: "The best way to find the volume of an irregularly shaped stone is to…",
+        options: ["measure its sides with a ruler", "weigh it on a balance", "lower it into water and measure the rise in level", "heat it and measure expansion"],
+        answerIndex: 2,
+        explanation: "Water displacement gives the volume of an irregular solid: the rise in water level equals the stone's volume.",
+        guideRef: "Measuring density",
+        difficulty: "core",
+        hints: ["You can't use length × width × height for an odd shape.", "What does the stone do to the water level?", "Volume of water pushed aside = volume of stone."],
+      },
+      {
+        id: "slg-mcq-q05",
+        question: "In a solid, the particles are…",
+        options: ["far apart and moving fast", "close together in a regular pattern, vibrating", "close together but sliding past each other", "randomly spread and filling the container"],
+        answerIndex: 1,
+        explanation: "Solid particles are closely packed in a regular arrangement and only vibrate about fixed positions.",
+        guideRef: "The particle model of solids, liquids and gases",
+        difficulty: "warmup",
+      },
+      {
+        id: "slg-mcq-q06",
+        question: "Which state of matter has a fixed volume but takes the shape of its container?",
+        options: ["Solid", "Liquid", "Gas", "None of these"],
+        answerIndex: 1,
+        explanation: "A liquid keeps a fixed volume but flows to take the shape of its container.",
+        guideRef: "The particle model of solids, liquids and gases",
+        difficulty: "warmup",
+      },
+      {
+        id: "slg-mcq-q07",
+        question: "The change of state from a gas to a liquid is called…",
+        options: ["melting", "evaporation", "condensation", "sublimation"],
+        answerIndex: 2,
+        explanation: "Gas to liquid is condensation; liquid to gas is evaporation/boiling.",
+        guideRef: "Changes of state and internal energy",
+        difficulty: "warmup",
+      },
+      {
+        id: "slg-mcq-q08",
+        question: "While a pure substance is melting, its temperature…",
+        options: ["rises steadily", "stays constant", "falls steadily", "rises then falls"],
+        answerIndex: 1,
+        explanation: "During a change of state the energy supplied breaks bonds rather than raising temperature, so the temperature stays constant.",
+        guideRef: "Changes of state and internal energy",
+        difficulty: "core",
+        hints: ["Where does the energy go during melting?", "Is it speeding particles up or breaking bonds?", "If it breaks bonds, the temperature does not change."],
+      },
+      {
+        id: "slg-mcq-q09",
+        question: "Evaporation cools a liquid because…",
+        options: [
+          "cold particles are added to the surface",
+          "the most energetic particles escape, lowering the average energy left behind",
+          "the liquid absorbs energy from the gas",
+          "the slowest particles escape first",
+        ],
+        answerIndex: 1,
+        explanation: "The fastest, most energetic particles escape at the surface, so the average energy (and temperature) of the remaining liquid falls.",
+        guideRef: "Changes of state and internal energy",
+        difficulty: "challenge",
+        hints: ["Which particles can escape from the surface?", "If the fastest leave, what happens to the average energy left?", "Lower average energy means lower temperature."],
+        strategy: "Think about which particles leave",
+      },
+      {
+        id: "slg-mcq-q10",
+        question: "The specific heat capacity of a substance is the energy needed to raise the temperature of…",
+        options: ["1 cm³ by 1 °C", "1 kg by 1 °C", "any mass by 100 °C", "1 mole by 1 K"],
+        answerIndex: 1,
+        explanation: "Specific heat capacity is the energy to raise 1 kg of a material by 1 °C, in J/(kg °C).",
+        guideRef: "Specific heat capacity",
+        difficulty: "warmup",
+      },
+      {
+        id: "slg-mcq-q11",
+        question: "Which equation gives the energy needed to heat a substance (no change of state)?",
+        options: ["Q = m c ΔT", "p = F/A", "ρ = m/V", "p = hρg"],
+        answerIndex: 0,
+        explanation: "Q = m c ΔT links thermal energy, mass, specific heat capacity and temperature change.",
+        guideRef: "Specific heat capacity",
+        difficulty: "warmup",
+      },
+      {
+        id: "slg-mcq-q12",
+        question: "How much energy is needed to raise the temperature of 2 kg of water (c = 4200 J/(kg °C)) by 10 °C?",
+        options: ["8400 J", "42 000 J", "84 000 J", "420 J"],
+        answerIndex: 2,
+        explanation: "Q = m c ΔT = 2 × 4200 × 10 = 84 000 J.",
+        guideRef: "Specific heat capacity",
+        difficulty: "core",
+        hints: ["Write down m, c and ΔT.", "Use Q = m c ΔT.", "2 × 4200 × 10 = ?"],
+        strategy: "List Q, m, c and ΔT first",
+      },
+      {
+        id: "slg-mcq-q13",
+        question: "A coastal town has milder weather than an inland town partly because water has a…",
+        options: ["low specific heat capacity, so it cools quickly", "high specific heat capacity, so it warms and cools slowly", "high density", "low boiling point"],
+        answerIndex: 1,
+        explanation: "Water's high specific heat capacity means the sea stores a lot of energy and changes temperature slowly, moderating the climate.",
+        guideRef: "Specific heat capacity",
+        difficulty: "challenge",
+        hints: ["Does the sea heat up quickly or slowly?", "What property describes how much energy a material needs to warm up?", "A high value means slow temperature change."],
+      },
+      {
+        id: "slg-mcq-q14",
+        question: "Pressure is defined as…",
+        options: ["force × area", "force ÷ area", "area ÷ force", "mass ÷ volume"],
+        answerIndex: 1,
+        explanation: "Pressure is force per unit area, p = F/A, measured in pascals.",
+        guideRef: "Pressure, and pressure in a liquid",
+        difficulty: "warmup",
+      },
+      {
+        id: "slg-mcq-q15",
+        question: "A force of 200 N acts on an area of 0.5 m². The pressure is…",
+        options: ["100 Pa", "400 Pa", "0.0025 Pa", "200.5 Pa"],
+        answerIndex: 1,
+        explanation: "p = F/A = 200 ÷ 0.5 = 400 Pa.",
+        guideRef: "Pressure, and pressure in a liquid",
+        difficulty: "core",
+        hints: ["Which equation links force, area and pressure?", "Divide force by area.", "200 ÷ 0.5 = ?"],
+      },
+      {
+        id: "slg-mcq-q16",
+        question: "As you go deeper in a lake, the water pressure…",
+        options: ["decreases", "stays the same", "increases", "becomes zero"],
+        answerIndex: 2,
+        explanation: "Pressure in a liquid increases with depth because there is more liquid weighing down from above (p = hρg).",
+        guideRef: "Pressure, and pressure in a liquid",
+        difficulty: "warmup",
+      },
+      {
+        id: "slg-mcq-q17",
+        question: "The pressure due to a 5 m depth of water (ρ = 1000 kg/m³, g = 10 N/kg) is…",
+        options: ["50 Pa", "5000 Pa", "50 000 Pa", "500 Pa"],
+        answerIndex: 2,
+        explanation: "p = hρg = 5 × 1000 × 10 = 50 000 Pa.",
+        guideRef: "Pressure, and pressure in a liquid",
+        difficulty: "core",
+        hints: ["Use p = hρg.", "Multiply depth × density × g.", "5 × 1000 × 10 = ?"],
+        strategy: "Pick the right pressure formula",
+      },
+      {
+        id: "slg-mcq-q18",
+        question: "Gas pressure on the walls of a container is caused by…",
+        options: ["the weight of the gas", "particles colliding with the walls", "the walls attracting the gas", "the gas dissolving into the walls"],
+        answerIndex: 1,
+        explanation: "Gas particles constantly collide with the walls; each collision exerts a force, producing pressure.",
+        guideRef: "Gas pressure, the Kelvin scale and the gas laws",
+        difficulty: "core",
+        hints: ["What are the particles doing inside the container?", "What happens each time a particle hits a wall?", "Many collisions add up to a force per area."],
+      },
+      {
+        id: "slg-mcq-q19",
+        question: "Absolute zero is equal to…",
+        options: ["0 °C", "−273 °C", "273 °C", "100 K"],
+        answerIndex: 1,
+        explanation: "Absolute zero is 0 K = −273 °C, the lowest possible temperature.",
+        guideRef: "Gas pressure, the Kelvin scale and the gas laws",
+        difficulty: "warmup",
+      },
+      {
+        id: "slg-mcq-q20",
+        question: "A temperature of 27 °C is equal to…",
+        options: ["246 K", "300 K", "27 K", "−246 K"],
+        answerIndex: 1,
+        explanation: "T(K) = °C + 273 = 27 + 273 = 300 K.",
+        guideRef: "Gas pressure, the Kelvin scale and the gas laws",
+        difficulty: "core",
+        hints: ["How do you convert °C to kelvin?", "Add 273.", "27 + 273 = ?"],
+      },
+      {
+        id: "slg-mcq-q21",
+        question: "Boyle's law for a fixed mass of gas at constant temperature is…",
+        options: ["p₁/T₁ = p₂/T₂", "p₁V₁ = p₂V₂", "Q = m c ΔT", "p = hρg"],
+        answerIndex: 1,
+        explanation: "At constant temperature, p₁V₁ = p₂V₂ (pressure is inversely proportional to volume).",
+        guideRef: "Gas pressure, the Kelvin scale and the gas laws",
+        difficulty: "warmup",
+      },
+      {
+        id: "slg-mcq-q22",
+        question: "A gas at 100 kPa occupying 2.0 m³ is compressed at constant temperature to 0.5 m³. The new pressure is…",
+        options: ["25 kPa", "200 kPa", "400 kPa", "50 kPa"],
+        answerIndex: 2,
+        explanation: "p₁V₁ = p₂V₂ → p₂ = (100 × 2.0) ÷ 0.5 = 400 kPa.",
+        guideRef: "Gas pressure, the Kelvin scale and the gas laws",
+        difficulty: "core",
+        hints: ["Temperature is constant, so use Boyle's law.", "p₁V₁ = p₂V₂, so p₂ = p₁V₁ ÷ V₂.", "(100 × 2.0) ÷ 0.5 = ?"],
+        strategy: "Identify what is held constant",
+      },
+      {
+        id: "slg-mcq-q23",
+        question: "A sealed rigid container of gas is heated from 300 K to 600 K. The pressure (constant volume) will…",
+        options: ["halve", "stay the same", "double", "fall to zero"],
+        answerIndex: 2,
+        explanation: "At constant volume p ∝ T (in kelvin). Doubling the kelvin temperature (300 → 600 K) doubles the pressure.",
+        guideRef: "Gas pressure, the Kelvin scale and the gas laws",
+        difficulty: "challenge",
+        hints: ["Volume is fixed, so use the pressure law p₁/T₁ = p₂/T₂.", "Is the temperature already in kelvin?", "600 K is twice 300 K, so the pressure does what?"],
+        strategy: "Always use kelvin for gas laws",
+      },
+      {
+        id: "slg-mcq-q24",
+        question: "A gas at 27 °C is heated to 327 °C at constant volume. By what factor does the pressure change?",
+        options: ["×12.1", "×2", "×1.5", "×327/27"],
+        answerIndex: 1,
+        explanation: "Convert: 27 °C = 300 K, 327 °C = 600 K. p ∝ T(K), so pressure doubles (600/300 = 2). Using °C directly would be wrong.",
+        guideRef: "Gas pressure, the Kelvin scale and the gas laws",
+        difficulty: "challenge",
+        hints: ["First convert both temperatures to kelvin.", "27 → 300 K and 327 → 600 K.", "Pressure ratio = T₂/T₁ in kelvin = 600/300."],
+        strategy: "Convert °C to K before taking the ratio",
+      },
+      {
+        id: "slg-mcq-q25",
+        question: "Brownian motion of smoke grains observed under a microscope is evidence that…",
+        options: [
+          "smoke is made of large heavy particles",
+          "air is made of tiny fast-moving particles in random motion",
+          "light pushes the grains around",
+          "the grains are electrically charged",
+        ],
+        answerIndex: 1,
+        explanation: "The random jiggling is caused by smaller, fast, invisible air molecules bombarding the grains — evidence for the particle model.",
+        guideRef: "Brownian motion — evidence for particles",
+        difficulty: "core",
+        hints: ["What is hitting the visible smoke grains?", "Are those molecules visible or invisible?", "Their random bombardment is evidence for what model?"],
+      },
+      {
+        id: "slg-mcq-q26",
+        question: "An object floats on water (ρ_water = 1000 kg/m³). Its average density must be…",
+        options: ["greater than 1000 kg/m³", "less than 1000 kg/m³", "exactly 1000 kg/m³ only", "zero"],
+        answerIndex: 1,
+        explanation: "An object floats when its average density is less than that of the fluid, so less than 1000 kg/m³ for water.",
+        guideRef: "Density",
+        difficulty: "challenge",
+        hints: ["What decides whether something floats or sinks?", "Compare the object's density with the water's.", "Floating means the object is the less dense one."],
+        strategy: "Compare densities to predict floating",
+      },
+    ],
+    qa: [
+      {
+        id: "slg-qa-q01",
+        question: "Describe how you would measure the density of a small, regularly shaped metal cube. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "Measure the length of each side of the cube with a ruler (or vernier callipers) and calculate the volume using V = length × width × height. Measure the mass of the cube on a (top-pan) balance. Then calculate the density using ρ = m/V, making sure the mass and volume use matching units (e.g. g and cm³ giving g/cm³).",
+        markScheme: [
+          "Measure the sides with a ruler/callipers",
+          "Calculate volume V = length × width × height",
+          "Measure the mass on a balance",
+          "Density ρ = m/V | divide mass by volume",
+        ],
+        commonError: "Forgetting to measure the mass, or mixing units (e.g. mass in g but volume in m³).",
+        guideRef: "Measuring density",
+        difficulty: "core",
+        hints: ["You need both a mass and a volume.", "How do you get the volume of a cube?", "Which equation combines them?"],
+      },
+      {
+        id: "slg-qa-q02",
+        question: "A piece of aluminium has a mass of 540 g and a volume of 200 cm³. Calculate its density in g/cm³, then convert your answer to kg/m³. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "ρ = m/V = 540 ÷ 200 = 2.7 g/cm³. To convert to kg/m³, multiply by 1000: 2.7 × 1000 = 2700 kg/m³.",
+        markScheme: [
+          "Use ρ = m/V",
+          "540 ÷ 200 = 2.7 g/cm³ | 2.7 g/cm³",
+          "Multiply by 1000 to convert | 1 g/cm³ = 1000 kg/m³",
+          "2700 kg/m³",
+        ],
+        commonError: "Dividing instead of multiplying by 1000, or forgetting to convert the units at all.",
+        guideRef: "Density",
+        difficulty: "core",
+        hints: ["Start with ρ = m/V.", "540 ÷ 200 = ?", "To go from g/cm³ to kg/m³, multiply by 1000."],
+        solutions: [
+          {
+            label: "Method: divide then convert",
+            steps: [
+              "Density: ρ = m/V = 540 g ÷ 200 cm³ = 2.7 g/cm³.",
+              "Conversion factor: 1 g/cm³ = 1000 kg/m³.",
+              "So 2.7 g/cm³ × 1000 = 2700 kg/m³.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "slg-qa-q03",
+        question: "Using the particle model, compare the arrangement, spacing and movement of particles in a liquid and in a gas. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "In a liquid the particles are close together but arranged randomly, and they can move and slide past one another, giving the liquid a fixed volume but no fixed shape. In a gas the particles are far apart and arranged randomly, and they move quickly in all directions, so a gas has no fixed shape or volume and can be compressed. Overall, gas particles are more spread out, more energetic and move more freely than liquid particles.",
+        markScheme: [
+          "Liquid: particles close together / random arrangement",
+          "Liquid: particles can slide/move past each other",
+          "Gas: particles far apart / random",
+          "Gas: particles move fast in all directions | more energy than liquid",
+        ],
+        commonError: "Saying gas particles 'don't touch' is fine, but do not say liquid particles are in a regular pattern — that describes a solid.",
+        guideRef: "The particle model of solids, liquids and gases",
+        difficulty: "core",
+        hints: ["Compare how close the particles are.", "Compare how freely they move.", "Mention the energy difference."],
+      },
+      {
+        id: "slg-qa-q04",
+        question: "Explain why, when a beaker of ice is heated steadily, the temperature stays constant while the ice melts even though energy is still being supplied. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "While the ice is melting, the thermal energy supplied is used to break the bonds (overcome the forces) holding the particles in the fixed solid arrangement, rather than to make the particles move faster. Because the energy goes into the potential energy of the particles (changing state) and not their kinetic energy, the temperature does not rise until all the ice has melted.",
+        markScheme: [
+          "Energy is used to break bonds / overcome forces between particles",
+          "Energy increases potential energy, not kinetic energy",
+          "Temperature depends on kinetic energy, so it stays constant until melting is complete",
+        ],
+        commonError: "Saying the energy 'disappears' — it is stored as potential energy as the particles separate.",
+        guideRef: "Changes of state and internal energy",
+        difficulty: "challenge",
+        hints: ["What is the energy being used for during melting?", "Is it speeding particles up or separating them?", "Temperature is linked to which type of energy?"],
+      },
+      {
+        id: "slg-qa-q05",
+        question: "Calculate the energy needed to raise the temperature of 0.5 kg of water from 20 °C to 100 °C. (Specific heat capacity of water = 4200 J/(kg °C).) (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "ΔT = 100 − 20 = 80 °C. Q = m c ΔT = 0.5 × 4200 × 80 = 168 000 J (168 kJ).",
+        markScheme: [
+          "ΔT = 100 − 20 = 80 (°C)",
+          "Use Q = m c ΔT",
+          "Q = 0.5 × 4200 × 80 = 168 000 J | 168 kJ",
+        ],
+        commonError: "Using 100 °C instead of the temperature change of 80 °C, or leaving mass in grams.",
+        guideRef: "Specific heat capacity",
+        difficulty: "core",
+        hints: ["First work out the temperature change ΔT.", "ΔT = 100 − 20.", "Then use Q = m c ΔT."],
+        solutions: [
+          {
+            label: "Method: Q = m c ΔT",
+            steps: [
+              "Temperature change: ΔT = 100 − 20 = 80 °C.",
+              "List values: m = 0.5 kg, c = 4200 J/(kg °C), ΔT = 80 °C.",
+              "Substitute: Q = 0.5 × 4200 × 80.",
+              "Q = 168 000 J = 168 kJ.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "slg-qa-q06",
+        question: "A 2.0 kg metal block is heated by 30 000 J and its temperature rises by 25 °C. Calculate the specific heat capacity of the metal, giving the unit. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "Rearrange Q = m c ΔT to c = Q / (m ΔT). c = 30 000 ÷ (2.0 × 25) = 30 000 ÷ 50 = 600 J/(kg °C).",
+        markScheme: [
+          "Rearrange to c = Q / (m ΔT)",
+          "c = 30 000 ÷ (2.0 × 25) | 30 000 ÷ 50",
+          "c = 600 J/(kg °C) | 600 with correct unit",
+        ],
+        commonError: "Forgetting the unit J/(kg °C), or multiplying instead of dividing.",
+        guideRef: "Specific heat capacity",
+        difficulty: "core",
+        hints: ["Start from Q = m c ΔT.", "Rearrange to make c the subject.", "c = Q ÷ (m × ΔT)."],
+        solutions: [
+          {
+            label: "Method: rearrange Q = m c ΔT",
+            steps: [
+              "Rearrange: c = Q / (m ΔT).",
+              "Substitute: c = 30 000 ÷ (2.0 × 25).",
+              "Denominator: 2.0 × 25 = 50.",
+              "c = 30 000 ÷ 50 = 600 J/(kg °C).",
+            ],
+          },
+        ],
+      },
+      {
+        id: "slg-qa-q07",
+        question: "A diver is 12 m below the surface of seawater of density 1030 kg/m³. Taking g = 10 N/kg, calculate the pressure on the diver due to the water. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "p = h ρ g = 12 × 1030 × 10 = 123 600 Pa (about 124 kPa). This is the pressure due to the water column above the diver; it does not include atmospheric pressure.",
+        markScheme: [
+          "Use p = hρg",
+          "p = 12 × 1030 × 10",
+          "p = 123 600 Pa | ≈ 124 kPa (allow 1.236 × 10⁵ Pa)",
+        ],
+        commonError: "Using the density of fresh water (1000) when seawater is given, or forgetting to include g.",
+        guideRef: "Pressure, and pressure in a liquid",
+        difficulty: "core",
+        hints: ["Which formula gives pressure at a depth?", "p = h × ρ × g.", "12 × 1030 × 10 = ?"],
+        solutions: [
+          {
+            label: "Method: p = hρg",
+            steps: [
+              "List values: h = 12 m, ρ = 1030 kg/m³, g = 10 N/kg.",
+              "Substitute: p = 12 × 1030 × 10.",
+              "p = 123 600 Pa ≈ 124 kPa.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "slg-qa-q08",
+        question: "Explain, in terms of particles, why the pressure of a fixed mass of gas in a rigid sealed container increases when the gas is heated. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "Heating the gas gives the particles more kinetic energy, so they move faster. The faster particles collide with the walls more frequently, and each collision exerts a larger force on the wall. Because the volume is fixed, the same wall area receives more force, so the pressure increases. (Pressure is proportional to the absolute/kelvin temperature.)",
+        markScheme: [
+          "Particles gain kinetic energy / move faster",
+          "Particles collide with the walls more often",
+          "Each collision exerts a greater force",
+          "Same (fixed) area, so pressure increases | p ∝ T in kelvin",
+        ],
+        commonError: "Saying the particles 'expand' — particles do not expand; they move faster and hit the walls harder and more often.",
+        guideRef: "Gas pressure, the Kelvin scale and the gas laws",
+        difficulty: "core",
+        hints: ["What does heating do to the particles' speed?", "How does that change the collisions with the walls?", "Volume is fixed — what happens to pressure?"],
+      },
+      {
+        id: "slg-qa-q09",
+        question: "A gas occupies a volume of 0.040 m³ at a pressure of 150 kPa. It is compressed at constant temperature until its volume is 0.015 m³. Calculate the new pressure. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "Temperature is constant, so use Boyle's law p₁V₁ = p₂V₂. p₂ = p₁V₁ / V₂ = (150 × 0.040) ÷ 0.015 = 6.0 ÷ 0.015 = 400 kPa.",
+        markScheme: [
+          "Recognise constant temperature → use p₁V₁ = p₂V₂",
+          "p₂ = (150 × 0.040) ÷ 0.015",
+          "p₂ = 400 kPa",
+        ],
+        commonError: "Multiplying by the volume ratio the wrong way (smaller volume must give a larger pressure).",
+        guideRef: "Gas pressure, the Kelvin scale and the gas laws",
+        difficulty: "core",
+        hints: ["What is held constant — temperature or volume?", "Constant temperature means Boyle's law.", "p₂ = p₁V₁ ÷ V₂."],
+        solutions: [
+          {
+            label: "Method: Boyle's law p₁V₁ = p₂V₂",
+            steps: [
+              "Constant temperature → use Boyle's law: p₁V₁ = p₂V₂.",
+              "Rearrange: p₂ = p₁V₁ / V₂.",
+              "Substitute: p₂ = (150 kPa × 0.040 m³) ÷ 0.015 m³.",
+              "Numerator: 150 × 0.040 = 6.0; then 6.0 ÷ 0.015 = 400 kPa.",
+              "Check: volume fell to less than half, so pressure more than doubled — sensible.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "slg-qa-q10",
+        question: "A sealed gas cylinder of fixed volume is at a pressure of 200 kPa when the temperature is 27 °C. It is heated to 127 °C. Calculate the new pressure. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "Convert temperatures to kelvin: T₁ = 27 + 273 = 300 K, T₂ = 127 + 273 = 400 K. Volume is constant, so use the pressure law p₁/T₁ = p₂/T₂. p₂ = p₁ × T₂/T₁ = 200 × (400/300) = 266.7 kPa (about 267 kPa).",
+        markScheme: [
+          "Convert both temperatures to kelvin (300 K and 400 K)",
+          "Use p₁/T₁ = p₂/T₂ (constant volume)",
+          "p₂ = 200 × 400/300",
+          "p₂ ≈ 267 kPa | 266.7 kPa",
+        ],
+        commonError: "Using °C directly in the ratio instead of converting to kelvin (a very common and serious error).",
+        guideRef: "Gas pressure, the Kelvin scale and the gas laws",
+        difficulty: "challenge",
+        hints: ["Gas laws need kelvin — convert both temperatures first.", "Volume fixed → pressure law p₁/T₁ = p₂/T₂.", "p₂ = p₁ × T₂/T₁ with T in kelvin."],
+        solutions: [
+          {
+            label: "Method: pressure law with kelvin conversion",
+            steps: [
+              "Convert: T₁ = 27 + 273 = 300 K, T₂ = 127 + 273 = 400 K.",
+              "Volume constant → p₁/T₁ = p₂/T₂.",
+              "Rearrange: p₂ = p₁ × T₂/T₁.",
+              "Substitute: p₂ = 200 × (400/300) = 200 × 1.333…",
+              "p₂ ≈ 267 kPa.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "slg-qa-q11",
+        question: "Describe what is meant by Brownian motion and explain how it provides evidence for the existence of small, fast-moving particles in a gas. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "Brownian motion is the random, jerky, zig-zag movement of small visible particles (such as smoke grains) suspended in a gas, seen under a microscope. The visible grains move because they are constantly bombarded from all sides by much smaller, fast-moving, invisible gas (air) molecules. At any moment the bombardment is uneven, giving the grain a push in a random direction; as the imbalance keeps changing, the grain follows a random path. This shows that gases are made of tiny particles in constant, fast, random motion.",
+        markScheme: [
+          "Brownian motion = random/jerky movement of visible particles in a fluid",
+          "Caused by collisions/bombardment from smaller (invisible) molecules",
+          "Bombardment is uneven / from all directions, giving random pushes",
+          "Evidence that gases are made of small fast-moving particles in random motion",
+        ],
+        commonError: "Confusing the visible smoke grains with the invisible molecules — it is the small molecules that do the pushing.",
+        guideRef: "Brownian motion — evidence for particles",
+        difficulty: "core",
+        hints: ["What is actually seen moving under the microscope?", "What is hitting those visible grains?", "What does the random motion prove about the gas?"],
+      },
+      {
+        id: "slg-qa-q12",
+        question: "A student pushes the plunger of a sealed syringe of trapped air in slowly, so the air stays at the same temperature. Explain, using ideas about particles and a named gas law, what happens to the pressure of the trapped air. (5 marks)",
+        marks: 5,
+        modelAnswer:
+          "Pushing the plunger in reduces the volume of the trapped air while the temperature stays constant. The same number of gas particles are now in a smaller space, so they hit the walls of the syringe more frequently, increasing the force per unit area and therefore the pressure. Because the temperature is constant, this follows Boyle's law: p₁V₁ = p₂V₂, so pressure is inversely proportional to volume — halving the volume doubles the pressure.",
+        markScheme: [
+          "Volume decreases (temperature constant)",
+          "Same number of particles in a smaller volume",
+          "Particles collide with the walls more frequently",
+          "Greater force per area → pressure increases",
+          "Boyle's law: p₁V₁ = p₂V₂ | p inversely proportional to V",
+        ],
+        commonError: "Saying the particles themselves get smaller or are squashed — it is the spacing that decreases, raising the collision rate.",
+        guideRef: "Gas pressure, the Kelvin scale and the gas laws",
+        difficulty: "challenge",
+        hints: ["What happens to the volume as the plunger moves in?", "How does packing the same particles into less space change collisions?", "Which law applies at constant temperature?"],
+      },
+    ],
+  },
+  // questionBank omitted — auto-assembled from the quiz pools by lib/content.ts.
+};

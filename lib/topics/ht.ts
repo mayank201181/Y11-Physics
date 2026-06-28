@@ -1,0 +1,784 @@
+import type { Topic } from "../types";
+
+// Heat Transfer — Edexcel IGCSE Physics (4PH1) thermal energy transfer.
+// Gold-standard topic: AoPS discovery openers, whyItWorks, strategies, tiered
+// difficulty, hint ladders and multi-method solutions. 25 MCQ / 12 QA.
+
+export const ht: Topic = {
+  id: "ht",
+  code: "HT",
+  number: 1,
+  title: "Heat Transfer",
+  subject: "Physics",
+  icon: "🔥",
+  color: "#ef4444",
+  intro:
+    "Energy always flows from hotter places to cooler places. In this topic you'll discover the three ways thermal energy travels — conduction, convection and radiation — and learn to explain everyday things like why metal feels cold, how a radiator warms a whole room, why a marathon runner is wrapped in shiny foil, and how a vacuum flask keeps a drink hot for hours.",
+  guide: [
+    {
+      heading: "Temperature vs thermal energy",
+      discovery: {
+        problem:
+          "A single spark from a sparkler can be over 1000 °C, yet it doesn't hurt when it lands on your skin. A bath of water at just 50 °C would scald you badly. The spark is twenty times hotter — so why is the cooler bath far more dangerous?",
+        idea: "Temperature and thermal energy are different. The spark is very hot but is tiny, so it carries almost no total energy. The bath is cooler but contains a huge number of particles, so its total thermal energy is enormous. Danger depends on how much energy can flow into you, not on temperature alone.",
+      },
+      body:
+        "Thermal energy (often just called heat) always moves from a region of **higher temperature** to a region of **lower temperature**. It keeps flowing until both regions reach the same temperature — they are then in *thermal equilibrium* and the net flow stops.\n\nTwo ideas are easy to confuse:\n\n- **Temperature** measures how hot something is. It depends on the *average kinetic energy* of the particles. Measured in **°C** (or kelvin, K).\n- **Thermal energy** is the *total* kinetic energy of *all* the particles in an object. Measured in **joules (J)**.\n\nA bathtub of warm water has far more thermal energy than a boiling cup of tea, even though the tea is at a higher temperature, because the bath contains so many more particles.",
+      keyPoints: [
+        "Energy flows from hot to cold, never the other way on its own.",
+        "Flow stops when temperatures are equal (thermal equilibrium).",
+        "Temperature = average particle KE (°C); thermal energy = total particle KE (J).",
+        "A large warm object can hold more thermal energy than a small hot one.",
+      ],
+      whyItWorks:
+        "Hotter particles vibrate or move faster. When they collide with slower, cooler particles they pass on some kinetic energy — so on average energy spreads out from hot to cold until the average KE (temperature) is the same everywhere.",
+      strategies: ["Define your terms before reasoning", "Separate 'how hot' from 'how much energy'"],
+    },
+    {
+      heading: "Conduction",
+      discovery: {
+        problem:
+          "You leave a metal teaspoon and a wooden spoon in the same warm soup. After a minute the metal one is too hot to hold while the wooden one is fine. Both sat in identical soup at the same temperature — so why the difference?",
+        idea: "Materials transfer thermal energy at very different rates. Metals are excellent thermal conductors because of free electrons; wood is a thermal insulator. The energy available is the same, but how fast it travels through each material is completely different.",
+      },
+      body:
+        "**Conduction** is heat transfer through a material *without the material itself moving*. It is the main way heat travels through **solids**, especially metals.\n\nThere are two mechanisms:\n\n1. **Particle vibration.** Particles at the hot end gain kinetic energy and vibrate more vigorously. They collide with neighbouring particles, passing energy along the material. This is slow and happens in all solids.\n2. **Free electrons.** In **metals**, some electrons are *delocalised* — free to move through the whole structure. At the hot end they gain kinetic energy, then move quickly through the metal and transfer energy in collisions far from where they started. This electron mechanism is much faster, which is why metals are by far the best conductors.\n\nMaterials with no free electrons and widely spaced particles (wood, plastic, air, water) conduct poorly and are called **insulators**. Gases are the worst conductors because their particles are so far apart that collisions are rare.",
+      diagrams: [
+        {
+          caption: "Energy passing along a metal bar by particle vibration and free electrons.",
+          svg:
+            '<svg viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A metal bar heated at the left end with thermal energy moving to the right">\n<rect x="10" y="35" width="300" height="30" rx="4" fill="#cbd5e1" stroke="#475569"/>\n<rect x="10" y="35" width="60" height="30" rx="4" fill="#ef4444"/>\n<text x="40" y="27" font-size="11" text-anchor="middle" fill="#b91c1c">HOT</text>\n<text x="280" y="27" font-size="11" text-anchor="middle" fill="#1d4ed8">cool</text>\n<circle cx="110" cy="50" r="4" fill="#1e293b"/>\n<circle cx="160" cy="50" r="4" fill="#1e293b"/>\n<circle cx="210" cy="50" r="4" fill="#1e293b"/>\n<text x="135" y="53" font-size="9" text-anchor="middle" fill="#334155">e-</text>\n<path d="M80 50 H300" stroke="#1e293b" stroke-width="2" marker-end="url(#a)"/>\n<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#1e293b"/></marker></defs>\n<text x="190" y="90" font-size="10" text-anchor="middle" fill="#334155">energy flows hot to cool</text>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "Conduction happens mainly in solids; particles stay in place.",
+        "Two mechanisms: particle vibration (all solids) + free electrons (metals).",
+        "Metals conduct best because of free (delocalised) electrons.",
+        "Liquids and gases are poor conductors; gases are the worst.",
+      ],
+      whyItWorks:
+        "Free electrons are not tied to one atom, so they carry kinetic energy across the whole metal quickly. Vibration alone (the only mechanism in non-metals) passes energy slowly from neighbour to neighbour, so insulators conduct far less.",
+      strategies: ["Compare extremes (best vs worst conductor)", "Name the mechanism, then the consequence"],
+    },
+    {
+      heading: "Convection",
+      discovery: {
+        problem:
+          "A heater sits on the floor of a cold room, yet within minutes the ceiling is the warmest place. We say 'heat rises' — but heat is energy, not a thing that can float. So what is actually going up?",
+        idea: "It isn't heat that rises — it's warm fluid. Heated air expands, becomes less dense, and floats upward, carrying its thermal energy with it. This bulk movement of fluid is convection.",
+      },
+      body:
+        "**Convection** is heat transfer by the *movement of the fluid itself* (a liquid or a gas). It **cannot** happen in solids because the particles are fixed and can't flow.\n\nThe cycle, called a **convection current**, works like this:\n\n1. Fluid near the heat source warms up and **expands**, so the same mass now fills more volume — it becomes **less dense**.\n2. The less-dense warm fluid is pushed **upward** by the denser fluid around it (an upthrust effect).\n3. As it rises it cools, becomes denser again and **sinks**.\n4. Cooler, denser fluid moves in to take its place near the heat source and is warmed in turn, so the loop repeats.\n\nReal examples: radiators heating a whole room, the hot water rising in a kettle or saucepan, land and sea breezes at the coast, and warm air rising over a hot road.",
+      diagrams: [
+        {
+          caption: "A convection current loop above a heater.",
+          svg:
+            '<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Convection current loop showing warm fluid rising and cool fluid sinking around a heater">\n<rect x="20" y="20" width="160" height="110" fill="#eff6ff" stroke="#94a3b8"/>\n<rect x="70" y="128" width="60" height="8" fill="#ef4444"/>\n<text x="100" y="146" font-size="9" text-anchor="middle" fill="#b91c1c">heater</text>\n<path d="M100 125 C100 85 100 60 100 42" stroke="#ef4444" stroke-width="3" fill="none" marker-end="url(#up)"/>\n<path d="M100 42 C145 42 155 95 132 125" stroke="#1d4ed8" stroke-width="3" fill="none" marker-end="url(#dn)"/>\n<path d="M100 42 C55 42 45 95 68 125" stroke="#1d4ed8" stroke-width="3" fill="none" marker-end="url(#dn)"/>\n<defs><marker id="up" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M0 6 L4 0 L8 6 z" fill="#ef4444"/></marker><marker id="dn" markerWidth="8" markerHeight="8" refX="4" refY="2" orient="auto"><path d="M0 0 L8 0 L4 6 z" fill="#1d4ed8"/></marker></defs>\n<text x="100" y="14" font-size="10" text-anchor="middle" fill="#334155">warm rises, cool sinks</text>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "Convection happens in liquids and gases only (never solids).",
+        "Warm fluid expands → less dense → rises.",
+        "Cooler denser fluid sinks and is heated, forming a continuous current.",
+        "It is the fluid that moves, carrying energy with it — not 'heat' itself.",
+      ],
+      whyItWorks:
+        "Heating spreads the particles out, so the same mass takes up more volume → lower density (density = mass ÷ volume). Less-dense fluid is pushed up by the surrounding denser fluid, just as a cork is pushed up through water.",
+      strategies: ["Trace the cycle step by step", "Link density to volume, then to floating"],
+    },
+    {
+      heading: "Thermal radiation",
+      discovery: {
+        problem:
+          "There are no particles in the 150 million km of empty space between the Sun and Earth, so conduction and convection are impossible. Yet the Sun's energy still reaches us and warms the planet. How does energy cross a perfect vacuum?",
+        idea: "By electromagnetic waves. Thermal radiation is infrared radiation — part of the electromagnetic spectrum — and EM waves need no medium at all, so they travel freely through a vacuum.",
+      },
+      body:
+        "**Thermal radiation** is heat transfer by **infrared electromagnetic waves**. Unlike conduction and convection, it needs **no particles** — it is the only way energy reaches us across the vacuum of space.\n\nKey facts:\n\n- **All objects** emit and absorb infrared radiation all the time.\n- The **hotter** an object is, the **more** radiation it emits each second.\n- The nature of the **surface** matters enormously:\n  - **Dark, matt (dull)** surfaces are the **best emitters** and the **best absorbers** of infrared.\n  - **Light, shiny (silvered)** surfaces are **poor emitters** and **poor absorbers** — they are good **reflectors**.\n\nNotice the symmetry: a good absorber is also a good emitter. A surface that is good at taking radiation in is equally good at giving it out.",
+      diagrams: [
+        {
+          caption: "Two surfaces in the Sun: dull black absorbs most infrared, shiny silver reflects most.",
+          svg:
+            '<svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Infrared rays hitting a dull black surface being absorbed and a shiny silver surface reflecting them">\n<circle cx="150" cy="18" r="12" fill="#f59e0b"/>\n<text x="150" y="22" font-size="8" text-anchor="middle" fill="#7c2d12">Sun</text>\n<rect x="30" y="90" width="90" height="24" fill="#1e293b"/>\n<text x="75" y="126" font-size="9" text-anchor="middle" fill="#334155">dull black: absorbs</text>\n<rect x="180" y="90" width="90" height="24" fill="#e2e8f0" stroke="#64748b"/>\n<text x="225" y="126" font-size="9" text-anchor="middle" fill="#334155">shiny: reflects</text>\n<path d="M140 30 L80 88" stroke="#ef4444" stroke-width="2" marker-end="url(#r)"/>\n<path d="M160 30 L225 88" stroke="#ef4444" stroke-width="2" marker-end="url(#r)"/>\n<path d="M225 88 L270 50" stroke="#1d4ed8" stroke-width="2" marker-end="url(#b)"/>\n<defs><marker id="r" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#ef4444"/></marker><marker id="b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#1d4ed8"/></marker></defs>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "Radiation = infrared electromagnetic waves; works through a vacuum.",
+        "Hotter objects emit more radiation per second.",
+        "Dark matt = best absorber AND best emitter.",
+        "Shiny silver = poor absorber/emitter; good reflector.",
+      ],
+      whyItWorks:
+        "All objects above absolute zero contain vibrating charged particles, and accelerating charges emit electromagnetic waves — so everything radiates, and more strongly the hotter (faster-vibrating) it is.",
+      thinkDeeper:
+        "Why are the cooling pipes on the back of a fridge painted black, while a marathon runner is wrapped in a shiny foil blanket? Black pipes emit waste heat well; the shiny blanket reflects the runner's body radiation back, reducing heat loss.",
+      strategies: ["Match surface to its job (absorb vs emit vs reflect)", "Use the absorber = emitter symmetry"],
+    },
+    {
+      heading: "Surfaces: absorbers, emitters and reflectors",
+      body:
+        "Surface questions are common in exams, and they reward careful thinking rather than memorising slogans. The trick is always to ask: **does the object need to absorb radiation, emit radiation, or reflect it?**\n\n- To **gain** heat from radiation → choose a **dull black** surface (best absorber). *Example: solar panels, the inside of a solar cooker.*\n- To **lose** heat quickly by radiation → choose a **dull black** surface (best emitter). *Example: a car radiator, fridge cooling pipes, a CPU heat sink.*\n- To **stay warm** by reducing radiation loss → choose a **shiny** surface (poor emitter). *Example: survival blankets, the inside of a vacuum flask.*\n- To **stay cool** by reflecting radiation away → choose a **shiny/white** surface (poor absorber). *Example: white houses in hot countries, foil on a windscreen.*\n\nA quick test you can apply: a *good absorber is always a good emitter*, and a *good reflector is always a poor emitter*. If you remember those two links you can reason out any surface question.",
+      keyPoints: [
+        "Always identify the job first: absorb, emit or reflect.",
+        "Dull black: best absorber and best emitter.",
+        "Shiny silver: poor emitter (keeps heat in) and poor absorber (keeps heat out).",
+        "Good absorber = good emitter; good reflector = poor emitter.",
+      ],
+      whyItWorks:
+        "A surface interacts with infrared the same way whether energy is arriving or leaving, so its ability to absorb and to emit are physically linked — which is why one rule covers both directions.",
+      strategies: ["Decide the job before choosing the surface", "Reason from the absorber = emitter link"],
+    },
+    {
+      heading: "Reducing unwanted heat transfer in the home",
+      body:
+        "To keep a house warm we cut down all three transfer routes. Each measure targets one or more of them:\n\n- **Loft insulation** (e.g. fibreglass wool) traps **pockets of still air**. Air is a poor conductor, and because the air can't circulate it can't form convection currents — so both conduction and convection through the roof are reduced.\n- **Cavity wall insulation** fills the gap between the two brick walls with foam that traps air, again cutting conduction and convection through the walls.\n- **Double glazing** uses two panes of glass with a thin layer of trapped air or vacuum between them. The trapped air/vacuum greatly reduces conduction and convection through the window.\n- **Draught excluders** stop cold air leaking in and warm air leaking out (reducing convection through gaps).\n- **Shiny foil behind radiators** reflects infrared radiation back into the room rather than letting it warm the outside wall.\n\nThe common idea is **trapped air**: air is a good insulator, but only if you stop it moving — otherwise convection currents carry the energy away.",
+      keyPoints: [
+        "Most home insulation works by trapping still air (a poor conductor).",
+        "Trapping the air also prevents convection currents.",
+        "Double glazing reduces conduction and convection through windows.",
+        "Foil behind radiators reflects infrared back into the room.",
+      ],
+      whyItWorks:
+        "Still air conducts very poorly because its particles are far apart. The reason we 'trap' rather than just 'use' air is that moving air sets up convection currents that transport energy quickly — trapping it removes that route as well.",
+      strategies: ["Attack each transfer route separately", "Ask why the air must be trapped, not just present"],
+    },
+    {
+      heading: "The vacuum flask: all three routes at once",
+      discovery: {
+        problem:
+          "A vacuum flask can keep a drink hot for many hours, far longer than an ordinary insulated mug. It uses no power and no special chemicals. How can such a simple object block heat loss so completely?",
+        idea: "Because it is designed to defeat all three transfer routes simultaneously. No single trick can do it — the flask combines a vacuum, silvered walls and insulating materials so that conduction, convection and radiation are each cut down.",
+      },
+      body:
+        "The classic exam example for reducing heat transfer is the **vacuum (Thermos) flask**. Walk through each route:\n\n1. A **vacuum** between the double walls contains no particles, so it stops heat loss by **conduction** and by **convection** across the gap (both need particles).\n2. The walls are **silvered (shiny)**, which **reflects infrared radiation** back towards the drink, reducing **radiation** losses.\n3. The **plastic stopper and outer case** are **insulators** with low conductivity, reducing **conduction** through the top and sides.\n4. The narrow neck and tight stopper reduce **convection** and **evaporation** from the open surface of the drink.\n\nBecause every route is blocked, the drink stays hot far longer. The very same design keeps cold drinks cold — it simply slows energy flow in *either* direction.",
+      diagrams: [
+        {
+          caption: "Cross-section of a vacuum flask showing how each heat-transfer route is reduced.",
+          svg:
+            '<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-section of a vacuum flask with vacuum gap, silvered walls and insulating stopper">\n<rect x="60" y="10" width="80" height="20" rx="3" fill="#94a3b8" stroke="#475569"/>\n<text x="100" y="24" font-size="8" text-anchor="middle" fill="#1e293b">stopper</text>\n<rect x="50" y="30" width="100" height="120" rx="6" fill="#e2e8f0" stroke="#475569"/>\n<rect x="62" y="40" width="76" height="105" rx="4" fill="#f8fafc" stroke="#64748b"/>\n<rect x="72" y="50" width="56" height="90" rx="3" fill="#bfdbfe" stroke="#1d4ed8"/>\n<text x="100" y="100" font-size="9" text-anchor="middle" fill="#1e3a8a">hot drink</text>\n<text x="100" y="46" font-size="7" text-anchor="middle" fill="#475569">vacuum gap</text>\n<text x="155" y="95" font-size="7" text-anchor="middle" fill="#334155" transform="rotate(90 155 95)">silvered walls</text>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "Vacuum stops conduction AND convection (no particles in the gap).",
+        "Silvered/shiny walls reflect infrared radiation back.",
+        "Insulating stopper and case reduce conduction through the top.",
+        "The same design keeps cold drinks cold by slowing energy flow inward.",
+      ],
+      whyItWorks:
+        "Each measure targets a different mechanism, so they don't overlap — removing the particles kills two routes at once, and the silvering handles the third, which is the only route that can cross a vacuum.",
+      formulae: [],
+      strategies: ["List the three routes, then name the feature that blocks each"],
+    },
+  ],
+  learn: {
+    bigIdea:
+      "Thermal energy moves from hot to cold by three routes — conduction (through solids, by vibration and free electrons), convection (by moving fluids that change density), and radiation (infrared EM waves, even through a vacuum). Control heat flow by working out which route dominates and blocking it.",
+    mustKnow: [
+      "Energy flows from higher to lower temperature until thermal equilibrium.",
+      "Temperature = average particle KE (°C); thermal energy = total particle KE (J).",
+      "Conduction: particle vibration + free electrons (best in metals), happens in solids.",
+      "Convection: warm fluid expands, becomes less dense and rises; cool fluid sinks — a current.",
+      "Radiation: infrared EM waves, needs no medium; dull black absorbs/emits best, shiny reflects.",
+      "A good absorber is also a good emitter; a good reflector is a poor emitter.",
+      "Insulation (vacuum flask, loft insulation, double glazing) blocks all three routes; trapped still air is key.",
+    ],
+    keywords: [
+      { term: "Conduction", definition: "Heat transfer through a material by particle vibration and free electrons, without the material itself moving." },
+      { term: "Convection", definition: "Heat transfer by the bulk movement of a heated fluid (liquid or gas) caused by density differences." },
+      { term: "Radiation", definition: "Heat transfer by infrared electromagnetic waves, requiring no medium (works through a vacuum)." },
+      { term: "Thermal equilibrium", definition: "The state where two objects reach the same temperature and net energy flow between them stops." },
+      { term: "Temperature", definition: "A measure of the average kinetic energy of the particles in an object, in °C or K." },
+      { term: "Thermal energy", definition: "The total kinetic energy of all the particles in an object, measured in joules." },
+      { term: "Insulator", definition: "A material that transfers thermal energy only slowly (e.g. wood, plastic, trapped air)." },
+      { term: "Free electrons", definition: "Delocalised electrons in a metal that move freely and carry kinetic energy, making metals good conductors." },
+      { term: "Density", definition: "Mass per unit volume (density = mass ÷ volume); heating a fluid expands it and lowers its density." },
+      { term: "Convection current", definition: "A continuous circulation of fluid in which warm fluid rises and cool fluid sinks." },
+    ],
+    flashcards: [
+      { front: "Why do metals conduct heat well?", back: "They have free (delocalised) electrons that move quickly and carry kinetic energy through the whole metal." },
+      { front: "Why does warm fluid rise in convection?", back: "It expands, becomes less dense than the surrounding fluid, and is pushed upward by it." },
+      { front: "Which surface is the best emitter AND absorber of radiation?", back: "A dull, matt black surface." },
+      { front: "How does a vacuum reduce heat loss?", back: "It has no particles, so neither conduction nor convection can occur across the gap." },
+      { front: "Difference between temperature and thermal energy?", back: "Temperature = average particle KE (how hot, in °C). Thermal energy = total energy of all particles (in joules)." },
+      { front: "Why is trapped air a good insulator but moving air is not?", back: "Still air conducts poorly; if air can move it forms convection currents that carry energy away." },
+    ],
+  },
+  quiz: {
+    mcq: [
+      {
+        id: "ht-mcq-q01",
+        question: "Thermal energy always flows from a region of…",
+        options: ["low temperature to high temperature", "high temperature to low temperature", "high density to low density", "solid to liquid"],
+        answerIndex: 1,
+        explanation: "Thermal energy spontaneously flows from hotter to cooler regions until both reach the same temperature.",
+        guideRef: "Temperature vs thermal energy",
+        difficulty: "warmup",
+      },
+      {
+        id: "ht-mcq-q02",
+        question: "Conduction is the main method of heat transfer in…",
+        options: ["gases", "a vacuum", "solids", "moving liquids"],
+        answerIndex: 2,
+        explanation: "Conduction dominates in solids, where particles are fixed and pass energy by vibration and (in metals) free electrons.",
+        guideRef: "Conduction",
+        difficulty: "warmup",
+      },
+      {
+        id: "ht-mcq-q03",
+        question: "Which unit is used to measure thermal energy?",
+        options: ["degrees Celsius (°C)", "joules (J)", "kelvin (K)", "watts (W)"],
+        answerIndex: 1,
+        explanation: "Thermal energy is a form of energy, so it is measured in joules. Temperature is measured in °C or K.",
+        guideRef: "Temperature vs thermal energy",
+        difficulty: "warmup",
+      },
+      {
+        id: "ht-mcq-q04",
+        question: "Which surface is the best absorber of infrared radiation?",
+        options: ["Shiny silver", "White gloss", "Dull matt black", "Polished steel"],
+        answerIndex: 2,
+        explanation: "Dull matt black surfaces are the best absorbers (and best emitters); shiny surfaces reflect radiation.",
+        guideRef: "Thermal radiation",
+        difficulty: "warmup",
+      },
+      {
+        id: "ht-mcq-q05",
+        question: "Convection can take place in…",
+        options: ["solids only", "liquids and gases only", "a vacuum", "solids and gases only"],
+        answerIndex: 1,
+        explanation: "Convection needs the particles to be free to move and flow, which only happens in fluids (liquids and gases).",
+        guideRef: "Convection",
+        difficulty: "warmup",
+      },
+      {
+        id: "ht-mcq-q06",
+        question: "Metals are the best thermal conductors mainly because they contain…",
+        options: ["tightly bonded molecules", "free (delocalised) electrons", "large air gaps", "trapped infrared waves"],
+        answerIndex: 1,
+        explanation: "Free electrons move quickly through the metal carrying kinetic energy, which is far faster than vibration alone.",
+        guideRef: "Conduction",
+        difficulty: "core",
+        hints: ["What can move freely through a metal but not through wood?", "Think about what carries charge in a metal wire.", "These particles carry kinetic energy across the whole metal."],
+        strategy: "Compare extremes",
+      },
+      {
+        id: "ht-mcq-q07",
+        question: "When part of a fluid is heated, it rises because it becomes…",
+        options: ["more dense", "less dense", "heavier", "solid"],
+        answerIndex: 1,
+        explanation: "Heating makes the fluid expand, so the same mass occupies more volume → lower density → it is pushed up by the denser fluid around it.",
+        guideRef: "Convection",
+        difficulty: "core",
+        hints: ["What happens to the volume of the fluid when it is heated?", "Density = mass ÷ volume — if volume goes up and mass stays the same…", "Less dense fluid is pushed up by denser fluid."],
+      },
+      {
+        id: "ht-mcq-q08",
+        question: "Which method of heat transfer can occur through a vacuum?",
+        options: ["Conduction", "Convection", "Radiation", "None of these"],
+        answerIndex: 2,
+        explanation: "Radiation is carried by electromagnetic (infrared) waves, which need no particles, so it works through a vacuum.",
+        guideRef: "Thermal radiation",
+        difficulty: "core",
+        hints: ["A vacuum contains no particles.", "Which two methods need particles to carry energy?", "Which method uses electromagnetic waves?"],
+      },
+      {
+        id: "ht-mcq-q09",
+        question: "A vacuum flask keeps a drink hot. The vacuum between the walls specifically prevents heat loss by…",
+        options: ["radiation only", "conduction and convection", "radiation and convection", "evaporation only"],
+        answerIndex: 1,
+        explanation: "With no particles between the walls, neither conduction nor convection can occur; the silvering deals with radiation separately.",
+        guideRef: "The vacuum flask: all three routes at once",
+        difficulty: "core",
+        hints: ["Which two methods need particles to work?", "A vacuum removes the particles.", "What does the silvering deal with instead?"],
+      },
+      {
+        id: "ht-mcq-q10",
+        question: "Which row correctly describes a dull black surface?",
+        options: [
+          "Good absorber, poor emitter",
+          "Poor absorber, good emitter",
+          "Good absorber, good emitter",
+          "Poor absorber, poor emitter",
+        ],
+        answerIndex: 2,
+        explanation: "A good absorber is also a good emitter, so a dull black surface is good at both.",
+        guideRef: "Surfaces: absorbers, emitters and reflectors",
+        difficulty: "core",
+        hints: ["Is dull black good at taking radiation in?", "A good absorber is also a good …?", "Both properties go together."],
+        strategy: "Use the absorber = emitter link",
+      },
+      {
+        id: "ht-mcq-q11",
+        question: "Why is a wooden spoon a better choice than a metal one for stirring hot soup?",
+        options: [
+          "Wood is colder than metal",
+          "Wood is a poor conductor, so the handle stays cool",
+          "Wood reflects infrared radiation",
+          "Wood produces convection currents",
+        ],
+        answerIndex: 1,
+        explanation: "Wood is a thermal insulator, so it conducts heat to your hand only slowly and the handle stays comfortable.",
+        guideRef: "Conduction",
+        difficulty: "core",
+        hints: ["Both spoons reach the soup's temperature eventually.", "Which material conducts heat to your hand slowly?", "Poor conductor = handle stays cool."],
+      },
+      {
+        id: "ht-mcq-q12",
+        question: "Gases are the worst conductors of heat because…",
+        options: [
+          "their particles are very close together",
+          "their particles are far apart so collisions are rare",
+          "they contain many free electrons",
+          "they reflect all infrared radiation",
+        ],
+        answerIndex: 1,
+        explanation: "In a gas the particles are widely spaced, so energy-transferring collisions are infrequent and conduction is very slow.",
+        guideRef: "Conduction",
+        difficulty: "core",
+        hints: ["How far apart are particles in a gas?", "Conduction relies on particles colliding.", "Few collisions → slow energy transfer."],
+      },
+      {
+        id: "ht-mcq-q13",
+        question: "Loft insulation reduces heat loss mainly by trapping air. Trapping the air also cuts convection because it…",
+        options: ["makes the air denser", "stops the air from circulating", "turns the air into a vacuum", "reflects infrared waves"],
+        answerIndex: 1,
+        explanation: "Trapped pockets of air cannot form convection currents, and still air is also a poor conductor — so both routes are reduced.",
+        guideRef: "Reducing unwanted heat transfer in the home",
+        difficulty: "core",
+        hints: ["Convection needs the fluid to move.", "What if the air cannot move?", "Trapped air = no circulation = no convection current."],
+      },
+      {
+        id: "ht-mcq-q14",
+        question: "Why is the cooling unit (pipes) on the back of a refrigerator usually painted black?",
+        options: [
+          "Black absorbs radiation from the room",
+          "Black is the best emitter, so waste heat radiates away quickly",
+          "Black reflects infrared radiation",
+          "Black is a good electrical conductor",
+        ],
+        answerIndex: 1,
+        explanation: "The pipes need to get rid of waste heat. A dull black surface is the best emitter of infrared, so it radiates that heat away efficiently.",
+        guideRef: "Surfaces: absorbers, emitters and reflectors",
+        difficulty: "core",
+        hints: ["What is the job of the pipes — gain or lose heat?", "Which surface emits radiation best?", "Best emitter = loses heat fastest."],
+        strategy: "Match surface to its job",
+      },
+      {
+        id: "ht-mcq-q15",
+        question: "A radiator warms a whole room mainly by…",
+        options: ["conduction through the air", "radiation only", "setting up convection currents in the air", "evaporation"],
+        answerIndex: 2,
+        explanation: "The radiator heats nearby air, which expands, rises and is replaced by cooler air, circulating warmth around the room as a convection current.",
+        guideRef: "Convection",
+        difficulty: "core",
+        hints: ["Air is a poor conductor, so it isn't conduction.", "What does warm air do?", "Rising warm air and sinking cool air form a …?"],
+      },
+      {
+        id: "ht-mcq-q16",
+        question: "Houses in very hot, sunny countries are often painted white. This is because white surfaces…",
+        options: [
+          "are good absorbers of radiation",
+          "reflect infrared radiation, keeping the house cooler",
+          "emit radiation poorly, trapping heat inside",
+          "increase convection inside the house",
+        ],
+        answerIndex: 1,
+        explanation: "Light, shiny/white surfaces are poor absorbers and good reflectors of infrared, so less of the Sun's radiation is absorbed and the house stays cooler.",
+        guideRef: "Surfaces: absorbers, emitters and reflectors",
+        difficulty: "core",
+        hints: ["Do you want the house to absorb or reflect the Sun's radiation?", "Which surface reflects radiation best?", "Reflect = absorb less = stay cooler."],
+        strategy: "Match surface to its job",
+      },
+      {
+        id: "ht-mcq-q17",
+        question: "Double glazing reduces heat loss through windows mainly because the gap between the panes…",
+        options: [
+          "is filled with metal, a good conductor",
+          "contains trapped air or vacuum, reducing conduction and convection",
+          "reflects all infrared back into the room",
+          "increases the temperature of the glass",
+        ],
+        answerIndex: 1,
+        explanation: "The trapped air (or vacuum) between the panes is a poor conductor and cannot easily form convection currents, so both routes are reduced.",
+        guideRef: "Reducing unwanted heat transfer in the home",
+        difficulty: "core",
+        hints: ["What is between the two panes of glass?", "Air is a poor conductor.", "Trapped air also limits convection."],
+      },
+      {
+        id: "ht-mcq-q18",
+        question: "Which statement about temperature and thermal energy is correct?",
+        options: [
+          "They are exactly the same thing",
+          "A large warm object can have more thermal energy than a small hotter object",
+          "Temperature is the total energy of all the particles",
+          "Thermal energy is measured in °C",
+        ],
+        answerIndex: 1,
+        explanation: "Thermal energy depends on the total of all particles, so a big warm object (e.g. a bath) can hold more than a small hotter one (e.g. a cup of tea).",
+        guideRef: "Temperature vs thermal energy",
+        difficulty: "challenge",
+        hints: ["Is a bath of warm water or a cup of boiling tea 'hotter'?", "Which one would take more energy to cool to room temperature?", "Thermal energy depends on the number of particles too."],
+        strategy: "Distinguish related quantities",
+      },
+      {
+        id: "ht-mcq-q19",
+        question: "Two identical mugs of tea are left to cool. Mug A is shiny silver, Mug B is dull black. After 10 minutes…",
+        options: [
+          "Mug A is cooler because shiny surfaces emit best",
+          "Mug B is cooler because dull surfaces emit radiation best",
+          "Both are the same because colour does not matter",
+          "Mug B is hotter because black absorbs heat from the room",
+        ],
+        answerIndex: 1,
+        explanation: "A dull black surface is the better emitter of infrared radiation, so Mug B loses energy faster and ends up cooler.",
+        guideRef: "Thermal radiation",
+        difficulty: "challenge",
+        hints: ["Which surface emits radiation best?", "Better emitter → loses energy faster.", "Faster energy loss → cooler after 10 minutes."],
+        strategy: "Match surface to its job",
+      },
+      {
+        id: "ht-mcq-q20",
+        question: "A metal block and a plastic block are both left in a warm room overnight. In the morning the metal feels colder to the touch. The best explanation is that…",
+        options: [
+          "the metal is actually at a lower temperature than the plastic",
+          "metal conducts heat away from your hand faster, so your skin cools more quickly",
+          "plastic emits more infrared radiation than metal",
+          "the metal sets up convection currents in your hand",
+        ],
+        answerIndex: 1,
+        explanation: "Both are at room temperature, but metal conducts heat away from your warmer hand much faster, so your skin cools quickly and the metal feels colder.",
+        guideRef: "Conduction",
+        difficulty: "challenge",
+        hints: ["Have they been in the same room overnight — same temperature?", "What does 'feeling cold' actually depend on?", "Which conducts heat away from your hand faster?"],
+        strategy: "Question the obvious assumption",
+      },
+      {
+        id: "ht-mcq-q21",
+        question: "On a sunny day, a sealed car gets extremely hot inside. Which combination best explains this 'greenhouse' warming?",
+        options: [
+          "Convection brings hot air in through the closed windows",
+          "Radiation enters and is absorbed; the trapped warm air cannot escape by convection",
+          "Conduction through the metal body heats the seats directly",
+          "The car emits more radiation than it absorbs",
+        ],
+        answerIndex: 1,
+        explanation: "Infrared/sunlight passes in and is absorbed by the dark interior, warming the air. Because the windows are closed, that warm air cannot escape by convection, so heat builds up.",
+        guideRef: "Surfaces: absorbers, emitters and reflectors",
+        difficulty: "challenge",
+        hints: ["How does the Sun's energy get into the car?", "What absorbs it inside?", "Why can't the warm air get out?"],
+        strategy: "Combine more than one transfer route",
+      },
+      {
+        id: "ht-mcq-q22",
+        question: "A survival (foil) blanket is wrapped shiny-side inward around a casualty. The main reason is that the shiny surface…",
+        options: [
+          "is a good absorber of the casualty's body heat",
+          "is a poor emitter, so little of the body's radiation escapes",
+          "conducts heat away quickly to keep them cool",
+          "increases convection around the body",
+        ],
+        answerIndex: 1,
+        explanation: "A shiny surface is a poor emitter, so it radiates very little of the body's infrared away and also reflects it back, helping the casualty retain heat.",
+        guideRef: "Surfaces: absorbers, emitters and reflectors",
+        difficulty: "challenge",
+        hints: ["Do you want to keep the casualty's heat in or let it out?", "Which surface emits radiation poorly?", "Poor emitter reflects body heat back."],
+        strategy: "Match surface to its job",
+      },
+      {
+        id: "ht-mcq-q23",
+        question: "Why does a layer of snow on a roof actually help keep a house warm?",
+        options: [
+          "Snow is a good conductor that carries heat into the house",
+          "Snow traps air, which is a poor conductor, reducing heat loss through the roof",
+          "Snow reflects all the house's heat back as radiation only",
+          "Snow increases convection currents above the roof",
+        ],
+        answerIndex: 1,
+        explanation: "Fresh snow contains many trapped air pockets, and trapped air is a poor conductor, so it acts as insulation and slows heat loss through the roof.",
+        guideRef: "Reducing unwanted heat transfer in the home",
+        difficulty: "challenge",
+        hints: ["What is trapped inside fresh, fluffy snow?", "Is trapped air a good or poor conductor?", "Poor conductor on the roof = less heat lost."],
+      },
+      {
+        id: "ht-mcq-q24",
+        question: "Sea breezes during the day blow from the sea towards the land. This is because…",
+        options: [
+          "the sea heats up faster than the land, so air rises over the sea",
+          "the land heats up faster, so air rises over the land and cooler sea air flows in to replace it",
+          "the land reflects radiation onto the sea",
+          "the sea conducts heat to the land through the ground",
+        ],
+        answerIndex: 1,
+        explanation: "During the day the land warms faster than the sea. Warm air rises over the land, and cooler, denser air from over the sea flows in to replace it — a large-scale convection current.",
+        guideRef: "Convection",
+        difficulty: "challenge",
+        hints: ["Which warms faster in the day, land or sea?", "Warm air over the land does what?", "Cooler air flows in from where to replace it?"],
+        strategy: "Trace the convection cycle",
+      },
+      {
+        id: "ht-mcq-q25",
+        question: "An electric kettle has its heating element at the bottom rather than the top. The best reason is that this…",
+        options: [
+          "reduces conduction through the metal base",
+          "allows convection currents to circulate and heat all the water",
+          "stops the water from radiating heat away",
+          "keeps the handle cool for the user",
+        ],
+        answerIndex: 1,
+        explanation: "Heating from the bottom lets warmed water rise and cooler water sink, setting up convection currents that heat all the water. Heating from the top would leave the lower water cold.",
+        guideRef: "Convection",
+        difficulty: "challenge",
+        hints: ["Where does warm water go?", "If you heated the top, could the warm water reach the bottom?", "Bottom heating drives a convection current through all the water."],
+        strategy: "Trace the convection cycle",
+      },
+    ],
+    qa: [
+      {
+        id: "ht-qa-q01",
+        question: "State the three methods by which thermal energy can be transferred. (3 marks)",
+        marks: 3,
+        modelAnswer: "Conduction, convection and radiation.",
+        markScheme: [
+          "Conduction",
+          "Convection",
+          "Radiation | thermal radiation | infrared radiation",
+        ],
+        commonError: "Writing 'heat' or 'insulation' instead of naming the three transfer methods.",
+        guideRef: "Temperature vs thermal energy",
+        difficulty: "warmup",
+      },
+      {
+        id: "ht-qa-q02",
+        question: "Explain the difference between temperature and thermal energy. (2 marks)",
+        marks: 2,
+        modelAnswer:
+          "Temperature is a measure of the average kinetic energy of the particles in an object (how hot it is), measured in °C. Thermal energy is the total kinetic energy of all the particles in the object, measured in joules.",
+        markScheme: [
+          "Temperature = average kinetic energy of particles | how hot something is",
+          "Thermal energy = total energy of all the particles | total kinetic energy",
+        ],
+        commonError: "Treating temperature and thermal energy as the same thing.",
+        guideRef: "Temperature vs thermal energy",
+        difficulty: "warmup",
+      },
+      {
+        id: "ht-qa-q03",
+        question: "Explain why a metal door handle feels colder than a wooden door on the same cold day, even though they are at the same temperature. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "They are at the same temperature, but metal is a much better thermal conductor than wood. The metal conducts thermal energy away from your hand quickly, so your hand cools rapidly and the handle feels cold. Wood conducts energy away slowly, so your hand stays warmer and the wood feels less cold.",
+        markScheme: [
+          "Both are at the same temperature | same temperature",
+          "Metal is a better conductor than wood | metal conducts faster",
+          "Metal conducts energy away from the hand quickly | energy flows from hand to metal",
+          "So the hand cools faster and feels colder",
+        ],
+        commonError: "Saying the metal 'is colder' — it is at the same temperature; it just removes heat from your hand faster.",
+        guideRef: "Conduction",
+        difficulty: "core",
+        hints: ["Are they actually at different temperatures?", "Which conducts energy away from your hand faster?", "What does 'feeling cold' actually depend on?"],
+      },
+      {
+        id: "ht-qa-q04",
+        question: "Explain, in terms of particles and free electrons, why metals are much better thermal conductors than non-metals such as wood. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "In all solids, particles at the hot end vibrate more and collide with neighbouring particles, passing on kinetic energy. This vibration mechanism is slow. Metals also contain free (delocalised) electrons that are not tied to one atom. These electrons gain kinetic energy at the hot end and move quickly through the metal, transferring energy rapidly as they collide. Non-metals like wood have no free electrons, so they rely on slow vibration only, making them poor conductors (insulators).",
+        markScheme: [
+          "Particles vibrate more at the hot end and collide with neighbours | vibration passes energy on",
+          "This vibration mechanism is slow",
+          "Metals have free (delocalised) electrons",
+          "Free electrons move through the metal and transfer energy quickly | non-metals have no free electrons so conduct slowly",
+        ],
+        commonError: "Mentioning free electrons without explaining that they move through the metal to carry energy.",
+        guideRef: "Conduction",
+        difficulty: "core",
+        hints: ["What happens to particles at the hot end?", "What extra particles do metals have that wood doesn't?", "Why does that make metals so much faster?"],
+        solutions: [
+          {
+            label: "Two-mechanism explanation",
+            steps: [
+              "Mechanism 1 (all solids): hot particles vibrate more, collide with neighbours, pass energy along — slow.",
+              "Mechanism 2 (metals only): free electrons gain KE at hot end and travel through the metal.",
+              "Moving electrons transfer energy far faster than vibration alone.",
+              "Wood has no free electrons, so only the slow mechanism works → poor conductor.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "ht-qa-q05",
+        question: "Describe how a convection current is set up when water is heated in a saucepan from below. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "The water at the bottom is heated first and expands, becoming less dense. This warm, less-dense water is pushed up by the surrounding denser water and rises to the top. Cooler, denser water from the top sinks to the bottom to replace it. This cooler water is then heated, expands and rises in turn. The repeating cycle of rising warm water and sinking cool water is a convection current, which heats all the water.",
+        markScheme: [
+          "Water at the bottom is heated and expands",
+          "It becomes less dense | density decreases",
+          "Warm less-dense water rises",
+          "Cooler denser water sinks to replace it",
+          "Cycle repeats forming a convection current",
+        ],
+        commonError: "Saying 'heat rises'. It is the warm, less-dense water that rises, carrying energy with it.",
+        guideRef: "Convection",
+        difficulty: "core",
+        hints: ["Start with the water nearest the heat.", "What happens to its density?", "Trace what the cooler water does next."],
+        solutions: [
+          {
+            label: "Step-by-step convection cycle",
+            steps: [
+              "Bottom water heated → particles gain energy → water expands.",
+              "Expansion lowers density (same mass, more volume).",
+              "Less-dense water is pushed upward by the surrounding denser water.",
+              "Cooler water sinks, is heated, and the loop repeats — a convection current.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "ht-qa-q06",
+        question: "Explain why thermal radiation, unlike conduction and convection, can transfer energy from the Sun to the Earth through space. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "Thermal radiation is carried by infrared electromagnetic waves, which do not need any particles or medium to travel. The space between the Sun and Earth is a vacuum (no particles), so conduction and convection cannot happen because they both rely on particles. Electromagnetic waves can travel through the vacuum, so radiation transfers the Sun's energy to Earth.",
+        markScheme: [
+          "Radiation is (infrared) electromagnetic waves",
+          "EM waves need no particles / medium | can travel through a vacuum",
+          "Conduction and convection need particles | space is a vacuum so they cannot occur",
+        ],
+        commonError: "Saying space is 'full of air' — it is a vacuum, which is exactly why only radiation works.",
+        guideRef: "Thermal radiation",
+        difficulty: "core",
+        hints: ["What kind of waves is thermal radiation?", "Do electromagnetic waves need particles?", "Why can't conduction or convection cross space?"],
+      },
+      {
+        id: "ht-qa-q07",
+        question: "Explain why loft insulation made of fibreglass wool reduces heat loss from a house through the roof. Refer to both conduction and convection. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "Fibreglass wool traps many small pockets of air. Air is a poor conductor of heat, so trapping a thick layer of air greatly reduces the conduction of thermal energy through the roof. Because the air is trapped in the wool it cannot circulate, so it cannot form convection currents that would otherwise carry energy upward and out. Reducing both conduction and convection cuts the heat lost through the roof.",
+        markScheme: [
+          "Wool traps pockets of (still) air",
+          "Air is a poor conductor | reduces conduction",
+          "Trapped air cannot circulate / move",
+          "So convection currents cannot form | reduces convection",
+        ],
+        commonError: "Only mentioning that air is a poor conductor, and forgetting that trapping it also stops convection.",
+        guideRef: "Reducing unwanted heat transfer in the home",
+        difficulty: "core",
+        hints: ["What does the fibreglass wool trap?", "Is air a good or poor conductor?", "Why does trapping the air also stop convection?"],
+      },
+      {
+        id: "ht-qa-q08",
+        question: "A vacuum flask is designed to keep a hot drink hot. Explain how its design reduces heat loss by all three methods of heat transfer. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "The vacuum between the double walls contains no particles, so it stops heat loss by conduction and by convection across the gap. The walls are silvered/shiny, which reflects infrared radiation back towards the drink and reduces radiation losses. The plastic stopper and case are insulators that conduct heat away only slowly, reducing conduction through the top.",
+        markScheme: [
+          "Vacuum has no particles | no particles in the gap",
+          "Stops conduction and convection",
+          "Silvered/shiny walls reflect (infrared) radiation back",
+          "Insulating stopper/case reduces conduction",
+        ],
+        commonError: "Forgetting that the vacuum stops two methods (conduction AND convection), not just one.",
+        guideRef: "The vacuum flask: all three routes at once",
+        difficulty: "core",
+        hints: ["Deal with each method one at a time.", "What does a vacuum remove?", "What does a shiny surface do to radiation?"],
+        solutions: [
+          {
+            label: "One feature per transfer route",
+            steps: [
+              "Conduction + convection: vacuum gap has no particles, so neither can cross it.",
+              "Radiation: silvered walls reflect infrared back to the drink.",
+              "Remaining conduction: insulating stopper and case have low conductivity.",
+              "All three routes reduced → drink stays hot far longer.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "ht-qa-q09",
+        question: "A student plans an experiment using two identical metal cans filled with hot water — one painted dull black, one shiny silver — to investigate how surface affects the rate of cooling. Describe the method and state the expected result, with reasoning. (5 marks)",
+        marks: 5,
+        modelAnswer:
+          "Fill both cans with the same volume of water at the same starting temperature. Place a thermometer in each and record the temperature of both cans every minute for the same length of time, keeping all other conditions (room temperature, volume, can size) the same. Plot temperature against time for each can. The dull black can will cool faster than the shiny silver can, because a dull black surface is a better emitter of infrared radiation, so it loses energy by radiation more quickly. This is a fair test because only the surface is changed; everything else is kept constant.",
+        markScheme: [
+          "Same volume of water at the same starting temperature in both cans",
+          "Record temperature of each can at regular time intervals",
+          "Keep other variables constant (room temp, volume, can size) | fair test",
+          "Dull black can cools faster",
+          "Because dull black is a better emitter of (infrared) radiation",
+        ],
+        commonError: "Not stating which variables must be kept the same, so the test is not fair.",
+        guideRef: "Surfaces: absorbers, emitters and reflectors",
+        difficulty: "challenge",
+        hints: ["What must be the same about the water in both cans at the start?", "What do you measure, and how often?", "Which surface emits radiation best, and what does that mean for cooling?"],
+        solutions: [
+          {
+            label: "Designing the fair test",
+            steps: [
+              "Independent variable: surface (dull black vs shiny silver).",
+              "Dependent variable: temperature, recorded every minute.",
+              "Control variables: volume of water, starting temperature, can size, surroundings.",
+              "Expected result: black can cools faster (better emitter of infrared) → temperature-time graph for black falls more steeply.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "ht-qa-q10",
+        question: "Solar hot-water panels are usually painted dull black and placed where sunlight falls on them. Explain why dull black is chosen, and suggest why the pipes carrying the heated water to the tank are wrapped in shiny insulation. (5 marks)",
+        marks: 5,
+        modelAnswer:
+          "The panel needs to absorb as much infrared radiation from the Sun as possible. Dull black surfaces are the best absorbers of radiation, so painting the panel black maximises the energy absorbed and transferred to the water. The pipes, however, need to keep the heated water hot on the way to the tank. Wrapping them in shiny insulation reduces heat loss: the shiny surface is a poor emitter so it radiates little energy away, and the insulation reduces conduction. So black maximises absorption at the panel, while shiny minimises emission from the pipes.",
+        markScheme: [
+          "Panel must absorb radiation | absorb infrared from the Sun",
+          "Dull black is the best absorber",
+          "Maximises energy transferred to the water",
+          "Shiny surface is a poor emitter | reduces radiation loss from pipes",
+          "Insulation reduces conduction loss",
+        ],
+        commonError: "Saying black 'attracts' heat. It absorbs infrared radiation well; it does not attract anything.",
+        guideRef: "Surfaces: absorbers, emitters and reflectors",
+        difficulty: "challenge",
+        hints: ["What is the panel's job — absorb or emit?", "Which surface absorbs radiation best?", "What is the pipe's job, and which surface emits least?"],
+        strategy: "Match surface to its job",
+      },
+      {
+        id: "ht-qa-q11",
+        question: "On a hot sunny day a sealed parked car becomes far hotter inside than the outside air. Explain how the three methods of heat transfer combine to cause this, and suggest one way to reduce the effect. (5 marks)",
+        marks: 5,
+        modelAnswer:
+          "Infrared radiation from the Sun passes through the windows and is absorbed by the dark interior surfaces (seats, dashboard), which warm up. These surfaces heat the air inside the car by conduction and convection. Because the windows and doors are closed, the warm air cannot escape — it cannot set up a convection current to the outside — so thermal energy builds up and the inside gets much hotter than outside. To reduce the effect you could use a reflective (shiny/white) sunshade on the windscreen to reflect the Sun's radiation before it is absorbed, or leave a window slightly open to allow convection to carry warm air out.",
+        markScheme: [
+          "Radiation from the Sun enters through the windows and is absorbed inside",
+          "Absorbing surfaces (dark interior) warm up",
+          "Air is warmed by conduction/convection from these surfaces",
+          "Closed car traps the warm air (no convection to outside) so heat builds up",
+          "Sensible reduction: reflective sunshade reflects radiation | open a window to allow convection",
+        ],
+        commonError: "Describing only one transfer method instead of explaining how radiation, conduction and convection combine.",
+        guideRef: "Surfaces: absorbers, emitters and reflectors",
+        difficulty: "challenge",
+        hints: ["How does the Sun's energy enter the car?", "What absorbs it, and how is the air then warmed?", "Why can't the heat escape, and what could you change?"],
+      },
+      {
+        id: "ht-qa-q12",
+        question: "Explain why the heating element of an electric kettle is placed at the bottom, and why this heats all the water rather than just the layer near the element. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "The element heats the water at the bottom, which expands, becomes less dense and rises. Cooler, denser water from above sinks to take its place and is heated in turn, setting up a convection current that circulates and heats all the water. If the element were at the top, the warm water would stay at the top (it would not sink), so the water below would heat only slowly by conduction and the kettle would be inefficient.",
+        markScheme: [
+          "Element at the bottom heats water which becomes less dense and rises",
+          "Cooler denser water sinks and is heated in turn | convection current circulates all the water",
+          "Heating at the top would leave lower water cold | warm water would not sink so no convection current",
+        ],
+        commonError: "Saying heating at the top works the same — it does not, because warm water cannot sink to start a convection current.",
+        guideRef: "Convection",
+        difficulty: "challenge",
+        hints: ["What does the heated bottom water do?", "How does the rest of the water get heated?", "What would go wrong if the element were at the top?"],
+      },
+    ],
+  },
+  // questionBank omitted — auto-assembled from the quiz pools by lib/content.ts.
+};
