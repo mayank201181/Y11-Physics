@@ -228,6 +228,9 @@ export const ge: Topic = {
       { front: "Give one advantage and one disadvantage of nuclear power.", back: "Advantage: huge energy output with no CO₂. Disadvantage: dangerous radioactive waste and high set-up cost." },
       { front: "What does a step-up transformer do?", back: "It increases the voltage (and decreases the current) before electricity enters the transmission lines." },
       { front: "Why is biomass called roughly carbon-neutral?", back: "The plants absorb CO₂ as they grow, balancing the CO₂ released when the biomass is burned." },
+      { front: "What is the base load and what meets it?", back: "The constant minimum demand always present; met by steady stations such as nuclear (and large gas/coal)." },
+      { front: "Which sources can meet sudden peaks in demand?", back: "Fast-responding sources: gas turbines and pumped-storage hydroelectric, which can increase output within minutes." },
+      { front: "How does a PV solar cell differ from other generators?", back: "It converts sunlight directly into electricity, with no turbine and no generator." },
     ],
   },
   quiz: {
