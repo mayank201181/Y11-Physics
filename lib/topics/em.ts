@@ -73,7 +73,7 @@ export const em: Topic = {
           "An electric current makes its own magnetic field. A current is moving charge, and moving charge produces magnetism. Switch the current on and a field appears; switch it off and the field vanishes.",
       },
       body:
-        "**A current in a wire creates a magnetic field around it.** For a straight wire the field lines are **concentric circles** around the wire. Their direction is given by the **right-hand grip rule**: point your right thumb along the (conventional) current and your curled fingers show the field direction.\n\nThe field is **stronger** if the current is **larger** or you are **closer** to the wire.\n\nA **solenoid** is a coil of wire. The fields from each turn add up to give a field that looks exactly like a **bar magnet's**: uniform inside, with a clear N and S pole at the ends. The field is stronger if you:\n\n- increase the **current**,\n- add **more turns**, or\n- put an **iron core** inside (this makes an **electromagnet**).",
+        "**A current in a wire creates a magnetic field around it.** For a straight wire the field lines are **concentric circles** around the wire. Their direction is given by the **right-hand grip rule**: point your right thumb along the (conventional) current and your curled fingers show the field direction. **Reversing the current reverses the field direction** (the circles point the other way round).\n\nThe field is **stronger** if the current is **larger** or you are **closer** to the wire.\n\nA **solenoid** is a coil of wire. The fields from each turn add up to give a field that looks exactly like a **bar magnet's**: uniform inside, with a clear N and S pole at the ends. The field is stronger if you:\n\n- increase the **current**,\n- add **more turns**, or\n- put an **iron core** inside (this makes an **electromagnet**).",
       diagrams: [
         {
           caption: "Concentric circular field around a straight current-carrying wire (right-hand grip rule).",
@@ -89,7 +89,8 @@ export const em: Topic = {
       keyPoints: [
         "A current always creates a magnetic field around it.",
         "Straight wire: concentric circular field lines (right-hand grip rule).",
-        "Solenoid: bar-magnet field, uniform inside, N and S at the ends.",
+        "Reversing the current reverses the field direction.",
+        "Flat coil / solenoid: bar-magnet field, uniform inside, N and S at the ends.",
         "Stronger field: more current, more turns, or an iron core.",
       ],
       whyItWorks:
@@ -175,12 +176,17 @@ export const em: Topic = {
           "Moving a magnet relative to a coil changes the magnetic field through the coil, and a *changing* field induces a voltage (e.m.f.). No change, no e.m.f. — that's why holding it still does nothing.",
       },
       body:
-        "**Electromagnetic induction**: when a conductor and a magnetic field **move relative to each other** (a wire cutting field lines, or a changing field through a coil), an **e.m.f. (voltage)** is *induced*. If the circuit is complete, this drives an **induced current**.\n\nThe induced e.m.f. is **bigger** if you:\n\n- move **faster**,\n- use a **stronger magnet**,\n- use **more turns** on the coil, or\n- increase the coil **area**.\n\n**Reversing the movement reverses the induced e.m.f.** (and current).\n\nAn **a.c. generator (alternator)** uses this. A coil is rotated in a magnetic field; as it spins, its sides cut field lines and an e.m.f. is induced. Because each side moves up through the field then down, the e.m.f. reverses every half-turn, giving **alternating current (a.c.)**. The coil connects to the circuit through **slip rings** and brushes (two continuous rings — *not* a split ring), so the output stays alternating.",
+        "**Electromagnetic induction**: when a conductor and a magnetic field **move relative to each other** (a wire cutting field lines, or a changing field through a coil), an **e.m.f. (voltage)** is *induced*. If the circuit is complete, this drives an **induced current**.\n\nThe induced e.m.f. is **bigger** if you:\n\n- move **faster**,\n- use a **stronger magnet**,\n- use **more turns** on the coil, or\n- increase the coil **area**.\n\n**Reversing the movement reverses the induced e.m.f.** (and current).\n\nAn **a.c. generator (alternator)** uses this. A coil is rotated in a magnetic field; as it spins, its sides cut field lines and an e.m.f. is induced. Because each side moves up through the field then down, the e.m.f. reverses every half-turn, giving **alternating current (a.c.)**. The coil connects to the circuit through **slip rings** and brushes (two continuous rings — *not* a split ring), so the output stays alternating.\n\nThe **output–time graph** is a **sine wave**: the e.m.f. is **maximum** when the coil is moving parallel to the field (cutting lines fastest) and **zero** twice per turn when the coil is moving along the field lines (cutting none). Spinning the coil **faster** increases the **peak** e.m.f. *and* the **frequency** (more cycles per second). A stronger magnet or more turns raises the peak.",
       diagrams: [
         {
           caption: "A.c. generator: a coil spins in a field; slip rings give an alternating output.",
           svg:
             '<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An alternating current generator with a coil rotating between magnet poles connected to slip rings">\n<rect x="10" y="40" width="30" height="60" fill="#ef4444" stroke="#475569"/>\n<text x="25" y="74" font-size="11" text-anchor="middle" fill="#ffffff">N</text>\n<rect x="220" y="40" width="30" height="60" fill="#3b82f6" stroke="#475569"/>\n<text x="235" y="74" font-size="11" text-anchor="middle" fill="#ffffff">S</text>\n<rect x="95" y="45" width="70" height="50" fill="none" stroke="#b91c1c" stroke-width="3"/>\n<text x="130" y="40" font-size="9" text-anchor="middle" fill="#334155">rotating coil</text>\n<circle cx="118" cy="108" r="7" fill="none" stroke="#475569" stroke-width="2"/>\n<circle cx="142" cy="108" r="7" fill="none" stroke="#475569" stroke-width="2"/>\n<text x="130" y="132" font-size="9" text-anchor="middle" fill="#334155">slip rings (continuous) give a.c.</text>\n</svg>',
+        },
+        {
+          caption: "Output-time graph of an a.c. generator: a sine wave that reverses every half-turn. Faster rotation gives a higher peak AND more cycles per second (higher frequency).",
+          svg:
+            '<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A sine-wave graph of induced e.m.f. against time for an alternating current generator, crossing zero each half turn and alternating between positive and negative peaks">\n<line x1="20" y1="70" x2="245" y2="70" stroke="#475569" stroke-width="1"/>\n<line x1="30" y1="15" x2="30" y2="125" stroke="#475569" stroke-width="1"/>\n<text x="250" y="74" font-size="9" fill="#334155">t</text>\n<text x="14" y="18" font-size="9" fill="#334155">e.m.f.</text>\n<path d="M30 70 C50 20 70 20 90 70 C110 120 130 120 150 70 C170 20 190 20 210 70 C223 105 233 105 240 85" fill="none" stroke="#b91c1c" stroke-width="2"/>\n<text x="90" y="14" font-size="8" text-anchor="middle" fill="#334155">peak (coil parallel to field)</text>\n<text x="150" y="135" font-size="8" text-anchor="middle" fill="#334155">zero when coil is perpendicular to field</text>\n</svg>',
         },
       ],
       keyPoints: [
@@ -188,7 +194,9 @@ export const em: Topic = {
         "No relative movement → no induced e.m.f.",
         "Bigger e.m.f.: faster movement, stronger magnet, more turns, larger area.",
         "Reversing the motion reverses the induced e.m.f.",
-        "A.c. generator: spinning coil + slip rings = alternating output.",
+        "The induced effect always OPPOSES the change that causes it (energy conservation).",
+        "A.c. generator: spinning coil + slip rings = alternating output (a sine wave).",
+        "Spinning faster raises both the peak e.m.f. and the frequency of the output.",
       ],
       whyItWorks:
         "Moving the conductor through the field exerts a force on its free electrons (the motor effect in reverse), pushing them along the wire — that push is the induced e.m.f. The faster the cutting of field lines, the larger the e.m.f.",

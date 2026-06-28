@@ -116,6 +116,41 @@ export const ge: Topic = {
       strategies: ["List the factors, then score each option", "Identify the deciding factor for the situation"],
     },
     {
+      heading: "Climate change and the move towards renewables",
+      body:
+        "For most of the 20th century, electricity came mainly from burning **fossil fuels**, because they are reliable, give a high output and were cheap to build. The problem is that burning them releases **carbon dioxide (CO₂)** and other **greenhouse gases**, which trap heat in the atmosphere and drive **global warming** and **climate change** (rising sea levels, more extreme weather).\n\nBecause of this, the **current trend is a shift away from fossil fuels towards low-carbon and renewable resources**:\n\n- Many countries are building large numbers of **wind farms** (on land and offshore) and **solar farms**.\n- Coal stations are being closed; gas is often used as a 'bridge' because it emits less CO₂ than coal per unit of energy.\n- **Nuclear** is used by some countries as a low-carbon (but non-renewable) part of the mix.\n- The cost of wind and solar has fallen sharply, making renewables increasingly competitive with fossil fuels.\n\nThe main challenge is that the most scalable renewables (wind, solar) are **intermittent**, so a low-carbon grid also needs **energy storage** (batteries, pumped-storage HEP) and reliable backup or 'firm' low-carbon sources to keep supply matched to demand.",
+      keyPoints: [
+        "Burning fossil fuels releases CO₂, a greenhouse gas that causes climate change.",
+        "Current trend: moving away from fossil fuels towards renewables and low-carbon sources.",
+        "Wind and solar are growing fastest as their costs have fallen.",
+        "Intermittency must be solved with storage and reliable backup.",
+      ],
+      thinkDeeper:
+        "Replacing fossil fuels is not just about building renewables — it is about keeping supply equal to demand at every instant. That is why storage, grid links and flexible/firm low-carbon power matter as much as the renewables themselves.",
+      strategies: ["Separate the cause (CO₂) from the response (renewables)", "Remember intermittency is the key obstacle"],
+    },
+    {
+      heading: "Electricity demand and base load",
+      body:
+        "Electricity cannot easily be stored in large amounts, so the amount **generated must match the amount used at every instant**. Demand is not constant — it varies through the day and across the year.\n\n- **Base load** is the more-or-less constant minimum demand that is always present (e.g. fridges, street lighting, factories, the night-time minimum). It is best met by stations that run steadily and are cheap to run continuously, such as **nuclear** and large **gas/coal** stations.\n- **Peaks** occur at predictable times — a big morning rise as people wake up, and a large evening peak (cooking, heating, lights, TVs). There are also sudden surges (e.g. everyone switching on kettles in an advert break).\n- To meet peaks, the grid needs stations that can **start up and increase output quickly**: **gas turbines** and **pumped-storage hydroelectric** are ideal because they respond in minutes. Nuclear is poor for this because it cannot change output quickly.\n\nThis is why a real grid uses a **mix** of resources: steady stations for the base load plus fast-responding stations and storage for the peaks.",
+      diagrams: [
+        {
+          caption: "A typical daily demand curve: a low overnight base load with morning and evening peaks.",
+          svg:
+            '<svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Daily electricity demand curve showing a low overnight base load and morning and evening peaks">\n<line x1="40" y1="150" x2="350" y2="150" stroke="#475569" stroke-width="1.5"/>\n<line x1="40" y1="20" x2="40" y2="150" stroke="#475569" stroke-width="1.5"/>\n<text x="195" y="172" font-size="10" text-anchor="middle" fill="#334155">time of day</text>\n<text x="18" y="90" font-size="10" text-anchor="middle" fill="#334155" transform="rotate(-90 18 90)">demand</text>\n<path d="M40 120 L90 118 L130 70 L170 95 L230 90 L280 40 L320 100 L350 120" fill="none" stroke="#2563eb" stroke-width="2.5"/>\n<line x1="40" y1="128" x2="350" y2="128" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5 4"/>\n<text x="300" y="142" font-size="9" fill="#16a34a">base load</text>\n<text x="130" y="60" font-size="9" text-anchor="middle" fill="#1e3a8a">morning</text>\n<text x="280" y="32" font-size="9" text-anchor="middle" fill="#1e3a8a">evening peak</text>\n<text x="60" y="115" font-size="9" fill="#64748b">night</text>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "Supply must match demand at every instant — electricity is hard to store.",
+        "Base load = constant minimum demand, met by steady stations (nuclear, large gas/coal).",
+        "Demand peaks in the morning and (largest) in the evening.",
+        "Peaks need fast-responding sources: gas turbines and pumped-storage HEP.",
+      ],
+      thinkDeeper:
+        "Pumped-storage HEP acts like a giant battery: cheap off-peak electricity pumps water uphill, and at peak times that water is released to generate quickly. It is one of the few ways to store electricity on a grid scale.",
+      strategies: ["Match steady sources to base load, fast sources to peaks", "Ask: how quickly can this station change its output?"],
+    },
+    {
       heading: "The National Grid",
       body:
         "The **National Grid** is the network of cables, pylons and transformers that carries electricity from power stations to homes, schools and factories across the country.\n\nThe journey of the electricity:\n\n1. Power stations generate electricity at around 25 kV.\n2. A **step-up transformer** raises the voltage to a very high value (e.g. **400 000 V**) for transmission.\n3. The electricity travels along **high-voltage transmission lines** (the pylons) over long distances.\n4. A **step-down transformer** lowers the voltage in stages for safe use (e.g. **230 V** in UK homes).\n5. The electricity reaches consumers.\n\nTransformers only work with **alternating current (a.c.)**, which is one reason mains electricity is a.c. Transmitting at high voltage is the key to delivering power efficiently over long distances.",
@@ -169,6 +204,8 @@ export const ge: Topic = {
       "The National Grid: power stations → step-up transformer → HV lines → step-down transformer → consumers.",
       "Electricity is transmitted at high voltage and low current to cut power loss, because loss = I²R.",
       "P = V × I, so for fixed power a higher voltage means a lower current.",
+      "Supply must match demand: steady stations (nuclear) cover the base load; fast stations (gas, pumped storage) meet peaks.",
+      "The trend is away from fossil fuels (CO₂/climate change) towards renewables, backed by storage for intermittency.",
     ],
     keywords: [
       { term: "Renewable resource", definition: "An energy resource that is replenished as fast as it is used, so it will not run out (e.g. wind, solar)." },
@@ -181,6 +218,9 @@ export const ge: Topic = {
       { term: "Step-up transformer", definition: "A transformer that increases voltage (and decreases current) for transmission." },
       { term: "Step-down transformer", definition: "A transformer that decreases voltage to a safe level for consumers." },
       { term: "Carbon-neutral", definition: "Releasing no net CO₂ overall; e.g. biomass, because growing plants reabsorb the CO₂ released when burned." },
+      { term: "Base load", definition: "The constant minimum electricity demand that is always present, best met by steady stations such as nuclear." },
+      { term: "Intermittent", definition: "Producing power only when the weather/conditions allow (e.g. wind, solar), so supply cannot be guaranteed on demand." },
+      { term: "Pumped storage", definition: "A hydroelectric scheme that pumps water uphill using cheap off-peak electricity and releases it to generate quickly at peak times." },
     ],
     flashcards: [
       { front: "Why is electricity transmitted at high voltage?", back: "High voltage means low current (P = VI), and the power lost in the cables is I²R, so a low current means far less wasted energy." },
@@ -505,6 +545,76 @@ export const ge: Topic = {
         hints: ["Find the ratio of the currents first (I = P/V).", "The voltage ratio is 1 : 10, so the current ratio is 10 : 1.", "Square the current ratio for the loss ratio."],
         strategy: "Remember the loss is squared in the current",
       },
+      {
+        id: "ge-mcq-q26",
+        question: "Which type of power station is best suited to supplying the constant base-load demand?",
+        options: [
+          "A gas turbine used only at peak times",
+          "A nuclear power station running steadily",
+          "A single small wind turbine",
+          "A pumped-storage hydroelectric scheme",
+        ],
+        answerIndex: 1,
+        explanation: "Base load is the constant minimum demand, best met by a station that runs steadily and is cheap to run continuously, such as a nuclear station. Gas turbines and pumped storage are for fast-responding peaks; a single wind turbine is intermittent.",
+        guideRef: "Electricity demand and base load",
+        difficulty: "core",
+        hints: ["Base load is steady and always present.", "Which station runs continuously and cannot change output quickly?", "Fast-response stations are for peaks, not base load."],
+      },
+      {
+        id: "ge-mcq-q27",
+        question: "Which generating method is best able to respond within minutes to a sudden evening peak in demand?",
+        options: ["Nuclear", "Pumped-storage hydroelectric", "Coal", "Solar PV"],
+        answerIndex: 1,
+        explanation: "Pumped-storage HEP can release stored water through its turbines within minutes, making it ideal for sudden peaks. Nuclear and coal change output slowly, and solar gives little output in the evening.",
+        guideRef: "Electricity demand and base load",
+        difficulty: "challenge",
+        hints: ["Which source can start generating almost instantly?", "Think of a method that stores energy ready to release.", "Water released from a high reservoir spins turbines at once."],
+      },
+      {
+        id: "ge-mcq-q28",
+        question: "What is the main reason many countries are moving away from fossil fuels towards renewables?",
+        options: [
+          "Renewables are always cheaper to build",
+          "Fossil fuels release CO₂, a greenhouse gas that causes climate change",
+          "Renewables are completely reliable",
+          "Fossil fuels produce radioactive waste",
+        ],
+        answerIndex: 1,
+        explanation: "The key driver is climate change: burning fossil fuels releases CO₂ and other greenhouse gases that warm the planet. Renewables are not always cheaper to build or fully reliable, and it is nuclear (not fossil fuels) that makes radioactive waste.",
+        guideRef: "Climate change and the move towards renewables",
+        difficulty: "core",
+        hints: ["What gas do fossil fuels release when burned?", "What global problem is that gas linked to?", "It is an environmental driver, not just cost."],
+      },
+      {
+        id: "ge-mcq-q29",
+        question: "Wave power generates electricity by…",
+        options: [
+          "trapping the tide behind a barrage",
+          "using the up-and-down movement of surface waves to drive a generator",
+          "heating water with hot underground rocks",
+          "letting water fall from a high dam",
+        ],
+        answerIndex: 1,
+        explanation: "Wave devices are rocked by the up-and-down motion of surface waves, and this movement drives a generator. Tidal uses a barrage, geothermal uses hot rocks, and HEP uses falling dammed water.",
+        guideRef: "Renewable resources compared",
+        difficulty: "core",
+        hints: ["Don't confuse waves (wind-driven surface motion) with tides.", "What is the device physically doing in the water?", "The bobbing motion drives the generator."],
+      },
+      {
+        id: "ge-mcq-q30",
+        question: "A photovoltaic solar panel differs from a coal, wind or hydroelectric station because it…",
+        options: [
+          "needs no Sun to work",
+          "generates electricity directly, without a turbine or generator",
+          "produces CO₂ while generating",
+          "stores energy as steam",
+        ],
+        answerIndex: 1,
+        explanation: "A PV cell converts sunlight straight into electricity, with no turbine and no generator. Coal, wind and HEP all spin a generator. PV produces no CO₂ and needs sunlight.",
+        guideRef: "Renewable resources compared",
+        difficulty: "core",
+        hints: ["What is missing from a solar PV setup compared to the others?", "Is there any spinning turbine in a PV panel?", "PV converts light energy straight to electrical energy."],
+      },
     ],
     qa: [
       {
@@ -774,6 +884,41 @@ export const ge: Topic = {
         difficulty: "challenge",
         hints: ["Write down P_loss = I²R and see what each factor does.", "Does thicker cable change R or I?", "Compare a linear effect (R) with a squared effect (I)."],
         strategy: "Remember the loss is squared in the current",
+      },
+      {
+        id: "ge-qa-q13",
+        question: "Explain what is meant by the 'base load' of electricity demand, and describe why a national grid uses a mix of different power stations to meet demand through the day. (5 marks)",
+        marks: 5,
+        modelAnswer:
+          "The base load is the more-or-less constant minimum demand for electricity that is always present, day and night (for example fridges, street lighting and factories). Demand is not constant, though: it rises to peaks at predictable times, with a morning rise and a large evening peak, plus sudden short surges. Because electricity cannot easily be stored in large amounts, the amount generated must match demand at every instant. The grid therefore uses a mix: steady stations that are cheap to run continuously (such as nuclear and large gas or coal stations) supply the base load, while stations that can change output quickly (such as gas turbines and pumped-storage hydroelectric) are switched on to meet the peaks. Using a mix means demand can always be matched without wasting fuel running expensive fast-response stations all the time.",
+        markScheme: [
+          "Base load = constant/minimum demand that is always present",
+          "Demand varies through the day | peaks (e.g. morning/evening)",
+          "Supply must match demand at every instant (electricity hard to store)",
+          "Steady stations (nuclear/large gas/coal) supply the base load",
+          "Fast-responding stations (gas turbine/pumped storage) meet the peaks",
+        ],
+        commonError: "Describing base load as the maximum demand, or saying one type of station can do everything — fast-response and steady stations have different roles.",
+        guideRef: "Electricity demand and base load",
+        difficulty: "challenge",
+        hints: ["Base load is the steady minimum, not the maximum.", "When does demand peak during a day?", "Match steady stations to base load and fast ones to peaks."],
+      },
+      {
+        id: "ge-qa-q14",
+        question: "Biomass is often described as a roughly carbon-neutral renewable resource. Explain what this means and give one advantage and one disadvantage of using biomass to generate electricity. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "Carbon-neutral means there is little or no net release of CO₂ overall: although burning biomass releases CO₂, the plants absorbed an approximately equal amount of CO₂ from the air as they grew, so the net addition to the atmosphere is small. It is renewable because new crops can be grown to replace what is burned. An advantage is that it makes use of plant or waste material and adds little net CO₂, and it is reliable like a fossil-fuel station (it can be burned on demand). A disadvantage is that burning still releases CO₂ and other pollutants at the point of use, and growing the crops needs large areas of land that could otherwise be used to grow food.",
+        markScheme: [
+          "Carbon-neutral = little/no net CO₂ overall",
+          "Because growing plants absorb CO₂ that balances the CO₂ released when burned",
+          "Advantage: uses waste/plants | low net CO₂ | reliable (burn on demand) | renewable",
+          "Disadvantage: still emits CO₂/pollutants when burned | large land use / competes with food",
+        ],
+        commonError: "Saying biomass releases no CO₂ at all — it does release CO₂ when burned; the point is that growth reabsorbs a similar amount, so the net is roughly zero.",
+        guideRef: "Renewable resources compared",
+        difficulty: "core",
+        hints: ["What does 'net' CO₂ mean here?", "Where does the balancing CO₂ get absorbed?", "Give one plus and one minus, including land use."],
       },
     ],
   },

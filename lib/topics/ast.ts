@@ -25,7 +25,7 @@ export const ast: Topic = {
           "Everything in the Solar System orbits because the Sun's gravity constantly pulls each object toward it. That inward pull bends a straight-line motion into a closed orbit. The bigger and closer the object, the stronger the pull.",
       },
       body:
-        "The **Solar System** formed about 4.6 billion years ago from a cloud of gas and dust. At its centre is the **Sun**, a star, which contains over 99% of the system's mass. Orbiting the Sun are:\n\n- **Eight planets** (Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune) in roughly **circular** orbits.\n- **Dwarf planets** such as Pluto — large enough to be round but they have not cleared other objects from their orbit.\n- **Moons (natural satellites)** that orbit planets, e.g. Earth's Moon.\n- **Asteroids** — small rocky bodies, most in the asteroid belt between Mars and Jupiter.\n- **Comets** — icy bodies on long, highly **elliptical** orbits that take them far from and then close to the Sun.\n\nThe four inner planets are small and rocky; the four outer planets are large gas/ice giants. Orbits get larger and slower the further you go from the Sun.",
+        "The **Solar System** formed about 4.6 billion years ago from a giant cloud of gas and dust (a nebula). Gravity pulled most of the material into the centre, where it became hot and dense enough for fusion to start — forming the **Sun**. The leftover material orbiting the young Sun clumped together to form the planets, moons, asteroids and comets. At the centre is the **Sun**, a star, which contains over 99% of the system's mass.\n\n**The eight planets, in order from the Sun:**\n\n1. Mercury\n2. Venus\n3. Earth\n4. Mars\n5. Jupiter\n6. Saturn\n7. Uranus\n8. Neptune\n\n(A common mnemonic: *My Very Easy Method Just Speeds Up Naming*.) The four **inner** planets (Mercury–Mars) are small and **rocky**; the four **outer** planets (Jupiter–Neptune) are large **gas/ice giants**.\n\nAlso orbiting the Sun are:\n\n- **Dwarf planets** such as **Pluto** — large enough for gravity to pull them into a round shape, but they have *not* cleared other objects from their orbit (which is why Pluto is no longer counted as a full planet).\n- **Moons (natural satellites)** that orbit planets, e.g. Earth's Moon and Jupiter's many moons.\n- **Asteroids** — small rocky bodies, most in the **asteroid belt** between Mars and Jupiter.\n- **Comets** — small icy bodies on long, highly **elliptical** orbits that take them far from and then close to the Sun.\n\nThe planets follow **slightly elliptical** (almost circular) orbits. Orbits get larger, and the planets move more slowly with longer periods, the further you go from the Sun.",
       diagrams: [
         {
           caption: "The Sun at the centre with planets in near-circular orbits and a comet on an elliptical orbit.",
@@ -35,9 +35,12 @@ export const ast: Topic = {
       ],
       keyPoints: [
         "The Sun (a star) holds 99%+ of the Solar System's mass and sits at the centre.",
-        "Planets have near-circular orbits; comets have highly elliptical orbits.",
-        "Dwarf planets have not cleared their orbits; moons orbit planets.",
+        "Planet order from the Sun: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.",
+        "Inner 4 planets are small and rocky; outer 4 are gas/ice giants.",
+        "Planets have slightly elliptical (near-circular) orbits; comets have highly elliptical orbits.",
+        "Dwarf planets (e.g. Pluto) have not cleared their orbits; moons orbit planets.",
         "Asteroids are small rocky bodies, mostly between Mars and Jupiter.",
+        "The Solar System formed ~4.6 billion years ago from a collapsing cloud of gas and dust.",
       ],
       strategies: ["Classify objects by type before reasoning", "Link orbit shape to object type"],
     },
@@ -219,6 +222,35 @@ export const ast: Topic = {
         "If every galaxy is moving away from us, does that put Earth at the centre of the Universe? (No — in an expanding space every observer sees all other galaxies receding, like dots on an inflating balloon.)",
       strategies: ["Link cause (recession) to effect (redshift)", "List both pieces of Big Bang evidence"],
     },
+    {
+      heading: "The speed of light and the light-year",
+      discovery: {
+        problem:
+          "The nearest star beyond the Sun is about 40 000 000 000 000 km away, and galaxies are millions of times further. Writing distances like that in metres or kilometres becomes hopeless. How do astronomers measure such enormous distances sensibly?",
+        idea:
+          "Light is the fastest thing in the Universe but it still takes time to travel. So astronomers use the distance light travels in one year — a **light-year** — as a giant ruler. It turns clumsy strings of zeros into manageable numbers.",
+      },
+      body:
+        "**The speed of light**\n\nLight (and all electromagnetic waves) travels through space (a vacuum) at a constant speed:\n\n`c = 3 × 10⁸ m/s` (300 000 000 m/s, or 300 000 km/s).\n\nNothing can travel faster than this. Even at this speed, light takes time to cross space: about 8 minutes from the Sun to Earth, and over 4 years from the next nearest star.\n\n**The light-year**\n\nA **light-year (ly)** is a unit of **distance**, not time: it is the distance light travels in one year.\n\nWork it out with distance = speed × time:\n\n- time for 1 year = 365.25 × 24 × 60 × 60 ≈ 3.15 × 10⁷ s\n- distance = c × t = (3 × 10⁸) × (3.15 × 10⁷) ≈ **9.5 × 10¹⁵ m** (about 9.5 trillion km).\n\nBecause distances to stars and galaxies are so huge, light-years are far more convenient than metres. A useful consequence: when we look at a galaxy 13 billion light-years away, we see light that left it 13 billion years ago — we are looking back in time.",
+      diagrams: [
+        {
+          caption: "Light travels at c = 3×10⁸ m/s; a light-year is the distance it covers in one year.",
+          svg:
+            '<svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A diagram showing light leaving a star and travelling for one year to define one light-year of distance">\n<rect x="0" y="0" width="320" height="120" fill="#f8fafc"/>\n<circle cx="30" cy="60" r="12" fill="#f59e0b" stroke="#b45309"/>\n<text x="30" y="88" font-size="8" text-anchor="middle" fill="#7c2d12">star</text>\n<line x1="44" y1="60" x2="280" y2="60" stroke="#fbbf24" stroke-width="3" marker-end="url(#ly)"/>\n<text x="160" y="50" font-size="9" text-anchor="middle" fill="#334155">light travels at c = 3 x 10^8 m/s</text>\n<text x="160" y="78" font-size="9" text-anchor="middle" fill="#7c3aed">distance covered in 1 year = 1 light-year</text>\n<text x="160" y="100" font-size="8" text-anchor="middle" fill="#475569">1 ly approx 9.5 x 10^15 m</text>\n<defs><marker id="ly" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#fbbf24"/></marker></defs>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "Speed of light c = 3 × 10⁸ m/s (the fastest possible speed).",
+        "A light-year is a unit of DISTANCE: the distance light travels in one year.",
+        "1 light-year ≈ 9.5 × 10¹⁵ m (about 9.5 trillion km).",
+        "Light-years make huge astronomical distances manageable.",
+        "Looking at very distant objects means looking back in time.",
+      ],
+      formulae: ["c = 3 × 10⁸ m/s", "distance = speed × time", "1 light-year = c × (1 year) ≈ 9.5 × 10¹⁵ m"],
+      whyItWorks:
+        "A light-year is just distance = speed × time with the speed fixed at c and the time set to one year. Using it avoids writing astronomical distances as huge, error-prone numbers of metres.",
+      strategies: ["Remember a light-year measures distance, not time", "Use distance = speed × time to derive it"],
+    },
   ],
   learn: {
     bigIdea:
@@ -231,6 +263,7 @@ export const ast: Topic = {
       "Stellar life cycle: nebula → protostar → main sequence; then (Sun-like) red giant → planetary nebula → white dwarf, or (massive) red supergiant → supernova → neutron star/black hole.",
       "Elements up to iron form by fusion in stars; heavier elements form in supernovae.",
       "Redshift of distant galaxies (greater the further away) shows the Universe is expanding; redshift and the CMBR are evidence for the Big Bang.",
+      "The speed of light c = 3 × 10⁸ m/s; a light-year is the distance light travels in one year (≈ 9.5 × 10¹⁵ m).",
     ],
     keywords: [
       { term: "Centripetal force", definition: "The resultant force directed toward the centre of a circle that keeps an object moving in a circular path; for orbits it is provided by gravity." },
@@ -243,6 +276,10 @@ export const ast: Topic = {
       { term: "Luminosity", definition: "The total power (light energy per second) actually emitted by a star." },
       { term: "Redshift", definition: "The increase in wavelength of light from a source moving away from us, shifting it toward the red end of the spectrum." },
       { term: "CMBR", definition: "Cosmic microwave background radiation — faint microwaves from all directions, leftover from the early hot Universe; evidence for the Big Bang." },
+      { term: "Speed of light (c)", definition: "The speed at which light travels through a vacuum, c = 3 × 10⁸ m/s; the maximum possible speed." },
+      { term: "Light-year", definition: "A unit of distance equal to the distance light travels in one year (≈ 9.5 × 10¹⁵ m)." },
+      { term: "Dwarf planet", definition: "A round body orbiting the Sun (e.g. Pluto) that has not cleared other objects from its orbit." },
+      { term: "Geostationary vs polar orbit", definition: "Geostationary: ~36 000 km over the equator, 24 h period, fixed above one point (comms/TV). Low polar: a few hundred km, ~90 min, scans the whole Earth (weather/imaging)." },
     ],
     flashcards: [
       { front: "What provides the centripetal force for a planet's orbit?", back: "The gravitational force of attraction between the Sun and the planet." },
@@ -251,6 +288,9 @@ export const ast: Topic = {
       { front: "Give the life cycle of a star much more massive than the Sun.", back: "Nebula → protostar → main sequence → red supergiant → supernova → neutron star or black hole." },
       { front: "What are the two main pieces of evidence for the Big Bang?", back: "Redshift of light from distant galaxies (the further away, the greater the redshift → expanding Universe) and the cosmic microwave background radiation (CMBR)." },
       { front: "Difference between luminosity and brightness?", back: "Luminosity is the total power a star really emits; brightness is how bright it appears to us, which also depends on distance." },
+      { front: "What is a light-year and roughly how big is it?", back: "A unit of distance — the distance light travels in one year. Using distance = speed × time: (3×10⁸)(3.15×10⁷) ≈ 9.5×10¹⁵ m." },
+      { front: "State the value of the speed of light c.", back: "c = 3 × 10⁸ m/s (300 000 km/s) — the fastest possible speed; light takes ~8 min from the Sun to Earth." },
+      { front: "List the eight planets in order from the Sun.", back: "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune." },
     ],
   },
   quiz: {

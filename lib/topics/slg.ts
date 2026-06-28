@@ -911,6 +911,66 @@ export const slg: Topic = {
         difficulty: "challenge",
         hints: ["What happens to the volume as the plunger moves in?", "How does packing the same particles into less space change collisions?", "Which law applies at constant temperature?"],
       },
+      {
+        id: "slg-qa-q13",
+        question: "Describe how you would measure the density of a liquid using a measuring cylinder and a balance. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "Place an empty (dry) measuring cylinder on a balance and record its mass, m₁. Pour a measured volume V of the liquid into the cylinder (reading the volume at eye level from the bottom of the meniscus) and record the new total mass, m₂. The mass of the liquid is m₂ − m₁. Calculate the density using ρ = (m₂ − m₁)/V.",
+        markScheme: [
+          "Measure mass of empty cylinder (m₁)",
+          "Add a known/measured volume V of liquid and measure new mass (m₂)",
+          "Mass of liquid = m₂ − m₁",
+          "Density ρ = (m₂ − m₁)/V | mass of liquid ÷ its volume",
+        ],
+        commonError: "Forgetting to subtract the mass of the empty cylinder, or reading the volume above/below the meniscus.",
+        guideRef: "Measuring density",
+        difficulty: "core",
+        hints: ["You must find the mass of the liquid alone.", "Weigh the cylinder empty, then with liquid.", "Then divide that mass by the volume."],
+      },
+      {
+        id: "slg-qa-q14",
+        question: "Explain, in terms of particles, why evaporation from the surface of a liquid causes the liquid to cool down. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "The particles in a liquid have a range of speeds and energies. Only the fastest, most energetic particles near the surface have enough energy to escape and become a gas (evaporate). When these high-energy particles leave, the average kinetic energy of the particles remaining in the liquid falls. Since temperature depends on the average kinetic energy of the particles, the temperature of the liquid drops, so the liquid cools.",
+        markScheme: [
+          "Particles have a range of energies; fastest/most energetic ones escape at the surface",
+          "Average kinetic energy of the remaining particles decreases",
+          "Temperature depends on average kinetic energy, so the liquid cools",
+        ],
+        commonError: "Saying all particles escape, or that the liquid gains energy — it is only the fastest that leave, lowering the average.",
+        guideRef: "Changes of state and internal energy",
+        difficulty: "challenge",
+        hints: ["Do all particles have the same speed?", "Which ones can escape from the surface?", "If the fastest leave, what happens to the average energy left behind?"],
+      },
+      {
+        id: "slg-qa-q15",
+        question: "(a) State what is meant by absolute zero and give its value in °C and in K. (b) Convert 75 °C to kelvin and −150 °C to kelvin. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "(a) Absolute zero is the lowest possible temperature, at which the particles have the minimum possible kinetic energy. It is −273 °C, which is 0 K. (b) T(K) = θ(°C) + 273. So 75 °C = 75 + 273 = 348 K, and −150 °C = −150 + 273 = 123 K.",
+        markScheme: [
+          "Absolute zero = lowest possible temperature / minimum particle (kinetic) energy",
+          "−273 °C = 0 K",
+          "75 °C = 348 K",
+          "−150 °C = 123 K",
+        ],
+        commonError: "Subtracting 273 instead of adding, or forgetting that −150 °C still gives a positive kelvin value (123 K).",
+        guideRef: "Gas pressure, the Kelvin scale and the gas laws",
+        difficulty: "core",
+        hints: ["Absolute zero is where motion is least.", "To convert °C to K, add 273.", "Watch the sign: −150 + 273 = 123 K."],
+        solutions: [
+          {
+            label: "Method: K = °C + 273",
+            steps: [
+              "Absolute zero = −273 °C = 0 K.",
+              "75 °C: 75 + 273 = 348 K.",
+              "−150 °C: −150 + 273 = 123 K.",
+            ],
+          },
+        ],
+      },
     ],
   },
   // questionBank omitted — auto-assembled from the quiz pools by lib/content.ts.

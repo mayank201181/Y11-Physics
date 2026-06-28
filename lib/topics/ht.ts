@@ -129,6 +129,79 @@ export const ht: Topic = {
       strategies: ["Decide the job before choosing the surface", "Reason from the absorber = emitter link"],
     },
     {
+      heading: "Factors affecting the rate of heat transfer",
+      discovery: {
+        problem:
+          "A cup of tea cools much faster on a freezing winter windowsill than on a warm kitchen table, and faster still if you pour it into a wide shallow bowl. Nothing about the tea itself has changed — so what controls how quickly thermal energy leaves it?",
+        idea: "Several separate factors set the rate of heat flow: how big the temperature difference is, what the object and its surroundings are made of, what the surface is like, and how much surface area is exposed. Change any one and the rate changes.",
+      },
+      body:
+        "The *amount* of energy that can flow is fixed by the thermal energy stored, but the **rate** (how fast it flows, in joules per second) depends on several factors. Examiners expect you to list and explain them:\n\n1. **Temperature difference.** The bigger the difference between an object and its surroundings, the **faster** energy flows. A drink in a cold room cools faster than the same drink in a warm room. As the object cools, the difference shrinks, so the rate slows down (this is why cooling curves level off).\n2. **Material / thermal conductivity.** Energy is lost faster through a good conductor (metal) than through an insulator (plastic, wood, trapped air). The container and any insulation around it set this.\n3. **Type and colour of surface.** A dull black surface radiates (and absorbs) faster than a shiny one, so surface finish changes the radiation rate.\n4. **Surface area.** A larger exposed surface area transfers energy faster — more area is in contact with the surroundings (for conduction/convection) and more area can emit radiation. This is exactly why a wide bowl cools faster than a tall narrow mug holding the same volume, and why cooling fins are used (see below).\n5. **Surroundings / air movement.** Moving air (a draught or wind) carries warmed air away and replaces it with cold air, speeding up convective heat loss (the 'wind-chill' effect).",
+      keyPoints: [
+        "Rate of heat transfer is measured in joules per second (it is a rate, not a total).",
+        "Bigger temperature difference → faster energy transfer; the rate slows as the difference shrinks.",
+        "Good conductors lose heat faster than insulators.",
+        "Dull black surfaces transfer radiation faster than shiny ones.",
+        "Larger surface area → faster transfer (basis of cooling fins).",
+        "Moving air (draughts/wind) speeds up convective heat loss.",
+      ],
+      whyItWorks:
+        "Each factor changes how much energy crosses the boundary per second: a larger temperature gap drives a stronger flow, more area gives more 'doorways' for energy, a better conductor or emitter opens those doorways wider, and moving air keeps replacing warmed surroundings with cold ones so the gradient stays steep.",
+      strategies: ["List every factor before answering 'rate' questions", "Separate rate (J/s) from total energy (J)"],
+    },
+    {
+      heading: "Experiments: comparing emitters and absorbers",
+      discovery: {
+        problem:
+          "Everyone 'knows' black radiates better than silver — but how would you actually prove it in a lab, and measure which surface is the best emitter and which is the best absorber?",
+        idea: "Use controlled experiments. A Leslie cube tests emission by detecting infrared from differently finished faces; matched metal plates with thermometers test absorption. Keep everything except the surface the same so the comparison is fair.",
+      },
+      body:
+        "Two classic required-practical-style experiments appear in exams.\n\n**1. The Leslie cube (testing emitters).** A Leslie cube is a hollow metal cube whose four vertical faces have different finishes — typically dull black, matt white, shiny silver and dull (or polished) metal. It is filled with hot water (or heated), so all four faces are at the **same temperature**. An infrared detector (or a thermometer with a blackened bulb) is held the **same distance** from each face in turn and the reading recorded. The **dull black face gives the highest reading** and the **shiny silver face the lowest**, showing that a dull black surface is the best emitter of infrared and a shiny surface the worst. *Fair test: same temperature, same distance, same detector, only the surface differs.*\n\n**2. Testing absorbers.** Take two metal plates of the same size, one painted dull black and one shiny silver, and fix a thermometer (or a small ball stuck on with wax) to the back of each. Place both the **same distance** from a radiant heater (or in the Sun). The **dull black plate heats up faster** (its thermometer rises faster, or its wax melts first), showing that a dull black surface is the better absorber of infrared. *Fair test: same distance from the heater, same size plates, same time, only the surface colour differs.*\n\nTogether these experiments confirm the key rule: a good emitter is also a good absorber, and a shiny surface is poor at both.",
+      diagrams: [
+        {
+          caption: "A Leslie cube: hot water inside; an IR detector reads each differently-finished face at equal distance.",
+          svg:
+            '<svg viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A Leslie cube with a dull black face and a shiny face, with an infrared detector reading each face">\n<rect x="60" y="40" width="70" height="70" fill="#1e293b" stroke="#0f172a"/>\n<text x="95" y="80" font-size="8" text-anchor="middle" fill="#f8fafc">dull</text>\n<text x="95" y="92" font-size="8" text-anchor="middle" fill="#f8fafc">black</text>\n<rect x="130" y="40" width="20" height="70" fill="#e2e8f0" stroke="#64748b"/>\n<text x="140" y="125" font-size="8" text-anchor="middle" fill="#334155">shiny</text>\n<text x="95" y="34" font-size="8" text-anchor="middle" fill="#b91c1c">hot water inside</text>\n<rect x="210" y="60" width="40" height="28" rx="3" fill="#fde68a" stroke="#92400e"/>\n<text x="230" y="78" font-size="8" text-anchor="middle" fill="#92400e">IR meter</text>\n<path d="M150 75 H208" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#ir)"/>\n<defs><marker id="ir" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#ef4444"/></marker></defs>\n<text x="180" y="55" font-size="8" text-anchor="middle" fill="#334155">infrared</text>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "Leslie cube: all faces at the SAME temperature; only the surface finish differs.",
+        "Dull black face emits most infrared; shiny silver face emits least.",
+        "Absorber test: dull black plate heats up fastest at the same distance from a heater.",
+        "Fair test = change only the surface; keep temperature, distance, size and time the same.",
+      ],
+      whyItWorks:
+        "Holding temperature and distance constant means the only thing that can vary the detector reading is the surface finish, so any difference must be caused by the surface — that is what makes the conclusion valid.",
+      strategies: ["Identify the one variable to change and what to keep constant", "Name the dependent variable (detector reading / temperature rise)"],
+    },
+    {
+      heading: "Cooling fins and heat sinks",
+      discovery: {
+        problem:
+          "A computer processor or a motorbike engine produces a lot of waste heat in a tiny space. If that heat is not removed fast enough the device overheats and fails. With no room to make the part bigger, how can engineers get rid of heat more quickly?",
+        idea: "Increase the surface area without making the device much bigger. Adding thin metal fins gives a huge extra area for conduction, convection and radiation, so heat escapes far faster.",
+      },
+      body:
+        "A **heat sink** is a block of metal (usually aluminium) fitted with many thin **cooling fins** attached to a hot component such as a CPU, transistor or engine. Its job is to remove waste heat quickly to stop the component overheating.\n\nHow it works, route by route:\n\n- **Conduction:** it is made of metal (a good conductor), so heat is conducted rapidly from the hot component into the fins.\n- **Surface area:** the fins give a very large surface area. A larger area transfers more energy per second by **convection** (more air contact) and by **radiation** (more emitting surface).\n- **Surface finish:** heat sinks are often dull/dark or anodised black to be better **emitters** of infrared radiation.\n- **Air flow:** a fan often blows air across the fins, replacing warmed air with cool air and boosting convective cooling.\n\nThe same idea explains the fins on motorbike-engine cylinders, the cooling pipes behind a fridge, and household radiators (which are really 'convectors' with a large surface area).",
+      diagrams: [
+        {
+          caption: "A finned heat sink: thin fins give a large surface area so heat escapes quickly.",
+          svg:
+            '<svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A heat sink with many fins on top of a hot chip, with energy escaping from the large surface area">\n<rect x="40" y="92" width="140" height="14" fill="#94a3b8" stroke="#475569"/>\n<rect x="70" y="106" width="80" height="10" fill="#ef4444"/>\n<text x="110" y="116" font-size="0" fill="#b91c1c"></text>\n<rect x="50" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="70" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="90" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="110" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="130" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="150" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<path d="M55 38 V20" stroke="#f59e0b" stroke-width="2" marker-end="url(#hs)"/>\n<path d="M115 38 V20" stroke="#f59e0b" stroke-width="2" marker-end="url(#hs)"/>\n<path d="M155 38 V20" stroke="#f59e0b" stroke-width="2" marker-end="url(#hs)"/>\n<defs><marker id="hs" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M0 6 L4 0 L8 6 z" fill="#f59e0b"/></marker></defs>\n<text x="110" y="14" font-size="9" text-anchor="middle" fill="#334155">heat escapes from large area</text>\n<text x="110" y="103" font-size="0" fill="#b91c1c"></text>\n</svg>',
+        },
+      ],
+      keyPoints: [
+        "Heat sinks remove waste heat to stop components overheating.",
+        "Made of metal → fast conduction from the component into the fins.",
+        "Fins give a large surface area → faster convection AND radiation.",
+        "Often dark/dull to emit infrared better; a fan boosts convection.",
+      ],
+      whyItWorks:
+        "Rate of heat transfer rises with surface area, so folding lots of thin fins into a small space maximises the area in contact with the air (and able to radiate) without making the device much bigger.",
+      strategies: ["Link 'cool it faster' to 'increase surface area'", "Name which transfer route each feature helps"],
+    },
+    {
       heading: "Reducing unwanted heat transfer in the home",
       body:
         "To keep a house warm we cut down all three transfer routes. Each measure targets one or more of them:\n\n- **Loft insulation** (e.g. fibreglass wool) traps **pockets of still air**. Air is a poor conductor, and because the air can't circulate it can't form convection currents — so both conduction and convection through the roof are reduced.\n- **Cavity wall insulation** fills the gap between the two brick walls with foam that traps air, again cutting conduction and convection through the walls.\n- **Double glazing** uses two panes of glass with a thin layer of trapped air or vacuum between them. The trapped air/vacuum greatly reduces conduction and convection through the window.\n- **Draught excluders** stop cold air leaking in and warm air leaking out (reducing convection through gaps).\n- **Shiny foil behind radiators** reflects infrared radiation back into the room rather than letting it warm the outside wall.\n\nThe common idea is **trapped air**: air is a good insulator, but only if you stop it moving — otherwise convection currents carry the energy away.",
@@ -193,6 +266,10 @@ export const ht: Topic = {
       { term: "Free electrons", definition: "Delocalised electrons in a metal that move freely and carry kinetic energy, making metals good conductors." },
       { term: "Density", definition: "Mass per unit volume (density = mass ÷ volume); heating a fluid expands it and lowers its density." },
       { term: "Convection current", definition: "A continuous circulation of fluid in which warm fluid rises and cool fluid sinks." },
+      { term: "Leslie cube", definition: "A metal cube with differently finished faces (kept at the same temperature) used to compare how well surfaces emit infrared radiation." },
+      { term: "Heat sink", definition: "A finned metal block fitted to a hot component to remove waste heat quickly by conduction, convection and radiation." },
+      { term: "Emitter", definition: "A surface that gives out infrared radiation; dull black surfaces are the best emitters." },
+      { term: "Absorber", definition: "A surface that takes in infrared radiation; dull black surfaces are the best absorbers." },
     ],
     flashcards: [
       { front: "Why do metals conduct heat well?", back: "They have free (delocalised) electrons that move quickly and carry kinetic energy through the whole metal." },
@@ -201,6 +278,10 @@ export const ht: Topic = {
       { front: "How does a vacuum reduce heat loss?", back: "It has no particles, so neither conduction nor convection can occur across the gap." },
       { front: "Difference between temperature and thermal energy?", back: "Temperature = average particle KE (how hot, in °C). Thermal energy = total energy of all particles (in joules)." },
       { front: "Why is trapped air a good insulator but moving air is not?", back: "Still air conducts poorly; if air can move it forms convection currents that carry energy away." },
+      { front: "Name four factors that affect the rate of heat transfer.", back: "Temperature difference, material/conductivity, surface type/colour, and surface area (plus air movement)." },
+      { front: "What does a Leslie cube test, and what is the result?", back: "It compares emitters: all faces are at the same temperature, and the dull black face emits the most infrared, the shiny face the least." },
+      { front: "How do cooling fins on a heat sink speed up cooling?", back: "They greatly increase the surface area, so more energy is transferred per second by convection and radiation." },
+      { front: "Why does a wide bowl of soup cool faster than a tall mug holding the same amount?", back: "The bowl has a larger exposed surface area, so heat is transferred faster." },
     ],
   },
   quiz: {
