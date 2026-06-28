@@ -302,6 +302,11 @@ export const wv: Topic = {
       { term: "Refractive index (n)", definition: "A measure of how much a material slows and bends light: n = sin i / sin r = c/v, always greater than 1." },
       { term: "Critical angle (c)", definition: "The angle of incidence in the denser medium for which the refracted ray travels along the surface; sin c = 1/n." },
       { term: "Total internal reflection", definition: "When light hitting a boundary from a denser medium at an angle greater than the critical angle is entirely reflected back." },
+      { term: "Ripple tank", definition: "A shallow tray of water with a vibrating bar used to make water waves visible so reflection and refraction can be studied." },
+      { term: "Real image", definition: "An image formed where light rays actually cross; it is inverted and can be projected on a screen." },
+      { term: "Virtual image", definition: "An image from which rays only appear to come (traced back); it is upright, cannot be put on a screen, and is formed by a magnifying glass." },
+      { term: "Magnification", definition: "How many times bigger the image is than the object: image height / object height (a ratio, no unit)." },
+      { term: "Principal focus (F)", definition: "The point on the axis where rays parallel to the axis meet after passing through a converging lens; lens-to-F distance is the focal length." },
     ],
     flashcards: [
       { front: "State the wave equation and the meaning of each symbol.", back: "v = f λ: wave speed (m/s) = frequency (Hz) × wavelength (m)." },
@@ -310,6 +315,10 @@ export const wv: Topic = {
       { front: "What two conditions are needed for total internal reflection?", back: "Light going from a denser to a less dense medium AND angle of incidence greater than the critical angle." },
       { front: "List the EM spectrum from longest to shortest wavelength.", back: "Radio, Microwave, Infrared, Visible, Ultraviolet, X-ray, Gamma." },
       { front: "Why can't sound travel through space?", back: "Sound is longitudinal and needs particles (a medium); space is a vacuum with almost none." },
+      { front: "Give the equation for magnification.", back: "magnification = image height / object height (a ratio, no unit)." },
+      { front: "Object beyond F vs inside F for a converging lens?", back: "Beyond F: real, inverted image (can be on a screen). Inside F: virtual, upright, magnified image (magnifying glass)." },
+      { front: "On an oscilloscope, what shows loudness and what shows pitch?", back: "Trace height (amplitude) shows loudness; how close the waves are (frequency) shows pitch." },
+      { front: "Echo method for the speed of sound?", back: "Time the echo t from a wall distance d away; v = 2d / t (sound travels there and back)." },
     ],
   },
   quiz: {

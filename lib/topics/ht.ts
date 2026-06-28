@@ -188,7 +188,7 @@ export const ht: Topic = {
         {
           caption: "A finned heat sink: thin fins give a large surface area so heat escapes quickly.",
           svg:
-            '<svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A heat sink with many fins on top of a hot chip, with energy escaping from the large surface area">\n<rect x="40" y="92" width="140" height="14" fill="#94a3b8" stroke="#475569"/>\n<rect x="70" y="106" width="80" height="10" fill="#ef4444"/>\n<text x="110" y="116" font-size="0" fill="#b91c1c"></text>\n<rect x="50" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="70" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="90" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="110" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="130" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="150" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<path d="M55 38 V20" stroke="#f59e0b" stroke-width="2" marker-end="url(#hs)"/>\n<path d="M115 38 V20" stroke="#f59e0b" stroke-width="2" marker-end="url(#hs)"/>\n<path d="M155 38 V20" stroke="#f59e0b" stroke-width="2" marker-end="url(#hs)"/>\n<defs><marker id="hs" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M0 6 L4 0 L8 6 z" fill="#f59e0b"/></marker></defs>\n<text x="110" y="14" font-size="9" text-anchor="middle" fill="#334155">heat escapes from large area</text>\n<text x="110" y="103" font-size="0" fill="#b91c1c"></text>\n</svg>',
+            '<svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A heat sink with many fins on top of a hot chip, with energy escaping from the large surface area">\n<rect x="40" y="92" width="140" height="14" fill="#94a3b8" stroke="#475569"/>\n<rect x="70" y="106" width="80" height="10" fill="#ef4444"/>\n<text x="110" y="115" font-size="8" text-anchor="middle" fill="#fff">hot chip</text>\n<rect x="50" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="70" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="90" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="110" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="130" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<rect x="150" y="40" width="10" height="52" fill="#cbd5e1" stroke="#475569"/>\n<path d="M55 38 V20" stroke="#f59e0b" stroke-width="2" marker-end="url(#hs)"/>\n<path d="M115 38 V20" stroke="#f59e0b" stroke-width="2" marker-end="url(#hs)"/>\n<path d="M155 38 V20" stroke="#f59e0b" stroke-width="2" marker-end="url(#hs)"/>\n<defs><marker id="hs" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto"><path d="M0 6 L4 0 L8 6 z" fill="#f59e0b"/></marker></defs>\n<text x="110" y="14" font-size="9" text-anchor="middle" fill="#334155">heat escapes from large area</text>\n<text x="110" y="103" font-size="0" fill="#b91c1c"></text>\n</svg>',
         },
       ],
       keyPoints: [
@@ -970,6 +970,101 @@ export const ht: Topic = {
         guideRef: "Convection",
         difficulty: "challenge",
         hints: ["What does the heated bottom water do?", "How does the rest of the water get heated?", "What would go wrong if the element were at the top?"],
+      },
+      {
+        id: "ht-qa-q13",
+        question: "State four factors that affect the rate at which a hot object loses thermal energy to its surroundings. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "The temperature difference between the object and its surroundings; the material/thermal conductivity of the object and any insulation; the type and colour of the surface (dull black loses heat faster than shiny); and the surface area exposed (a larger area loses heat faster). Air movement around the object also affects the rate.",
+        markScheme: [
+          "Temperature difference (between object and surroundings)",
+          "Material / thermal conductivity / insulation",
+          "Surface type or colour (dull black vs shiny)",
+          "Surface area | air movement / draught around it",
+        ],
+        commonError: "Listing the three methods of heat transfer instead of the factors that affect the rate.",
+        guideRef: "Factors affecting the rate of heat transfer",
+        difficulty: "warmup",
+      },
+      {
+        id: "ht-qa-q14",
+        question: "Explain why liquids and gases are poor conductors of heat, and why gases are the worst conductors of all. (3 marks)",
+        marks: 3,
+        modelAnswer:
+          "Conduction relies on particles colliding and passing on kinetic energy. In liquids the particles are further apart than in solids and have no free electrons (in non-metallic liquids), so energy is passed on slowly. In gases the particles are spread very far apart, so collisions are rare and energy is transferred only very slowly, making gases the worst conductors.",
+        markScheme: [
+          "Conduction needs particles to collide / pass on energy",
+          "In liquids/gases particles are further apart (and no free electrons) so conduction is slow",
+          "In gases particles are very far apart, so collisions are rare | gases conduct worst",
+        ],
+        commonError: "Saying gases 'have no particles' — they do, but the particles are very widely spaced so collisions are infrequent.",
+        guideRef: "Conduction",
+        difficulty: "core",
+        hints: ["What has to happen for conduction to occur?", "How does particle spacing differ between liquids and gases?", "Few collisions means what for the rate?"],
+      },
+      {
+        id: "ht-qa-q15",
+        question: "Describe how you would use a Leslie cube to show that the colour and finish of a surface affects how well it emits infrared radiation. Include the result you expect. (5 marks)",
+        marks: 5,
+        modelAnswer:
+          "Fill the Leslie cube with hot water so all four faces (dull black, matt white, shiny silver and dull metal) are at the same temperature. Hold an infrared detector (or a thermometer with a blackened bulb) a fixed distance from one face and record the reading, then repeat for each face at the same distance and for the same time. Keep the temperature, distance and detector the same so only the surface differs (a fair test). The dull black face gives the highest reading and the shiny silver face the lowest, showing that a dull black surface is the best emitter of infrared radiation and a shiny surface the worst.",
+        markScheme: [
+          "Fill cube with hot water so all faces are at the same temperature",
+          "Use an infrared detector / thermometer held the same distance from each face",
+          "Record the reading for each face | keep distance/time the same (fair test)",
+          "Dull black face gives the highest reading",
+          "Shiny silver gives the lowest | conclusion: dull black is the best emitter",
+        ],
+        commonError: "Forgetting to keep the detector the same distance from each face, which would make the comparison unfair.",
+        guideRef: "Experiments: comparing emitters and absorbers",
+        difficulty: "challenge",
+        hints: ["How do you make sure every face is at the same temperature?", "What do you measure, and what must stay constant?", "Which face emits most, and what does that prove?"],
+        solutions: [
+          {
+            label: "Method and fair-test structure",
+            steps: [
+              "Independent variable: surface finish of the face (black, white, silver, dull metal).",
+              "Dependent variable: infrared detector reading.",
+              "Control variables: temperature of cube, distance of detector, same detector, same time.",
+              "Result: black face reads highest, shiny reads lowest → dull black is the best emitter.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "ht-qa-q16",
+        question: "A microprocessor is fitted with an aluminium heat sink that has many thin fins, and is often coloured dull black. Explain how this design removes waste heat quickly. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "Aluminium is a good conductor, so thermal energy is conducted quickly from the hot processor into the heat sink. The many thin fins give a very large surface area, so more energy is transferred away each second by convection (more contact with the air) and by radiation (more emitting surface). Colouring it dull black makes it a better emitter of infrared radiation, so it loses heat even faster. (A fan is often added to move air across the fins and boost convection.)",
+        markScheme: [
+          "Metal/aluminium is a good conductor → conducts heat from the processor",
+          "Fins give a large surface area",
+          "Larger area → faster convection and/or radiation",
+          "Dull black is a good emitter of radiation | fan increases convection",
+        ],
+        commonError: "Saying the fins 'store' the heat — they help it escape faster, mainly by increasing the surface area.",
+        guideRef: "Cooling fins and heat sinks",
+        difficulty: "core",
+        hints: ["Why is it made of metal?", "What do the fins do to the surface area?", "Why colour it dull black?"],
+      },
+      {
+        id: "ht-qa-q17",
+        question: "Describe how you could carry out a fair test to compare how well a dull black surface and a shiny silver surface absorb infrared radiation. (4 marks)",
+        marks: 4,
+        modelAnswer:
+          "Take two metal plates of the same size, one painted dull black and one shiny silver, each with a thermometer fixed to the back (or a small ball stuck on with wax). Place both plates the same distance from a radiant heater so they receive the same radiation. Record the temperature of each plate at regular intervals for the same length of time, keeping everything except the surface the same. The dull black plate heats up faster (its thermometer rises faster or its wax melts first), showing it is the better absorber of infrared radiation.",
+        markScheme: [
+          "Two same-size plates, one dull black and one shiny, with thermometers (or wax)",
+          "Place both the same distance from a heater / radiation source",
+          "Record temperature at intervals, keeping other variables constant (fair test)",
+          "Dull black heats up faster → better absorber",
+        ],
+        commonError: "Not placing the plates at equal distances from the heater, so they receive different amounts of radiation and the test is unfair.",
+        guideRef: "Experiments: comparing emitters and absorbers",
+        difficulty: "core",
+        hints: ["What two surfaces are you comparing, and what must be the same about the plates?", "How do you give both the same radiation?", "What do you measure to show absorption?"],
       },
     ],
   },
